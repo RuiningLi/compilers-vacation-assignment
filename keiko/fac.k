@@ -1,0 +1,66 @@
+MODULE Main 0 0
+IMPORT Lib 0
+ENDHDR
+
+PROC _fac 0 0 0
+!   if n = 0 then
+LOCAL 16
+LOADW
+CONST 0
+JEQ L2
+JUMP L3
+LABEL L2
+!     return 1
+CONST 1
+RETURNW
+JUMP L4
+LABEL L3
+!     return n * fac(n-1)
+LOCAL 16
+LOADW
+LOCAL 16
+LOADW
+CONST 1
+MINUS
+CONST 0
+GLOBAL _fac
+PCALLW 1
+TIMES
+RETURNW
+LABEL L4
+ERROR E_RETURN 0
+END
+
+PROC MAIN 0 0 0
+!   f := fac(10);
+CONST 10
+CONST 0
+GLOBAL _fac
+PCALLW 1
+GLOBAL _f
+STOREW
+!   print_string("fac(10) = ");
+CONST 10
+GLOBAL g1
+CONST 0
+GLOBAL lib.print_string
+PCALL 2
+!   print_num(f);
+GLOBAL _f
+LOADW
+CONST 0
+GLOBAL lib.print_num
+PCALL 1
+!   newline()
+CONST 0
+GLOBAL lib.newline
+PCALL 0
+RETURN
+END
+
+GLOVAR _f 4
+! String "fac(10) = "
+DEFINE g1
+STRING 66616328313029203D2000
+
+! End

@@ -1,0 +1,12 @@
+This directory contains the lab materials for Compilers.
+
+The following subdirectories exist:
+
+    lab1        Code for Lab 1 -- expressions and statements
+    lab2        Code for Lab 2 -- arrays
+    lab3        Code for Lab 3 -- procedures
+    lab4        Code for Lab 4 -- machine code
+    keiko       Keiko bytecode interpreter
+    lib         Shared utility routines
+    tools       Tools for Lab 4
+    ppc         Complete picoPascal compiler for Keiko

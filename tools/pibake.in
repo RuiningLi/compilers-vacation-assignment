@@ -1,0 +1,37 @@
+#!/bin/bash
+
+DIR='@DIR@'
+HOST=zeta
+TOKEN=$DIR/guest_rsa
+TOKSRC=/users/mike/pi/guest_rsa
+PROG=$1
+
+# Check that we have the login token
+if ! [ -r $TOKEN ]; then
+    if [ -r $TOKSRC ]; then
+        cp $TOKSRC $TOKEN
+    else
+        echo "pibake: Please get the correct guest_rsa file from Mike" >&2
+        exit 2
+    fi
+fi
+
+# Make sure the token is private
+chmod og-rwx $TOKEN
+
+# Make sure socket directory exists
+mkdir -p ~/.ssh/sockets
+
+dir="user/$USER"
+lib=/home/guest/lib
+
+# Form batch job and submit it to the Pi
+( echo mkdir -p $dir
+  echo cd $dir
+  echo 'cat >b.s <<\EOF'
+  cat $1
+  echo EOF
+  echo "(set -x; gcc -I $lib $lib/pas0.o b.s -o b.out && ./b.out)"
+  echo rm -f b.s b.out ) \
+| ssh -F $DIR/sshconfig $HOST /bin/bash
+

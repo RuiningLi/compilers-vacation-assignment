@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Usage: ecsx b.s pas0.c
+
+HOST=ecs.ox.ac.uk
+ARMGCC='arm-linux-gnueabihf-gcc -marm -march=armv6'
+QEMU=qemu-arm
+
+# Make sure socket directory exists
+mkdir -p ~/.ssh/sockets
+
+# Remote temp directory for this test
+dir="ecsx-$$"
+
+# Form a batch job
+( # Limit CPU to 2 seconds
+  echo ulimit -t 2
+  echo /bin/mkdir -p $dir
+  # Create source files
+  for f in $*; do
+      echo "/bin/cat >$dir/$f <<\\EOF"
+      cat $f
+      echo EOF
+  done
+  # Compile and run
+  echo "(cd $dir; set -x;
+		$ARMGCC $* -static -o b.out && $QEMU ./b.out)"
+  # Delete the directory
+  echo /bin/rm -rf $dir ) \
+    |
+# Submit it to the server, reusing a previous connection if possible
+    ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/sockets/%r@%h-%p' \
+          -o 'ControlPersist 600' $HOST /bin/bash
+
