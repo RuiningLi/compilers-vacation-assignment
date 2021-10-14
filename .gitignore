@@ -7,6 +7,10 @@
 keiko/obx-t.a
 keiko/pplink
 keiko/ppx
+keiko/fac.x
+keiko/ptr.x
+keiko/ptr2.x
+keiko/stubs.c
 lab1/a.k
 lab1/a.test
 lab1/a.x

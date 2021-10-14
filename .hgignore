@@ -47,3 +47,7 @@ lab3/a.x
 tools/guest_rsa
 tools/pibake
 tools/sshconfig
+keiko/fac.x
+keiko/ptr.x
+keiko/ptr2.x
+keiko/stubs.c
