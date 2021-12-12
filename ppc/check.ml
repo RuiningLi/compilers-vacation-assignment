@@ -163,6 +163,37 @@ and expr_type e env =
         let t = check_binop w (check_expr e1 env) (check_expr e2 env) in
         e.e_value <- try_binop w e1.e_value e2.e_value;
         t
+    | Valof s -> stmt_result_type s env
+
+(* |stmt_result_type| -- return result type of a statement *)
+and stmt_result_type s env =
+  match s.s_guts with
+      Seq (s1::ss) ->
+        let t1 = stmt_result_type s1 env and t2 = stmt_result_type (makeStmt (Seq ss, 0)) env in
+        if t1 = voidtype then t2
+        else if t2 = voidtype then t1
+        else if t1 <> t2 then sem_error "all occurrences of resultis associated with the same block expression must return values of the same type" []
+        else t1
+    | IfStmt (_, s1, s2) ->
+        let t1 = stmt_result_type s1 env and t2 = stmt_result_type s2 env in
+        if t1 = voidtype then t2
+        else if t2 = voidtype then t1
+        else if t1 <> t2 then sem_error "all occurrences of resultis associated with the same block expression must return values of the same type" []
+        else t1
+    | WhileStmt (_, s1) -> stmt_result_type s1 env
+    | RepeatStmt (s1, _) -> stmt_result_type s1 env
+    | ForStmt (_, _, _, s1) -> stmt_result_type s1 env
+    | CaseStmt (_, ss, s1) ->
+        let t = stmt_result_type s1 env and ts = List.map (fun (e, stmt) -> stmt_result_type stmt env) ss in
+        let types = List.filter (fun type_ -> type_ <> voidtype) (t::ts) in
+        if List.length types = 0 then voidtype
+        else
+          let t0 = List.hd types in
+          if List.length (List.filter (fun type_ -> type_ <> t0) types) > 0
+          then sem_error "all occurrences of resultis associated with the same block expression must return values of the same type" []
+          else t0
+    | ResultStmt e -> check_expr e env
+    | _ -> voidtype
 
 (* |check_funcall| -- check a function or procedure call *)
 and check_funcall f args env v =
@@ -256,17 +287,16 @@ and check_libcall q args env v =
     | _ -> ()
 
 (* |check_const| -- check an expression with constant value *)
-let check_const e env =
+and check_const e env =
   let t = check_expr e env in
   match e.e_value with
       Some v -> (t, v)
     | None -> sem_error "constant expected" []
 
-
 (* STATEMENTS *)
 
 (* check_dupcases -- check for duplicate case labels *)
-let check_dupcases vs =
+and check_dupcases vs =
   let rec chk = 
     function
         [] | [_] -> ()
@@ -276,7 +306,7 @@ let check_dupcases vs =
   chk (List.sort compare vs)
 
 (* |check_stmt| -- check and annotate a statement *)
-let rec check_stmt s env =
+and check_stmt s env =
   err_line := s.s_line;
   match s.s_guts with
       Skip -> ()
@@ -346,6 +376,7 @@ let rec check_stmt s env =
         let vs = List.map check_arm arms in
         check_dupcases vs;
         check_stmt deflt env
+    | ResultStmt e -> ()
 
 
 (* TYPES AND DECLARATIONS *)

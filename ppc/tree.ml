@@ -40,6 +40,7 @@ and stmt_guts =
   | RepeatStmt of stmt * expr
   | ForStmt of expr * expr * expr * stmt
   | CaseStmt of expr * (expr * stmt) list * stmt
+  | ResultStmt of expr
 
 and expr = 
   { e_guts: expr_guts; 
@@ -57,6 +58,7 @@ and expr_guts =
   | FuncCall of name * expr list
   | Monop of op * expr 
   | Binop of op * expr * expr
+  | Valof of stmt
 
 and typexpr = 
     TypeName of name 

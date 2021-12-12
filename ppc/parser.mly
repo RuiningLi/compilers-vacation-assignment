@@ -23,6 +23,7 @@ open Tree
 %token                  PROC RECORD RETURN THEN TO TYPE
 %token                  VAR WHILE NOT POINTER NIL
 %token                  REPEAT UNTIL FOR ELSIF CASE
+%token                  VALOF RESULTIS
 
 /* operator priorities */
 %left                   RELOP EQUAL
@@ -125,7 +126,8 @@ stmt1 :
   | FOR name ASSIGN expr TO expr DO stmts END 
                                         { let v = makeExpr (Variable $2) in
                                           ForStmt (v, $4, $6, $8) } 
-  | CASE expr OF arms else_part END     { CaseStmt ($2, $4, $5) } ;
+  | CASE expr OF arms else_part END     { CaseStmt ($2, $4, $5) }
+  | RESULTIS expr                       { ResultStmt $2 } ;
 
 elses :
     /* empty */                         { makeStmt (Skip, 0) }
@@ -166,7 +168,8 @@ expr :
   | expr MINUS expr                     { makeExpr (Binop (Minus, $1, $3)) }
   | expr RELOP expr                     { makeExpr (Binop ($2, $1, $3)) }
   | expr EQUAL expr                     { makeExpr (Binop (Eq, $1, $3)) }
-  | LPAR expr RPAR                      { $2 } ;
+  | LPAR expr RPAR                      { $2 }
+  | VALOF stmts END                     { makeExpr (Valof $2) };
 
 actuals :       
     LPAR RPAR                           { [] }
