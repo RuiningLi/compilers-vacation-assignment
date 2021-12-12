@@ -98,3 +98,5 @@ val makeBlock : decl list * stmt -> block
 
 (* |print_tree| -- pretty-print a tree *)
 val print_tree : out_channel -> string -> program -> unit
+
+val fExpr : expr -> Print.arg

@@ -15,6 +15,8 @@ open Print
 let optflag = ref false
 let boundchk = ref false
 
+let dummy_lab = label ()
+
 (* |level| -- nesting level of current procedure *)
 let level = ref 0
 
@@ -137,7 +139,12 @@ and gen_expr e =
                 SEQ [gen_expr e1; gen_expr e2; BINOP w]
             | FuncCall (p, args) -> 
                 gen_call p args
-            | _ -> failwith "gen_expr"
+            | Valof s ->
+                let lab = label () in
+                SEQ [gen_stmt lab s; CONST 0; LABEL lab]
+            | _ ->
+                printf "$" [fExpr e];
+                failwith "gen_expr"
         end
 
 (* |gen_call| -- generate code to call a procedure *)
@@ -232,7 +239,7 @@ and gen_cond_expr test =
   SEQ [gen_cond l1 l2 test;
     LABEL l1; CONST 1; JUMP l3; LABEL l2; CONST 0; LABEL l3]
 
-let gen_jtable tab0 deflab =
+and gen_jtable tab0 deflab =
   if tab0 = [] then JUMP deflab else begin
     let table = List.sort (fun (v1, l1) (v2, l2) -> compare v1 v2) tab0 in
     let lob = fst (List.hd table) in
@@ -245,11 +252,11 @@ let gen_jtable tab0 deflab =
   end
 
 (* |gen_stmt| -- generate code for a statement *)
-let rec gen_stmt s = 
+and gen_stmt exit_lab s = 
   let code =
     match s.s_guts with
         Skip -> NOP
-      | Seq ss -> SEQ (List.map gen_stmt ss)
+      | Seq ss -> SEQ (List.map (gen_stmt exit_lab) ss)
       | Assign (v, e) ->
           if scalar v.e_type || is_pointer v.e_type then
             SEQ [gen_expr e; gen_addr v; STORE (size_of v.e_type)]
@@ -267,22 +274,22 @@ let rec gen_stmt s =
       | IfStmt (test, thenpt, elsept) ->
           let lab1 = label () and lab2 = label () and lab3 = label () in
           SEQ [gen_cond lab1 lab2 test; 
-            LABEL lab1; gen_stmt thenpt; JUMP lab3;
-            LABEL lab2; gen_stmt elsept; LABEL lab3]
+            LABEL lab1; gen_stmt exit_lab thenpt; JUMP lab3;
+            LABEL lab2; gen_stmt exit_lab elsept; LABEL lab3]
       | WhileStmt (test, body) ->
         let lab1 = label () and lab2 = label () and lab3 = label () in
-          SEQ [JUMP lab2; LABEL lab1; gen_stmt body; 
+          SEQ [JUMP lab2; LABEL lab1; gen_stmt exit_lab body; 
             LABEL lab2; gen_cond lab1 lab3 test; LABEL lab3]
       | RepeatStmt (body, test) ->
           let lab1 = label () and lab2 = label () in
-          SEQ [LABEL lab1; gen_stmt body;
+          SEQ [LABEL lab1; gen_stmt exit_lab body;
             gen_cond lab2 lab1 test; LABEL lab2]
       | ForStmt (var, lo, hi, body) ->
           (* For simplicity, this code re-evaluates hi on each iteration *)
           let l1 = label () and l2 = label () in
           let s = int_rep.r_size in
           SEQ [gen_expr lo; gen_addr var; STORE s; JUMP l2;
-            LABEL l1; gen_stmt body;
+            LABEL l1; gen_stmt exit_lab body;
             gen_expr var; CONST 1; BINOP Plus; gen_addr var; STORE s;
             LABEL l2; gen_expr var; gen_expr hi; JUMPC (Leq, l1)] 
       | CaseStmt (sel, arms, deflt) ->
@@ -291,11 +298,14 @@ let rec gen_stmt s =
           let get_val (v, body) = get_value v in
           let table = List.combine (List.map get_val arms) labs in
           let gen_case lab (v, body) =
-            SEQ [LABEL lab; gen_stmt body; JUMP donelab] in
+            SEQ [LABEL lab; gen_stmt exit_lab body; JUMP donelab] in
           SEQ [gen_expr sel; gen_jtable table deflab;
             SEQ (List.map2 gen_case labs arms);
-            LABEL deflab; gen_stmt deflt;
-            LABEL donelab] in
+            LABEL deflab; gen_stmt exit_lab deflt;
+            LABEL donelab] 
+      | ResultStmt res ->
+          if exit_lab = dummy_lab then failwith "no surrounding valof for resultis"
+          else SEQ [gen_expr res; JUMP exit_lab] in
   SEQ [if s.s_line <> 0 then LINE s.s_line else NOP; code]
 
 (* |do_proc| -- generate code for a procedure *)
@@ -303,7 +313,7 @@ let do_proc lab lev rtype fsize body =
   printf "PROC $ $ 0 0\n" [fStr lab; fNum fsize];
   level := lev+1;
   let code = 
-    SEQ [gen_stmt body;
+    SEQ [gen_stmt dummy_lab body;
       (if rtype.t_rep.r_size = 0 then RETURN 0 else ERETURN 0)] in
   Keiko.output (if !optflag then Peepopt.optimise code else code);
   printf "END\n\n" []

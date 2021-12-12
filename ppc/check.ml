@@ -163,7 +163,9 @@ and expr_type e env =
         let t = check_binop w (check_expr e1 env) (check_expr e2 env) in
         e.e_value <- try_binop w e1.e_value e2.e_value;
         t
-    | Valof s -> stmt_result_type s env
+    | Valof s ->
+        check_stmt s env;
+        stmt_result_type s env
 
 (* |stmt_result_type| -- return result type of a statement *)
 and stmt_result_type s env =
@@ -192,7 +194,7 @@ and stmt_result_type s env =
           if List.length (List.filter (fun type_ -> type_ <> t0) types) > 0
           then sem_error "all occurrences of resultis associated with the same block expression must return values of the same type" []
           else t0
-    | ResultStmt e -> check_expr e env
+    | ResultStmt e -> e.e_type
     | _ -> voidtype
 
 (* |check_funcall| -- check a function or procedure call *)
@@ -376,7 +378,10 @@ and check_stmt s env =
         let vs = List.map check_arm arms in
         check_dupcases vs;
         check_stmt deflt env
-    | ResultStmt e -> ()
+    | ResultStmt e ->
+        let t = check_expr e env in
+          if not (scalar t) then
+            sem_error "expression in resultis must be scalar" []
 
 
 (* TYPES AND DECLARATIONS *)
