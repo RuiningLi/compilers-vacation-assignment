@@ -27,6 +27,7 @@ val char_rep : metrics          (* Char type *)
 val bool_rep : metrics          (* Boolean type *)
 val void_rep : metrics          (* Void type *)
 val addr_rep : metrics          (* All addresses *)
+val undefined_rep : metrics     (* Type undefined *)
 val proc_rep : metrics          (* Closures *)
 val param_rep : metrics         (* Procedure parameters *)
 val max_align : int

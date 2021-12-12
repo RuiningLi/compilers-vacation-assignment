@@ -142,9 +142,7 @@ and gen_expr e =
             | Valof s ->
                 let lab = label () in
                 SEQ [gen_stmt lab s; CONST 0; LABEL lab]
-            | _ ->
-                printf "$" [fExpr e];
-                failwith "gen_expr"
+            | _ -> failwith "gen_expr"
         end
 
 (* |gen_call| -- generate code to call a procedure *)
@@ -304,8 +302,7 @@ and gen_stmt exit_lab s =
             LABEL deflab; gen_stmt exit_lab deflt;
             LABEL donelab] 
       | ResultStmt res ->
-          if exit_lab = dummy_lab then failwith "no surrounding valof for resultis"
-          else SEQ [gen_expr res; JUMP exit_lab] in
+          SEQ [gen_expr res; JUMP exit_lab] in
   SEQ [if s.s_line <> 0 then LINE s.s_line else NOP; code]
 
 (* |do_proc| -- generate code for a procedure *)

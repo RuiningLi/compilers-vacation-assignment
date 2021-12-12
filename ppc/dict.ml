@@ -107,6 +107,7 @@ and type_guts =
   | RecordType of def list
   | ProcType of proc_data
   | PointerType of ptype ref
+  | UndefinedType
 
 (* |proc_data| -- data about a procedure type *)
 and proc_data =
@@ -174,6 +175,7 @@ let integer =   mk_type (BasicType IntType) int_rep
 let character = mk_type (BasicType CharType) char_rep
 let boolean =   mk_type (BasicType BoolType) bool_rep
 let addrtype =  mk_type (BasicType AddrType) addr_rep
+let undefined = mk_type UndefinedType undefined_rep
 
 let row n t =
   let r = { r_size = n * t.t_rep.r_size; r_align = max_align } in

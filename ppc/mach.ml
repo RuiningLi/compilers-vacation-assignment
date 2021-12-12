@@ -11,6 +11,7 @@ let char_rep = { r_size = 1; r_align = 1 }
 let bool_rep = { r_size = 1; r_align = 1 }
 let void_rep = { r_size = 0; r_align = 1 }
 let addr_rep = { r_size = 4; r_align = 4 }
+let undefined_rep = { r_size = 0; r_align = 1 }
 let proc_rep = { r_size = 8; r_align = 4 }
 let param_rep = { r_size = 4; r_align = 4 }
 let max_align = 4

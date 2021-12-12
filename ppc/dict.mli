@@ -69,6 +69,7 @@ and type_guts =
   | RecordType of def list
   | ProcType of proc_data
   | PointerType of ptype ref
+  | UndefinedType
 
 (* |proc_data| -- data about a procedure type *)
 and proc_data =
@@ -89,6 +90,7 @@ val character : ptype
 val boolean : ptype
 val voidtype : ptype
 val addrtype : ptype
+val undefined : ptype
 
 type environment
 

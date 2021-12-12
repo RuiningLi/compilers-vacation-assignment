@@ -16,6 +16,8 @@ let return_type = ref voidtype
 
 let err_line = ref 1
 
+let block_level = ref 0
+
 exception Sem_error of string * Print.arg list * int
 
 let sem_error fmt args =
@@ -160,11 +162,31 @@ and expr_type e env =
         e.e_value <- try_monop w e1.e_value;
         t
     | Binop (w, e1, e2) -> 
-        let t = check_binop w (check_expr e1 env) (check_expr e2 env) in
-        e.e_value <- try_binop w e1.e_value e2.e_value;
-        t
+        begin
+          match w with
+              Eq | Lt | Gt | Leq | Geq | Neq ->
+                begin
+                  match e1.e_guts with
+                      Valof _ -> sem_error "block expression may not be used inside arguments of comparison operators" []
+                    | _ ->
+                      begin
+                        match e2.e_guts with
+                            Valof _ -> sem_error "block expression may not be used inside arguments of comparison operators" []
+                          | _ ->
+                            let t = check_binop w (check_expr e1 env) (check_expr e2 env) in
+                            e.e_value <- try_binop w e1.e_value e2.e_value;
+                            t
+                      end
+                end
+            | _ ->
+              let t = check_binop w (check_expr e1 env) (check_expr e2 env) in
+              e.e_value <- try_binop w e1.e_value e2.e_value;
+              t
+        end
     | Valof s ->
+        block_level := !block_level + 1;
         check_stmt s env;
+        block_level := !block_level - 1;
         stmt_result_type s env
 
 (* |stmt_result_type| -- return result type of a statement *)
@@ -172,14 +194,14 @@ and stmt_result_type s env =
   match s.s_guts with
       Seq (s1::ss) ->
         let t1 = stmt_result_type s1 env and t2 = stmt_result_type (makeStmt (Seq ss, 0)) env in
-        if t1 = voidtype then t2
-        else if t2 = voidtype then t1
+        if t1 = undefined then t2
+        else if t2 = undefined then t1
         else if t1 <> t2 then sem_error "all occurrences of resultis associated with the same block expression must return values of the same type" []
         else t1
     | IfStmt (_, s1, s2) ->
         let t1 = stmt_result_type s1 env and t2 = stmt_result_type s2 env in
-        if t1 = voidtype then t2
-        else if t2 = voidtype then t1
+        if t1 = undefined then t2
+        else if t2 = undefined then t1
         else if t1 <> t2 then sem_error "all occurrences of resultis associated with the same block expression must return values of the same type" []
         else t1
     | WhileStmt (_, s1) -> stmt_result_type s1 env
@@ -187,15 +209,15 @@ and stmt_result_type s env =
     | ForStmt (_, _, _, s1) -> stmt_result_type s1 env
     | CaseStmt (_, ss, s1) ->
         let t = stmt_result_type s1 env and ts = List.map (fun (e, stmt) -> stmt_result_type stmt env) ss in
-        let types = List.filter (fun type_ -> type_ <> voidtype) (t::ts) in
-        if List.length types = 0 then voidtype
+        let types = List.filter (fun type_ -> type_ <> undefined) (t::ts) in
+        if List.length types = 0 then undefined
         else
           let t0 = List.hd types in
           if List.length (List.filter (fun type_ -> type_ <> t0) types) > 0
           then sem_error "all occurrences of resultis associated with the same block expression must return values of the same type" []
           else t0
     | ResultStmt e -> e.e_type
-    | _ -> voidtype
+    | _ -> undefined
 
 (* |check_funcall| -- check a function or procedure call *)
 and check_funcall f args env v =
@@ -318,7 +340,7 @@ and check_stmt s env =
         let lt = check_expr lhs env
         and rt = check_expr rhs env in
         check_var lhs;
-        if not (same_type lt rt) then
+        if not (same_type lt rt) && rt <> undefined then
           sem_error "type mismatch in assignment" []
     | ProcCall (p, args) ->
         let rt = check_funcall p args env (ref None) in
@@ -333,7 +355,7 @@ and check_stmt s env =
                 if same_type !return_type voidtype then
                   sem_error "procedure must not return a result" [];
                 let t = check_expr e env in
-                if not (same_type t !return_type) then
+                if not (same_type t !return_type) && t <> undefined then
                   sem_error "type mismatch in return statement" []
             | None ->
                 if not (same_type !return_type voidtype) then
@@ -347,20 +369,23 @@ and check_stmt s env =
         check_stmt elsept env
     | WhileStmt (cond, body) ->
         let ct = check_expr cond env in
-        if not (same_type ct boolean) then
+        if not (same_type ct boolean) && ct <> undefined then
           sem_error "type mismatch in while statement" [];
         check_stmt body env
     | RepeatStmt (body, test) ->
         check_stmt body env;
         let ct = check_expr test env in
-        if not (same_type ct boolean) then
+        if not (same_type ct boolean) && ct <> undefined then
           sem_error "type mismatch in repeat statement" []
     | ForStmt (var, lo, hi, body) ->
         let vt = check_expr var env in
         let lot = check_expr lo env in
         let hit = check_expr hi env in
-        if not (same_type vt integer) || not (same_type lot integer)
-            || not (same_type hit integer) then
+        if not (same_type vt integer) && vt <> undefined then
+          sem_error "type mismatch in for statement" [];
+        if not (same_type lot integer) && lot <> undefined then
+          sem_error "type mismatch in for statement" [];
+        if not (same_type hit integer) && hit <> undefined then
           sem_error "type mismatch in for statement" [];
         check_var var;
         check_stmt body env
@@ -379,6 +404,8 @@ and check_stmt s env =
         check_dupcases vs;
         check_stmt deflt env
     | ResultStmt e ->
+        if !block_level = 0 then
+          sem_error "no surrounding valof for resultis" [];
         let t = check_expr e env in
           if not (scalar t) then
             sem_error "expression in resultis must be scalar" []
