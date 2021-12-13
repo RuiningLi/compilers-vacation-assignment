@@ -101,12 +101,12 @@ let rec check_var e =
     | _ -> sem_error "a variable is needed here" []
 
 (* |check_expr| -- check and annotate an expression, return its type *)
-let rec check_expr e env =
-  let t = expr_type e env in
+let rec check_expr e env block_expr_allowed =
+  let t = expr_type e env block_expr_allowed in
   e.e_type <- t; t
 
 (* |expr_type| -- return type of expression *)
-and expr_type e env =
+and expr_type e env block_expr_allowed =
   match e.e_guts with
       Variable x -> 
         let d = lookup_def x env in 
@@ -120,8 +120,8 @@ and expr_type e env =
         end;
         d.d_type
     | Sub (e1, e2) ->
-        let t1 = check_expr e1 env
-        and t2 = check_expr e2 env in
+        let t1 = check_expr e1 env block_expr_allowed
+        and t2 = check_expr e2 env block_expr_allowed in
         if not (same_type t2 integer) then
           sem_error "subscript is not an integer" [];
         begin
@@ -130,7 +130,7 @@ and expr_type e env =
             | _ -> sem_error "subscripting a non-array" []
         end
     | Select (e1, x) ->
-        let t1 = check_expr e1 env in
+        let t1 = check_expr e1 env block_expr_allowed in
         err_line := x.x_line;
         begin
           match t1.t_guts with
@@ -142,7 +142,7 @@ and expr_type e env =
           | _ -> sem_error "selecting from a non-record" []
         end
     | Deref e1 ->
-        let t1 = check_expr e1 env in
+        let t1 = check_expr e1 env block_expr_allowed in
         begin
           match t1.t_guts with
               PointerType u -> !u
@@ -158,32 +158,23 @@ and expr_type e env =
           sem_error "$ does not return a result" [fId p.x_name];
         e.e_value <- !v; t1
     | Monop (w, e1) -> 
-        let t = check_monop w (check_expr e1 env) in
+        let t = check_monop w (check_expr e1 env block_expr_allowed) in
         e.e_value <- try_monop w e1.e_value;
         t
     | Binop (w, e1, e2) -> 
         begin
           match w with
               Eq | Lt | Gt | Leq | Geq | Neq ->
-                begin
-                  match e1.e_guts with
-                      Valof _ -> sem_error "block expression may not be used inside arguments of comparison operators" []
-                    | _ ->
-                      begin
-                        match e2.e_guts with
-                            Valof _ -> sem_error "block expression may not be used inside arguments of comparison operators" []
-                          | _ ->
-                            let t = check_binop w (check_expr e1 env) (check_expr e2 env) in
-                            e.e_value <- try_binop w e1.e_value e2.e_value;
-                            t
-                      end
-                end
+                let t = check_binop w (check_expr e1 env false) (check_expr e2 env false) in
+                e.e_value <- try_binop w e1.e_value e2.e_value;
+                t
             | _ ->
-              let t = check_binop w (check_expr e1 env) (check_expr e2 env) in
-              e.e_value <- try_binop w e1.e_value e2.e_value;
-              t
+                let t = check_binop w (check_expr e1 env block_expr_allowed) (check_expr e2 env block_expr_allowed) in
+                e.e_value <- try_binop w e1.e_value e2.e_value;
+                t
         end
     | Valof s ->
+        if not block_expr_allowed then sem_error "block expression not allowed here" [];
         block_level := !block_level + 1;
         check_stmt s env;
         block_level := !block_level - 1;
@@ -241,7 +232,7 @@ and check_args formals args env =
 and check_arg formal arg env =
   match formal.d_kind with
       CParamDef | VParamDef ->
-        let t1 = check_expr arg env in
+        let t1 = check_expr arg env true in
         if not (same_type formal.d_type t1) then
           sem_error "argument has wrong type" [];
         if formal.d_kind = VParamDef then 
@@ -273,7 +264,7 @@ and check_libcall q args env v =
     sem_error "wrong number of arguments for $" [fLibId q.q_id];
   if q.q_argtypes <> [] then begin
     let check t e =
-      if not (same_type t (check_expr e env)) then
+      if not (same_type t (check_expr e env true)) then
         sem_error "argument of $ has wrong type" [fLibId q.q_id] in
     List.iter2 check q.q_argtypes args
   end;
@@ -283,36 +274,36 @@ and check_libcall q args env v =
         v := e1.e_value
     | OrdFun ->
         let e1 = List.hd args in
-        let t1 = check_expr e1 env in
+        let t1 = check_expr e1 env true in
         if not (discrete t1) then
           sem_error "ord expects an argument of a discrete type" [];
         v := e1.e_value
     | PrintString ->
-        let t1 = check_expr (List.hd args) env in
+        let t1 = check_expr (List.hd args) env true in
         if not (is_string t1) then
           sem_error "print_string expects a string" []
     | ReadChar ->
         check_var (List.hd args)
     | NewProc ->
-        let t1 = check_expr (List.hd args) env in
+        let t1 = check_expr (List.hd args) env true in
         if not (is_pointer t1) then 
           sem_error "parameter of new must be a pointer" [];
         check_var (List.hd args)
     | ArgvProc ->
-        let t1 = check_expr (List.nth args 0) env
-        and t2 = check_expr (List.nth args 1) env in
+        let t1 = check_expr (List.nth args 0) env true
+        and t2 = check_expr (List.nth args 1) env true in
         if not (same_type t1 integer) || not (is_string t2) then
           sem_error "type error in parameters of argv" [];
         check_var (List.nth args 1)
     | OpenIn ->
-        let t1 = check_expr (List.nth args 0) env in
+        let t1 = check_expr (List.nth args 0) env true in
         if not (is_string t1) then
           sem_error "parameter of open_in is not a string" []
     | _ -> ()
 
 (* |check_const| -- check an expression with constant value *)
 and check_const e env =
-  let t = check_expr e env in
+  let t = check_expr e env true in
   match e.e_value with
       Some v -> (t, v)
     | None -> sem_error "constant expected" []
@@ -337,8 +328,8 @@ and check_stmt s env =
     | Seq ss ->
         List.iter (fun s1 -> check_stmt s1 env) ss
     | Assign (lhs, rhs) ->
-        let lt = check_expr lhs env
-        and rt = check_expr rhs env in
+        let lt = check_expr lhs env true
+        and rt = check_expr rhs env true in
         check_var lhs;
         if not (same_type lt rt) && rt <> undefined then
           sem_error "type mismatch in assignment" []
@@ -354,7 +345,7 @@ and check_stmt s env =
               Some e ->
                 if same_type !return_type voidtype then
                   sem_error "procedure must not return a result" [];
-                let t = check_expr e env in
+                let t = check_expr e env true in
                 if not (same_type t !return_type) && t <> undefined then
                   sem_error "type mismatch in return statement" []
             | None ->
@@ -362,25 +353,25 @@ and check_stmt s env =
                   sem_error "function must return a result" []
         end
     | IfStmt (cond, thenpt, elsept) ->
-        let ct = check_expr cond env in
+        let ct = check_expr cond env true in
         if not (same_type ct boolean) then
           sem_error "test in if statement must be a boolean" []; 
         check_stmt thenpt env;
         check_stmt elsept env
     | WhileStmt (cond, body) ->
-        let ct = check_expr cond env in
+        let ct = check_expr cond env true in
         if not (same_type ct boolean) && ct <> undefined then
           sem_error "type mismatch in while statement" [];
         check_stmt body env
     | RepeatStmt (body, test) ->
         check_stmt body env;
-        let ct = check_expr test env in
+        let ct = check_expr test env true in
         if not (same_type ct boolean) && ct <> undefined then
           sem_error "type mismatch in repeat statement" []
     | ForStmt (var, lo, hi, body) ->
-        let vt = check_expr var env in
-        let lot = check_expr lo env in
-        let hit = check_expr hi env in
+        let vt = check_expr var env true in
+        let lot = check_expr lo env true in
+        let hit = check_expr hi env true in
         if not (same_type vt integer) && vt <> undefined then
           sem_error "type mismatch in for statement" [];
         if not (same_type lot integer) && lot <> undefined then
@@ -390,7 +381,7 @@ and check_stmt s env =
         check_var var;
         check_stmt body env
     | CaseStmt (sel, arms, deflt) ->
-        let st = check_expr sel env in
+        let st = check_expr sel env false in
         if not (scalar st) then
           sem_error "expression in case statement must be scalar" [];
 
@@ -406,7 +397,7 @@ and check_stmt s env =
     | ResultStmt e ->
         if !block_level = 0 then
           sem_error "no surrounding valof for resultis" [];
-        let t = check_expr e env in
+        let t = check_expr e env true in
           if not (scalar t) then
             sem_error "expression in resultis must be scalar" []
 

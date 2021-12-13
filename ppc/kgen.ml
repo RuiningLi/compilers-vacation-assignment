@@ -12,7 +12,7 @@ open Print
    because each generation routine returns a list of instructions,
    represented using the SEQ constructor of Keiko.inst *)
 
-let optflag = ref false
+let optflag = ref true
 let boundchk = ref false
 
 let dummy_lab = label ()
