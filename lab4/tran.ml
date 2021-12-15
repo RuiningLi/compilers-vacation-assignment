@@ -14,6 +14,7 @@ let release =
       Register reg -> release_reg reg
     | Index (reg, off) -> release_reg reg
     | Index2 (r1, r2, n) -> release_reg r1; release_reg r2
+    | Shift (reg, n) -> release_reg reg
     | _ -> ()
 
 let fix_reg r = Register (get_reg (reg_of r))
@@ -177,6 +178,8 @@ and e_rand =
   (* returns |Const| or |Register| *)
   function
       <CONST k> when fits_immed k -> Const k
+    | <BINOP Lsl, t1, <CONST n>> ->
+        let v1 = e_reg t1 anyreg in Shift (reg_of v1, n)
     | t -> e_reg t anyreg
 
 (* |e_addr| -- evaluate to form an address for ldr or str *)
@@ -188,6 +191,12 @@ and e_addr =
     | <OFFSET, t1, <CONST n>> when fits_offset n ->
         let v1 = e_reg t1 anyreg in
         Index (reg_of v1, n)
+    | <OFFSET, t1, <BINOP Lsl, t2, <CONST n>>> ->
+        let v1 = e_reg t1 anyreg and v2 = e_reg t2 anyreg in
+        Index2 (reg_of v1, reg_of v2, n)
+    | <OFFSET, t1, t2> ->
+        let v1 = e_reg t1 anyreg and v2 = e_reg t2 anyreg in
+        Index2 (reg_of v1, reg_of v2, 0)
     | t ->
         let v1 = e_reg t anyreg in
         Index (reg_of v1, 0)

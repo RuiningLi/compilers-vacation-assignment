@@ -45,6 +45,7 @@ type operand =                  (* VALUE        ASM SYNTAX       *)
   | Index2 of reg * reg * int   (* [r1]+[r2]<<n [r1, r2, LSL #n] *)
   | Global of symbol            (* lab          lab              *)
   | Label of codelab            (* lab          lab              *)
+  | Shift of reg * int          (* [reg]<<n     reg, LSL $n      *)
 
 (* |fRand| -- format operand for printing *)
 let fRand =
@@ -61,6 +62,7 @@ let fRand =
           fMeta "[$, $, LSL #$]" [fReg r1; fReg r2; fNum n]
     | Global lab -> fStr lab
     | Label lab -> fMeta ".$" [fLab lab]
+    | Shift (reg, n) -> fMeta "$, LSL #$" [fReg reg; fNum n]
 
 (* |reg_of| -- extract register (or R_none) from operand *)
 let reg_of = 

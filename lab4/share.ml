@@ -5,7 +5,7 @@ open Print
 open Optree
 open Mach
 
-let debug = false
+let debug = true
 
 (* |dagnode| -- node in DAG representation of an expression *)
 type dagnode =
@@ -13,7 +13,8 @@ type dagnode =
     g_op: inst;                         (* Operator *)
     g_rands: dagnode list;              (* Operands *)
     mutable g_refct: int;               (* Reference count *)
-    mutable g_temp: int }               (* Temp, or -1 if none *)
+    mutable g_temp: int;                (* Temp, or -1 if none *)
+    mutable g_init: bool }              (* Whether or not it is first initiated *)
 
 let fNode g = fMeta "@$($)" [fNum g.g_serial; fNum g.g_refct]
 
@@ -29,12 +30,62 @@ let node_count = ref 0
 (* |newnode| -- create a new node *)
 let newnode op rands = 
   incr node_count;
-  List.iter (function g -> g.g_refct <- g.g_refct+1) rands;
+
+  let func gs =
+    match op with
+        LOADW | LOADC ->
+          begin
+            match gs with
+                [#<OFFSET, @(g' :: #<CONST n> :: [])>] when (-4096 < n && n < 4096) ->
+                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
+                  else g'.g_init <- true
+              | [#<OFFSET, @(g' :: #<BINOP Lsl, @(g'' :: #<CONST n> :: [])> :: [])>] ->
+                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
+                  else g'.g_init <- true
+              | _ ->
+                  List.iter (function g -> g.g_refct <- g.g_refct + 1) gs
+          end
+      | STOREW | STOREC ->
+          begin
+            match gs with
+                [g; #<OFFSET, @(g' :: #<CONST n> :: args)>] when (-4096 < n && n < 4096) ->
+                  if g.g_init then g.g_refct <- g.g_refct + 1
+                  else g.g_init <- true;
+                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
+                  else g'.g_init <- true;
+                  List.iter (function g -> g.g_refct <- g.g_refct + 1) args
+              | g :: (#<OFFSET, @(g' :: #<BINOP Lsl, @(g'' :: #<CONST n> :: [])> :: [])>) :: args ->
+                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
+                  else g'.g_init <- true;
+                  if g''.g_init then g''.g_refct <- g''.g_refct + 1
+                  else g''.g_init <- true;
+                  List.iter (function g -> g.g_refct <- g.g_refct + 1) args;
+                  printf "extra arg number: $\n" [fNum (List.length args)];
+                  printf "---------------- Node is $\n" [fNode g'']
+              | _ ->
+                  List.iter (function g -> g.g_refct <- g.g_refct + 1) gs
+          end
+      | OFFSET ->
+          begin
+            match gs with
+                [g; #<BINOP Lsl, @(g' :: #<CONST n> :: [])>] when (-4096 < n && n < 4096) ->
+                  if g.g_init then g.g_refct <- g.g_refct + 1
+                  else g.g_init <- true;
+                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
+                  else g'.g_init <- true;
+                  printf "*************** Node is $\n" [fNode g']
+              | _ ->
+                  List.iter (function g -> g.g_refct <- g.g_refct + 1) gs
+          end
+      | _ ->
+          List.iter (function g -> g.g_refct <- g.g_refct + 1) gs in
+  func rands;
+
   if debug then
     printf "@ Node @$ = $ [$]\n"
       [fNum !node_count; fInst op; fList(fNode) rands];
   { g_serial = !node_count; g_op = op; g_rands = rands; 
-    g_refct = 0; g_temp = -1 }
+    g_refct = 0; g_temp = -1; g_init = false }
 
 (* |node| -- create a new node or share an existing one *)
 let node op rands =
@@ -130,7 +181,7 @@ and make_store st ld t1 t2 =
     node st [g1; g2]
   else begin
     let g3 = node ld [g2] in
-    g2.g_refct <- g2.g_refct-1; (* Ignore artificial ref from g3 *)
+    g2.g_refct <- g2.g_refct - 1; (* Ignore artificial ref from g3 *)
     node st [g1; g2; g3]
   end
 
@@ -145,7 +196,7 @@ let rec visit g top =
         (* Procedure call -- always moved to top level *)
         if top then build g else share g
     | _ ->
-        if top || g.g_refct = 1 then build g else share g
+        if top || g.g_refct <= 1 then build g else share g
 
 (* |build| -- convert dag to tree with no sharing at the root *)
 and build g =

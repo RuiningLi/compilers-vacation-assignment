@@ -23,6 +23,7 @@ type operand =                  (* VALUE        ASM SYNTAX       *)
   | Index2 of reg * reg * int   (* [r1]+[r2]<<n [r1, r2, LSL #n] *)
   | Global of symbol            (* lab          lab              *)
   | Label of codelab            (* lab          lab              *)
+  | Shift of reg * int          (* [reg]<<n     reg, LSL $n      *)
 
 (* |fRand| -- format operand for printing *)
 val fRand : operand -> Print.arg
