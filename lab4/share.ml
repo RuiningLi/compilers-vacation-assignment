@@ -5,7 +5,7 @@ open Print
 open Optree
 open Mach
 
-let debug = true
+let debug = false
 
 (* |dagnode| -- node in DAG representation of an expression *)
 type dagnode =
@@ -43,7 +43,6 @@ let newnode op rands rf_add =
                     lsl_base.g_refct <- lsl_base.g_refct + 1;
                     let offset_base = List.hd addr_node.g_rands in
                     offset_base.g_refct <- offset_base.g_refct + 1;
-                    printf "$ gets added\n" [fNode offset_base];
                     if serial offset_node = !node_count - 2 then
                       List.iter (function g -> g.g_refct <- g.g_refct - 1) offset_node.g_rands;
                     if serial addr_node = !node_count - 1 then
@@ -75,7 +74,6 @@ let newnode op rands rf_add =
                     lsl_base.g_refct <- lsl_base.g_refct + 1;
                     let offset_base = List.hd addr_node.g_rands in
                     offset_base.g_refct <- offset_base.g_refct + 1;
-                    printf "$ gets added\n" [fNode offset_base];
                     if serial offset_node = !node_count - List.length rands then
                       List.iter (function g -> g.g_refct <- g.g_refct - 1) offset_node.g_rands;
                     if serial addr_node = !node_count - List.length rands + 1 then

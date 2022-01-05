@@ -192,10 +192,12 @@ and e_addr =
         let v1 = e_reg t1 anyreg in
         Index (reg_of v1, n)
     | <OFFSET, t1, <BINOP Lsl, t2, <CONST n>>> ->
-        let v1 = e_reg t1 anyreg and v2 = e_reg t2 anyreg in
+        let v1 = e_reg t1 anyreg 
+        and v2 = e_reg t2 anyreg in
         Index2 (reg_of v1, reg_of v2, n)
     | <OFFSET, t1, t2> ->
-        let v1 = e_reg t1 anyreg and v2 = e_reg t2 anyreg in
+        let v1 = e_reg t1 anyreg 
+        and v2 = e_reg t2 anyreg in
         Index2 (reg_of v1, reg_of v2, 0)
     | t ->
         let v1 = e_reg t anyreg in
