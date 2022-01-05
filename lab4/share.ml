@@ -13,8 +13,7 @@ type dagnode =
     g_op: inst;                         (* Operator *)
     g_rands: dagnode list;              (* Operands *)
     mutable g_refct: int;               (* Reference count *)
-    mutable g_temp: int;                (* Temp, or -1 if none *)
-    mutable g_init: bool }              (* Whether or not it is first initiated *)
+    mutable g_temp: int }               (* Temp, or -1 if none *)
 
 let fNode g = fMeta "@$($)" [fNum g.g_serial; fNum g.g_refct]
 
@@ -28,71 +27,87 @@ let node_table = Hashtbl.create 129
 let node_count = ref 0
 
 (* |newnode| -- create a new node *)
-let newnode op rands = 
+let newnode op rands rf_add = 
   incr node_count;
-
-  let func gs =
-    match op with
-        LOADW | LOADC ->
-          begin
-            match gs with
-                [#<OFFSET, @(g' :: #<CONST n> :: [])>] when (-4096 < n && n < 4096) ->
-                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
-                  else g'.g_init <- true
-              | [#<OFFSET, @(g' :: #<BINOP Lsl, @(g'' :: #<CONST n> :: [])> :: [])>] ->
-                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
-                  else g'.g_init <- true
-              | _ ->
-                  List.iter (function g -> g.g_refct <- g.g_refct + 1) gs
-          end
-      | STOREW | STOREC ->
-          begin
-            match gs with
-                [g; #<OFFSET, @(g' :: #<CONST n> :: args)>] when (-4096 < n && n < 4096) ->
-                  if g.g_init then g.g_refct <- g.g_refct + 1
-                  else g.g_init <- true;
-                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
-                  else g'.g_init <- true;
-                  List.iter (function g -> g.g_refct <- g.g_refct + 1) args
-              | g :: (#<OFFSET, @(g' :: #<BINOP Lsl, @(g'' :: #<CONST n> :: [])> :: [])>) :: args ->
-                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
-                  else g'.g_init <- true;
-                  if g''.g_init then g''.g_refct <- g''.g_refct + 1
-                  else g''.g_init <- true;
-                  List.iter (function g -> g.g_refct <- g.g_refct + 1) args;
-                  printf "extra arg number: $\n" [fNum (List.length args)];
-                  printf "---------------- Node is $\n" [fNode g'']
-              | _ ->
-                  List.iter (function g -> g.g_refct <- g.g_refct + 1) gs
-          end
-      | OFFSET ->
-          begin
-            match gs with
-                [g; #<BINOP Lsl, @(g' :: #<CONST n> :: [])>] when (-4096 < n && n < 4096) ->
-                  if g.g_init then g.g_refct <- g.g_refct + 1
-                  else g.g_init <- true;
-                  if g'.g_init then g'.g_refct <- g'.g_refct + 1
-                  else g'.g_init <- true;
-                  printf "*************** Node is $\n" [fNode g']
-              | _ ->
-                  List.iter (function g -> g.g_refct <- g.g_refct + 1) gs
-          end
-      | _ ->
-          List.iter (function g -> g.g_refct <- g.g_refct + 1) gs in
-  func rands;
-
+  if rf_add then
+    if op = LOADC || op = LOADW then
+      let addr_node = List.hd rands in
+      if addr_node.g_op = OFFSET then
+        let offset_node = List.nth addr_node.g_rands 1 in
+        match offset_node.g_op with
+            BINOP Lsl ->
+              let lsl_node = List.nth offset_node.g_rands 1 in begin
+              match lsl_node.g_op with
+                  CONST n ->
+                    let lsl_base = List.hd offset_node.g_rands in
+                    lsl_base.g_refct <- lsl_base.g_refct + 1;
+                    let offset_base = List.hd addr_node.g_rands in
+                    offset_base.g_refct <- offset_base.g_refct + 1;
+                    printf "$ gets added\n" [fNode offset_base];
+                    if serial offset_node = !node_count - 2 then
+                      List.iter (function g -> g.g_refct <- g.g_refct - 1) offset_node.g_rands;
+                    if serial addr_node = !node_count - 1 then
+                      List.iter (function g -> g.g_refct <- g.g_refct - 1) addr_node.g_rands;
+                | _ ->
+                    if serial addr_node <> !node_count - 1 then
+                      List.iter (function g -> g.g_refct <- g.g_refct + 1) addr_node.g_rands;
+              end
+          | CONST n ->
+              let offset_base = List.hd addr_node.g_rands in
+              offset_base.g_refct <- offset_base.g_refct + 1;
+              if serial addr_node = !node_count - 1 then
+                List.iter (function g -> g.g_refct <- g.g_refct - 1) addr_node.g_rands;
+          | _ ->
+              if serial addr_node <> !node_count - 1 then
+                List.iter (function g -> g.g_refct <- g.g_refct + 1) addr_node.g_rands;
+      else 
+        List.iter (function g -> g.g_refct <- g.g_refct + 1) rands;
+    else if op = STOREC || op = STOREW then
+      let addr_node = List.nth rands 1 in
+      if addr_node.g_op = OFFSET then
+        let offset_node = List.nth addr_node.g_rands 1 in
+        match offset_node.g_op with 
+            BINOP Lsl -> 
+              let lsl_node = List.nth offset_node.g_rands 1 in begin
+              match lsl_node.g_op with
+                  CONST n ->
+                    let lsl_base = List.hd offset_node.g_rands in
+                    lsl_base.g_refct <- lsl_base.g_refct + 1;
+                    let offset_base = List.hd addr_node.g_rands in
+                    offset_base.g_refct <- offset_base.g_refct + 1;
+                    printf "$ gets added\n" [fNode offset_base];
+                    if serial offset_node = !node_count - List.length rands then
+                      List.iter (function g -> g.g_refct <- g.g_refct - 1) offset_node.g_rands;
+                    if serial addr_node = !node_count - List.length rands + 1 then
+                      List.iter (function g -> g.g_refct <- g.g_refct - 1) addr_node.g_rands;
+                | _ ->
+                  if serial addr_node <> !node_count - List.length rands + 1 then
+                    List.iter (function g -> g.g_refct <- g.g_refct + 1) addr_node.g_rands;
+            end
+          | CONST n ->
+              let offset_base = List.hd addr_node.g_rands in
+              offset_base.g_refct <- offset_base.g_refct + 1;
+              if serial addr_node = !node_count - List.length rands + 1 then
+                List.iter (function g -> g.g_refct <- g.g_refct - 1) addr_node.g_rands;
+          | _ ->
+            if serial addr_node <> !node_count - List.length rands + 1 then
+              List.iter (function g -> g.g_refct <- g.g_refct + 1) addr_node.g_rands;
+      else
+        List.iter (function g -> g.g_refct <- g.g_refct + 1) rands;
+    else
+      List.iter (function g -> g.g_refct <- g.g_refct + 1) rands;
   if debug then
     printf "@ Node @$ = $ [$]\n"
       [fNum !node_count; fInst op; fList(fNode) rands];
   { g_serial = !node_count; g_op = op; g_rands = rands; 
-    g_refct = 0; g_temp = -1; g_init = false }
+    g_refct = 0; g_temp = -1 }
 
 (* |node| -- create a new node or share an existing one *)
-let node op rands =
+let node op rands rf_add =
   let key = (op, List.map serial rands) in
   try Hashtbl.find node_table key with 
     Not_found -> 
-      let n = newnode op rands in
+      let n = newnode op rands rf_add in
       Hashtbl.add node_table key n; 
       n
 
@@ -160,16 +175,16 @@ let rec make_dag t =
     | <STOREC, t1, t2> -> 
         make_store STOREC LOADC t1 t2
     | <LABEL lab> -> 
-        reset (); node (LABEL lab) []
+        reset (); node (LABEL lab) [] true
     | <CALL n, @ts> -> 
-        (* Never share procedure calls *)
+        (* Never share procedure calls  *)
         let gs = List.map make_dag ts in
         kill (fun g -> true);
-        newnode (CALL n) gs
+        newnode (CALL n) gs true
     | <(ARG _|STATLINK) as op, t> ->
-        newnode op [make_dag t]
+        newnode op [make_dag t] true
     | <w, @ts> ->
-        node w (List.map make_dag ts)
+        node w (List.map make_dag ts) true
 
 and make_store st ld t1 t2 =
   let g1 = make_dag t1 in
@@ -178,11 +193,10 @@ and make_store st ld t1 t2 =
   kill (alias g2); 
   (* Add dummy argument to detect use of stored value *)
   if is_regvar t2 then
-    node st [g1; g2]
+    node st [g1; g2] true
   else begin
-    let g3 = node ld [g2] in
-    g2.g_refct <- g2.g_refct - 1; (* Ignore artificial ref from g3 *)
-    node st [g1; g2; g3]
+    let g3 = node ld [g2] false in
+    node st [g1; g2; g3] true
   end
 
 (* |visit| -- convert dag to tree, sharing the root if worthwhile *)
