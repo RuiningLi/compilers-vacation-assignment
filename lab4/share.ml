@@ -61,8 +61,10 @@ let newnode op rands rf_add =
                 List.iter (function g -> g.g_refct <- g.g_refct + 1) addr_node.g_rands;
       else 
         List.iter (function g -> g.g_refct <- g.g_refct + 1) rands;
-    else if op = STOREC || op = STOREW then
-      let addr_node = List.nth rands 1 in
+    else if op = STOREC || op = STOREW then begin
+      List.iter (function g -> g.g_refct <- g.g_refct + 1) rands;
+      let addr_node = List.nth rands 1 in begin
+      addr_node.g_refct <- addr_node.g_refct - 1;
       if addr_node.g_op = OFFSET then
         let offset_node = List.nth addr_node.g_rands 1 in
         match offset_node.g_op with 
@@ -91,7 +93,9 @@ let newnode op rands rf_add =
             if serial addr_node <> !node_count - List.length rands + 1 then
               List.iter (function g -> g.g_refct <- g.g_refct + 1) addr_node.g_rands;
       else
-        List.iter (function g -> g.g_refct <- g.g_refct + 1) rands;
+        addr_node.g_refct <- addr_node.g_refct + 1;
+      end
+    end
     else
       List.iter (function g -> g.g_refct <- g.g_refct + 1) rands;
   if debug then
