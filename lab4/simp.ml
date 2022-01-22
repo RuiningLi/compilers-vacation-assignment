@@ -90,4 +90,3 @@ let rec simplify <x, @ts> = simp <x, @(List.map simplify ts)>
 (* |optimise| -- simplify a procedure body *)
 let optimise prog = 
   List.map simplify prog
-

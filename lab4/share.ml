@@ -5,7 +5,10 @@ open Print
 open Optree
 open Mach
 
-let debug = false
+let debug = true
+
+(* |fits_offset| -- test for fitting in offset field of address *)
+let fits_offset x = (-4096 < x && x < 4096)
 
 (* |dagnode| -- node in DAG representation of an expression *)
 type dagnode =
@@ -51,7 +54,7 @@ let newnode op rands rf_add =
                     if serial addr_node <> !node_count - 1 then
                       List.iter (function g -> g.g_refct <- g.g_refct + 1) addr_node.g_rands;
               end
-          | CONST n ->
+          | CONST n when fits_offset n ->
               let offset_base = List.hd addr_node.g_rands in
               offset_base.g_refct <- offset_base.g_refct + 1;
               if serial addr_node = !node_count - 1 then
@@ -84,7 +87,7 @@ let newnode op rands rf_add =
                   if serial addr_node <> !node_count - List.length rands + 1 then
                     List.iter (function g -> g.g_refct <- g.g_refct + 1) addr_node.g_rands;
             end
-          | CONST n ->
+          | CONST n when fits_offset n ->
               let offset_base = List.hd addr_node.g_rands in
               offset_base.g_refct <- offset_base.g_refct + 1;
               if serial addr_node = !node_count - List.length rands + 1 then

@@ -1,0 +1,4901 @@
+52c52
+< @ Node @12 = LOADC [@11(0)]
+---
+> @ Node @12 = LOADC [@11(1)]
+263c263
+< @ Node @72 = LOADC [@71(0)]
+---
+> @ Node @72 = LOADC [@71(1)]
+268,269c268,269
+< @ Node @77 = LOADC [@76(0)]
+< @ Node @78 = STOREC [@72(1), @76(0), @77(1)]
+---
+> @ Node @77 = LOADC [@76(1)]
+> @ Node @78 = STOREC [@72(1), @76(1), @77(1)]
+273c273
+< @ Node @82 = LOADW [@74(2)]
+---
+> @ Node @82 = LOADW [@74(3)]
+280c280
+< @ Node @89 = LOADC [@88(0)]
+---
+> @ Node @89 = LOADC [@88(1)]
+499c499
+< @ Node @107 = LOADC [@106(0)]
+---
+> @ Node @107 = LOADC [@106(1)]
+507c507
+< @ Node @115 = LOADC [@114(0)]
+---
+> @ Node @115 = LOADC [@114(1)]
+520c520
+< @ Node @128 = LOADC [@127(0)]
+---
+> @ Node @128 = LOADC [@127(1)]
+526c526
+< @ Node @134 = LOADC [@133(0)]
+---
+> @ Node @134 = LOADC [@133(1)]
+666c666
+< @ Node @148 = LOADC [@147(0)]
+---
+> @ Node @148 = LOADC [@147(1)]
+821c821
+< @ Node @199 = LOADW [@190(1)]
+---
+> @ Node @199 = LOADW [@190(2)]
+1014c1014
+< @ Node @238 = LOADW [@233(1)]
+---
+> @ Node @238 = LOADW [@233(2)]
+1029,1030c1029,1030
+< @ Node @253 = LOADW [@252(0)]
+< @ Node @254 = STOREW [@247(1), @252(0), @253(1)]
+---
+> @ Node @253 = LOADW [@252(1)]
+> @ Node @254 = STOREW [@247(1), @252(1), @253(1)]
+1230c1230
+< @ Node @294 = LOADW [@285(1)]
+---
+> @ Node @294 = LOADW [@285(2)]
+1380c1380
+< @ Node @315 = LOADC [@314(0)]
+---
+> @ Node @315 = LOADC [@314(1)]
+1385,1386c1385,1386
+< @ Node @320 = LOADC [@319(0)]
+< @ Node @321 = STOREC [@315(1), @319(0), @320(1)]
+---
+> @ Node @320 = LOADC [@319(1)]
+> @ Node @321 = STOREC [@315(1), @319(1), @320(1)]
+1390c1390
+< @ Node @325 = LOADW [@317(2)]
+---
+> @ Node @325 = LOADW [@317(3)]
+1402,1403c1402,1403
+< @ Node @337 = LOADC [@336(0)]
+< @ Node @338 = STOREC [@332(1), @336(0), @337(1)]
+---
+> @ Node @337 = LOADC [@336(1)]
+> @ Node @338 = STOREC [@332(1), @336(1), @337(1)]
+1407c1407
+< @ Node @342 = LOADW [@334(2)]
+---
+> @ Node @342 = LOADW [@334(3)]
+1527c1527
+< @ Node @354 = LOADC [@353(0)]
+---
+> @ Node @354 = LOADC [@353(1)]
+1536c1536
+< @ Node @363 = LOADC [@362(0)]
+---
+> @ Node @363 = LOADC [@362(1)]
+1539c1539
+< @ Node @366 = LOADC [@365(0)]
+---
+> @ Node @366 = LOADC [@365(1)]
+1544c1544
+< @ Node @371 = LOADW [@360(2)]
+---
+> @ Node @371 = LOADW [@360(3)]
+1663c1663
+< @ Node @381 = LOADC [@380(0)]
+---
+> @ Node @381 = LOADC [@380(1)]
+1665c1665
+< @ Node @383 = LOADC [@375(1)]
+---
+> @ Node @383 = LOADC [@375(2)]
+1682c1682
+< @ Node @400 = LOADW [@396(1)]
+---
+> @ Node @400 = LOADW [@396(2)]
+1773c1773
+< @ Node @411 = LOADC [@410(0)]
+---
+> @ Node @411 = LOADC [@410(1)]
+1979c1979
+< @ Node @444 = LOADW [@443(0)]
+---
+> @ Node @444 = LOADW [@443(1)]
+1992,1993c1992,1993
+< @ Node @457 = OFFSET [@443(1), @456(1)]
+< @ Node @458 = LOADW [@457(0)]
+---
+> @ Node @457 = OFFSET [@443(2), @456(1)]
+> @ Node @458 = LOADW [@457(1)]
+1996c1996
+< @ Node @461 = MINUS [@460(1), @441(1)]
+---
+> @ Node @461 = MINUS [@460(1), @441(2)]
+1998c1998
+< @ Node @463 = LOADW [@439(1)]
+---
+> @ Node @463 = LOADW [@439(2)]
+2008c2008
+< @ Node @473 = LOADW [@472(0)]
+---
+> @ Node @473 = LOADW [@472(1)]
+2013,2014c2013,2014
+< @ Node @478 = OFFSET [@472(1), @476(2)]
+< @ Node @479 = LOADW [@478(0)]
+---
+> @ Node @478 = OFFSET [@472(2), @476(2)]
+> @ Node @479 = LOADW [@478(1)]
+2018c2018
+< @ Node @483 = LOADW [@468(1)]
+---
+> @ Node @483 = LOADW [@468(2)]
+2026,2027c2026,2029
+< @ Sharing @450(2) as temp 1
+< @ Sharing @479(2) as temp 2
+---
+> @ Sharing @443(2) as temp 1
+> @ Sharing @450(2) as temp 2
+> @ Sharing @472(2) as temp 3
+> @ Sharing @479(2) as temp 4
+2044,2051c2046,2050
+< @ <JNEQ L200,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 5>>
+< @ <DEFTEMP 1, <LOADW, <LOCAL 44>>>
+< @ <JEQ L200, <TEMP 1>, <CONST 0>>
+---
+> @ <DEFTEMP 1,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+> @ <JNEQ L200, <LSR, <LOADW, <TEMP 1>>, <CONST 8>>, <CONST 5>>
+> @ <DEFTEMP 2, <LOADW, <LOCAL 44>>>
+> @ <JEQ L200, <TEMP 2>, <CONST 0>>
+2055c2054
+< @     <PLUS, <TEMP 1>, <CONST 7>>,
+---
+> @     <PLUS, <TEMP 2>, <CONST 7>>,
+2057,2064c2056
+< @       <LSL,
+< @         <LOADW,
+< @           <OFFSET,
+< @             <OFFSET,
+< @               <GLOBAL _mem>,
+< @               <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @             <CONST 4>>>,
+< @         <CONST 1>>,
+---
+> @       <LSL, <LOADW, <OFFSET, <TEMP 1>, <CONST 4>>>, <CONST 1>>,
+2069,2080c2061,2065
+< @ <JNEQ L202,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 4>>
+< @ <DEFTEMP 2,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< @ <JEQ L202, <TEMP 2>, <CONST 0>>
+---
+> @ <DEFTEMP 3,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+> @ <JNEQ L202, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 4>>
+> @ <DEFTEMP 4, <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>>
+> @ <JEQ L202, <TEMP 4>, <CONST 0>>
+2082c2067
+< @ <STOREW, <TEMP 2>, <LOCAL 40>>
+---
+> @ <STOREW, <TEMP 4>, <LOCAL 40>>
+2121,2126c2106,2107
+< @ <JNEQ L200,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 5>>
+---
+> @ <DEFTEMP 1,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+2129c2110,2112
+< 	ldr r0, [r0, r1, LSL #2]
+---
+> 	add r4, r0, r1, LSL #2
+> @ <JNEQ L200, <LSR, <LOADW, <TEMP 1>>, <CONST 8>>, <CONST 5>>
+> 	ldr r0, [r4]
+2133,2136c2116,2119
+< @ <DEFTEMP 1, <LOADW, <LOCAL 44>>>
+< 	ldr r4, [fp, #44]
+< @ <JEQ L200, <TEMP 1>, <CONST 0>>
+< 	cmp r4, #0
+---
+> @ <DEFTEMP 2, <LOADW, <LOCAL 44>>>
+> 	ldr r5, [fp, #44]
+> @ <JEQ L200, <TEMP 2>, <CONST 0>>
+> 	cmp r5, #0
+2141c2124
+< @     <PLUS, <TEMP 1>, <CONST 7>>,
+---
+> @     <PLUS, <TEMP 2>, <CONST 7>>,
+2143,2150c2126
+< @       <LSL,
+< @         <LOADW,
+< @           <OFFSET,
+< @             <OFFSET,
+< @               <GLOBAL _mem>,
+< @               <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @             <CONST 4>>>,
+< @         <CONST 1>>,
+---
+> @       <LSL, <LOADW, <OFFSET, <TEMP 1>, <CONST 4>>>, <CONST 1>>,
+2153,2157c2129,2130
+< 	add r0, r4, #7
+< 	set r1, _mem
+< 	ldr r2, [fp, #40]
+< 	add r1, r1, r2, LSL #2
+< 	ldr r1, [r1, #4]
+---
+> 	add r0, r5, #7
+> 	ldr r1, [r4, #4]
+2165,2170c2138,2139
+< @ <JNEQ L202,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 4>>
+---
+> @ <DEFTEMP 3,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+2173c2142,2144
+< 	ldr r0, [r0, r1, LSL #2]
+---
+> 	add r4, r0, r1, LSL #2
+> @ <JNEQ L202, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 4>>
+> 	ldr r0, [r4]
+2177,2186c2148,2150
+< @ <DEFTEMP 2,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	set r0, _mem
+< 	ldr r1, [fp, #40]
+< 	add r0, r0, r1, LSL #2
+< 	ldr r4, [r0, #4]
+< @ <JEQ L202, <TEMP 2>, <CONST 0>>
+---
+> @ <DEFTEMP 4, <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>>
+> 	ldr r4, [r4, #4]
+> @ <JEQ L202, <TEMP 4>, <CONST 0>>
+2190c2154
+< @ <STOREW, <TEMP 2>, <LOCAL 40>>
+---
+> @ <STOREW, <TEMP 4>, <LOCAL 40>>
+2442c2406
+< @ Node @504 = LOADC [@503(0)]
+---
+> @ Node @504 = LOADC [@503(1)]
+2478c2442
+< @ Node @540 = LOADW [@539(0)]
+---
+> @ Node @540 = LOADW [@539(1)]
+2545,2546c2509,2510
+< @ Node @607 = LOADW [@606(0)]
+< @ Node @608 = STOREW [@600(1), @606(0), @607(1)]
+---
+> @ Node @607 = LOADW [@606(1)]
+> @ Node @608 = STOREW [@600(1), @606(1), @607(1)]
+2549,2551c2513,2515
+< @ Node @611 = OFFSET [@606(1), @604(1)]
+< @ Node @612 = LOADW [@611(0)]
+< @ Node @613 = STOREW [@610(1), @611(0), @612(1)]
+---
+> @ Node @611 = OFFSET [@606(2), @604(2)]
+> @ Node @612 = LOADW [@611(1)]
+> @ Node @613 = STOREW [@610(1), @611(1), @612(1)]
+2555,2557c2519,2521
+< @ Node @617 = OFFSET [@606(2), @616(1)]
+< @ Node @618 = LOADW [@617(0)]
+< @ Node @619 = STOREW [@615(1), @617(0), @618(1)]
+---
+> @ Node @617 = OFFSET [@606(3), @616(1)]
+> @ Node @618 = LOADW [@617(1)]
+> @ Node @619 = STOREW [@615(1), @617(1), @618(1)]
+2559,2561c2523,2525
+< @ Node @621 = OFFSET [@606(3), @620(1)]
+< @ Node @622 = LOADW [@621(0)]
+< @ Node @623 = STOREW [@615(2), @621(0), @622(1)]
+---
+> @ Node @621 = OFFSET [@606(4), @620(1)]
+> @ Node @622 = LOADW [@621(1)]
+> @ Node @623 = STOREW [@615(2), @621(1), @622(1)]
+2570c2534
+< @ Sharing @606(3) as temp 6
+---
+> @ Sharing @606(4) as temp 6
+2887c2851
+< @ Node @638 = LOADC [@637(0)]
+---
+> @ Node @638 = LOADC [@637(1)]
+2893,2894c2857,2858
+< @ Node @644 = LOADC [@643(0)]
+< @ Node @645 = STOREC [@638(2), @643(0), @644(1)]
+---
+> @ Node @644 = LOADC [@643(1)]
+> @ Node @645 = STOREC [@638(2), @643(1), @644(1)]
+2906,2907c2870,2871
+< @ Node @657 = LOADC [@656(0)]
+< @ Node @658 = STOREC [@652(1), @656(0), @657(1)]
+---
+> @ Node @657 = LOADC [@656(1)]
+> @ Node @658 = STOREC [@652(1), @656(1), @657(1)]
+2922,2923c2886,2887
+< @ Node @673 = LOADW [@672(0)]
+< @ Node @674 = STOREW [@666(1), @672(0), @673(1)]
+---
+> @ Node @673 = LOADW [@672(1)]
+> @ Node @674 = STOREW [@666(1), @672(1), @673(1)]
+2928,2929c2892,2893
+< @ Node @679 = LOADW [@678(0)]
+< @ Node @680 = STOREW [@676(1), @678(0), @679(1)]
+---
+> @ Node @679 = LOADW [@678(1)]
+> @ Node @680 = STOREW [@676(1), @678(1), @679(1)]
+3294c3258
+< @ Node @686 = LOADW [@685(0)]
+---
+> @ Node @686 = LOADW [@685(1)]
+3314,3315c3278,3279
+< @ Node @706 = LOADW [@705(0)]
+< @ Node @707 = STOREW [@701(1), @705(0), @706(1)]
+---
+> @ Node @706 = LOADW [@705(1)]
+> @ Node @707 = STOREW [@701(1), @705(1), @706(1)]
+3331c3295
+< @ Node @723 = LOADW [@722(0)]
+---
+> @ Node @723 = LOADW [@722(1)]
+3341c3305
+< @ Node @733 = LOADW [@732(0)]
+---
+> @ Node @733 = LOADW [@732(1)]
+3351c3315
+< @ Node @743 = LOADW [@742(0)]
+---
+> @ Node @743 = LOADW [@742(1)]
+3360c3324
+< @ Node @752 = LOADW [@751(0)]
+---
+> @ Node @752 = LOADW [@751(1)]
+3370c3334
+< @ Node @762 = LOADW [@761(0)]
+---
+> @ Node @762 = LOADW [@761(1)]
+3379c3343
+< @ Node @771 = LOADW [@770(0)]
+---
+> @ Node @771 = LOADW [@770(1)]
+3991c3955
+< @ Node @846 = LOADW [@845(0)]
+---
+> @ Node @846 = LOADW [@845(1)]
+3996c3960
+< @ Node @851 = LOADW [@850(0)]
+---
+> @ Node @851 = LOADW [@850(1)]
+4002c3966
+< @ Node @857 = LSL [@856(1), @849(1)]
+---
+> @ Node @857 = LSL [@856(1), @849(2)]
+4006c3970
+< @ Node @861 = LOADW [@860(0)]
+---
+> @ Node @861 = LOADW [@860(1)]
+4024c3988
+< @ Node @879 = LOADC [@878(0)]
+---
+> @ Node @879 = LOADC [@878(1)]
+4029c3993
+< @ Node @884 = LSL [@883(1), @849(2)]
+---
+> @ Node @884 = LSL [@883(1), @849(3)]
+4031c3995
+< @ Node @886 = LOADW [@885(0)]
+---
+> @ Node @886 = LOADW [@885(1)]
+4045c4009
+< @ Node @900 = LOADW [@899(0)]
+---
+> @ Node @900 = LOADW [@899(1)]
+4051,4052c4015,4016
+< @ Node @906 = LOADW [@899(0)]
+< @ Node @907 = STOREW [@905(1), @899(0), @906(1)]
+---
+> @ Node @906 = LOADW [@899(2)]
+> @ Node @907 = STOREW [@905(1), @899(2), @906(1)]
+4064c4028
+< @ Node @919 = LOADW [@918(0)]
+---
+> @ Node @919 = LOADW [@918(1)]
+4077c4041
+< @ Node @932 = LOADW [@931(0)]
+---
+> @ Node @932 = LOADW [@931(1)]
+4094,4095c4058,4059
+< @ Node @949 = LOADW [@948(0)]
+< @ Node @950 = STOREW [@940(1), @948(0), @949(1)]
+---
+> @ Node @949 = LOADW [@948(1)]
+> @ Node @950 = STOREW [@940(1), @948(1), @949(1)]
+4099c4063
+< @ Sharing @897(2) as temp 3
+---
+> @ Sharing @899(2) as temp 3
+4145,4146c4109,4112
+< @   <OFFSET, <GLOBAL _symtab>, <LSL, <LOADW, <REGVAR 0>>, <CONST 4>>>>
+< @ <JNEQ L232, <LOADW, <OFFSET, <TEMP 3>, <CONST 12>>>, <CONST 0>>
+---
+> @   <OFFSET,
+> @     <OFFSET, <GLOBAL _symtab>, <LSL, <LOADW, <REGVAR 0>>, <CONST 4>>>,
+> @     <CONST 12>>>
+> @ <JNEQ L232, <LOADW, <TEMP 3>>, <CONST 0>>
+4148c4114
+< @ <STOREW, <LOADW, <LOCAL 40>>, <OFFSET, <TEMP 3>, <CONST 12>>>
+---
+> @ <STOREW, <LOADW, <LOCAL 40>>, <TEMP 3>>
+4247c4213,4215
+< @   <OFFSET, <GLOBAL _symtab>, <LSL, <LOADW, <REGVAR 0>>, <CONST 4>>>>
+---
+> @   <OFFSET,
+> @     <OFFSET, <GLOBAL _symtab>, <LSL, <LOADW, <REGVAR 0>>, <CONST 4>>>,
+> @     <CONST 12>>>
+4249,4251c4217,4220
+< 	add r6, r0, r4, LSL #4
+< @ <JNEQ L232, <LOADW, <OFFSET, <TEMP 3>, <CONST 12>>>, <CONST 0>>
+< 	ldr r0, [r6, #12]
+---
+> 	add r0, r0, r4, LSL #4
+> 	add r6, r0, #12
+> @ <JNEQ L232, <LOADW, <TEMP 3>>, <CONST 0>>
+> 	ldr r0, [r6]
+4255c4224
+< @ <STOREW, <LOADW, <LOCAL 40>>, <OFFSET, <TEMP 3>, <CONST 12>>>
+---
+> @ <STOREW, <LOADW, <LOCAL 40>>, <TEMP 3>>
+4257c4226
+< 	str r0, [r6, #12]
+---
+> 	str r0, [r6]
+4419c4388
+< @ Node @960 = LOADW [@959(0)]
+---
+> @ Node @960 = LOADW [@959(1)]
+4439,4440c4408,4409
+< @ Node @980 = LOADW [@979(0)]
+< @ Node @981 = STOREW [@975(1), @979(0), @980(1)]
+---
+> @ Node @980 = LOADW [@979(1)]
+> @ Node @981 = STOREW [@975(1), @979(1), @980(1)]
+4443,4445c4412,4414
+< @ Node @984 = OFFSET [@979(1), @956(2)]
+< @ Node @985 = LOADW [@984(0)]
+< @ Node @986 = STOREW [@983(1), @984(0), @985(1)]
+---
+> @ Node @984 = OFFSET [@979(2), @956(3)]
+> @ Node @985 = LOADW [@984(1)]
+> @ Node @986 = STOREW [@983(1), @984(1), @985(1)]
+4451c4420
+< @ Node @992 = LOADW [@991(0)]
+---
+> @ Node @992 = LOADW [@991(1)]
+4464c4433
+< @ Node @1005 = LOADW [@1004(0)]
+---
+> @ Node @1005 = LOADW [@1004(1)]
+4469c4438
+< @ Node @1010 = LSL [@1009(1), @1002(1)]
+---
+> @ Node @1010 = LSL [@1009(1), @1002(2)]
+4473,4474c4442,4443
+< @ Node @1014 = LOADW [@1013(0)]
+< @ Node @1015 = STOREW [@1005(1), @1013(0), @1014(1)]
+---
+> @ Node @1014 = LOADW [@1013(1)]
+> @ Node @1015 = STOREW [@1005(1), @1013(1), @1014(1)]
+4484a4454
+> @ Sharing @979(2) as temp 2
+4500,4501c4470
+< @ <STOREW,
+< @   <PLUS, <LOADW, <REGVAR 2>>, <CONST 258>>,
+---
+> @ <DEFTEMP 2,
+4502a4472
+> @ <STOREW, <PLUS, <LOADW, <REGVAR 2>>, <CONST 258>>, <TEMP 2>>
+4504,4508c4474
+< @ <STOREW,
+< @   <LOADW, <LOCAL 40>>,
+< @   <OFFSET,
+< @     <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <LOADW, <LOCAL 40>>, <OFFSET, <TEMP 2>, <CONST 4>>>
+4557,4558c4523
+< @ <STOREW,
+< @   <PLUS, <LOADW, <REGVAR 2>>, <CONST 258>>,
+---
+> @ <DEFTEMP 2,
+4559a4525,4527
+> 	set r0, _mem
+> 	add r7, r0, r4, LSL #2
+> @ <STOREW, <PLUS, <LOADW, <REGVAR 2>>, <CONST 258>>, <TEMP 2>>
+4562,4563c4530
+< 	set r1, _mem
+< 	str r0, [r1, r4, LSL #2]
+---
+> 	str r0, [r7]
+4565,4569c4532
+< @ <STOREW,
+< @   <LOADW, <LOCAL 40>>,
+< @   <OFFSET,
+< @     <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <LOADW, <LOCAL 40>>, <OFFSET, <TEMP 2>, <CONST 4>>>
+4571,4573c4534
+< 	set r1, _mem
+< 	add r1, r1, r4, LSL #2
+< 	str r0, [r1, #4]
+---
+> 	str r0, [r7, #4]
+4653c4614
+< @ Node @1029 = LOADW [@1028(0)]
+---
+> @ Node @1029 = LOADW [@1028(1)]
+4658c4619
+< @ Node @1034 = LOADW [@1033(0)]
+---
+> @ Node @1034 = LOADW [@1033(1)]
+4730c4691
+< @ Node @1052 = LOADW [@1051(0)]
+---
+> @ Node @1052 = LOADW [@1051(1)]
+4804,4805c4765,4766
+< @ Node @1067 = LOADW [@1066(0)]
+< @ Node @1068 = STOREW [@1062(1), @1066(0), @1067(1)]
+---
+> @ Node @1067 = LOADW [@1066(1)]
+> @ Node @1068 = STOREW [@1062(1), @1066(1), @1067(1)]
+4810,4812c4771,4773
+< @ Node @1073 = OFFSET [@1066(1), @1072(1)]
+< @ Node @1074 = LOADW [@1073(0)]
+< @ Node @1075 = STOREW [@1071(1), @1073(0), @1074(1)]
+---
+> @ Node @1073 = OFFSET [@1066(2), @1072(1)]
+> @ Node @1074 = LOADW [@1073(1)]
+> @ Node @1075 = STOREW [@1071(1), @1073(1), @1074(1)]
+4814a4776
+> @ Sharing @1066(2) as temp 2
+4820,4821c4782
+< @ <STOREW,
+< @   <CONST 514>,
+---
+> @ <DEFTEMP 2,
+4822a4784
+> @ <STOREW, <CONST 514>, <TEMP 2>>
+4824,4828c4786
+< @ <STOREW,
+< @   <LOADW, <LOCAL 40>>,
+< @   <OFFSET,
+< @     <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <LOADW, <LOCAL 40>>, <OFFSET, <TEMP 2>, <CONST 4>>>
+4844,4845c4802
+< @ <STOREW,
+< @   <CONST 514>,
+---
+> @ <DEFTEMP 2,
+4846a4804,4806
+> 	set r0, _mem
+> 	add r5, r0, r4, LSL #2
+> @ <STOREW, <CONST 514>, <TEMP 2>>
+4848,4849c4808
+< 	set r1, _mem
+< 	str r0, [r1, r4, LSL #2]
+---
+> 	str r0, [r5]
+4851,4855c4810
+< @ <STOREW,
+< @   <LOADW, <LOCAL 40>>,
+< @   <OFFSET,
+< @     <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <LOADW, <LOCAL 40>>, <OFFSET, <TEMP 2>, <CONST 4>>>
+4857,4859c4812
+< 	set r1, _mem
+< 	add r1, r1, r4, LSL #2
+< 	str r0, [r1, #4]
+---
+> 	str r0, [r5, #4]
+4916,4917c4869,4870
+< @ Node @1090 = LOADW [@1089(0)]
+< @ Node @1091 = STOREW [@1085(1), @1089(0), @1090(1)]
+---
+> @ Node @1090 = LOADW [@1089(1)]
+> @ Node @1091 = STOREW [@1085(1), @1089(1), @1090(1)]
+4922,4924c4875,4877
+< @ Node @1096 = OFFSET [@1089(1), @1095(1)]
+< @ Node @1097 = LOADW [@1096(0)]
+< @ Node @1098 = STOREW [@1094(1), @1096(0), @1097(1)]
+---
+> @ Node @1096 = OFFSET [@1089(2), @1095(1)]
+> @ Node @1097 = LOADW [@1096(1)]
+> @ Node @1098 = STOREW [@1094(1), @1096(1), @1097(1)]
+4926a4880
+> @ Sharing @1089(2) as temp 2
+4932,4933c4886
+< @ <STOREW,
+< @   <CONST 770>,
+---
+> @ <DEFTEMP 2,
+4934a4888
+> @ <STOREW, <CONST 770>, <TEMP 2>>
+4936,4940c4890
+< @ <STOREW,
+< @   <LOADC, <LOCAL 40>>,
+< @   <OFFSET,
+< @     <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <LOADC, <LOCAL 40>>, <OFFSET, <TEMP 2>, <CONST 4>>>
+4956,4957c4906
+< @ <STOREW,
+< @   <CONST 770>,
+---
+> @ <DEFTEMP 2,
+4958a4908,4910
+> 	set r0, _mem
+> 	add r5, r0, r4, LSL #2
+> @ <STOREW, <CONST 770>, <TEMP 2>>
+4960,4961c4912
+< 	set r1, _mem
+< 	str r0, [r1, r4, LSL #2]
+---
+> 	str r0, [r5]
+4963,4967c4914
+< @ <STOREW,
+< @   <LOADC, <LOCAL 40>>,
+< @   <OFFSET,
+< @     <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <LOADC, <LOCAL 40>>, <OFFSET, <TEMP 2>, <CONST 4>>>
+4969,4971c4916
+< 	set r1, _mem
+< 	add r1, r1, r4, LSL #2
+< 	str r0, [r1, #4]
+---
+> 	str r0, [r5, #4]
+5097c5042
+< @ Node @1138 = LOADC [@1137(0)]
+---
+> @ Node @1138 = LOADC [@1137(1)]
+5396,5397c5341,5342
+< @ Node @1173 = LOADW [@1172(0)]
+< @ Node @1174 = STOREW [@1167(1), @1172(0), @1173(1)]
+---
+> @ Node @1173 = LOADW [@1172(1)]
+> @ Node @1174 = STOREW [@1167(1), @1172(1), @1173(1)]
+5400,5402c5345,5347
+< @ Node @1177 = OFFSET [@1172(1), @1176(1)]
+< @ Node @1178 = LOADW [@1177(0)]
+< @ Node @1179 = STOREW [@1175(1), @1177(0), @1178(1)]
+---
+> @ Node @1177 = OFFSET [@1172(2), @1176(1)]
+> @ Node @1178 = LOADW [@1177(1)]
+> @ Node @1179 = STOREW [@1175(1), @1177(1), @1178(1)]
+5406,5408c5351,5353
+< @ Node @1183 = OFFSET [@1172(2), @1182(1)]
+< @ Node @1184 = LOADW [@1183(0)]
+< @ Node @1185 = STOREW [@1181(1), @1183(0), @1184(1)]
+---
+> @ Node @1183 = OFFSET [@1172(3), @1182(1)]
+> @ Node @1184 = LOADW [@1183(1)]
+> @ Node @1185 = STOREW [@1181(1), @1183(1), @1184(1)]
+5426c5371
+< @ Node @1203 = LOADW [@1202(0)]
+---
+> @ Node @1203 = LOADW [@1202(1)]
+5433c5378
+< @ Node @1210 = LSL [@1209(1), @1200(1)]
+---
+> @ Node @1210 = LSL [@1209(1), @1200(2)]
+5437,5438c5382,5383
+< @ Node @1214 = LOADW [@1213(0)]
+< @ Node @1215 = STOREW [@1203(1), @1213(0), @1214(1)]
+---
+> @ Node @1214 = LOADW [@1213(1)]
+> @ Node @1215 = STOREW [@1203(1), @1213(1), @1214(1)]
+5457,5458c5402,5403
+< @ Node @1234 = LOADW [@1233(0)]
+< @ Node @1235 = STOREW [@1222(1), @1233(0), @1234(1)]
+---
+> @ Node @1234 = LOADW [@1233(1)]
+> @ Node @1235 = STOREW [@1222(1), @1233(1), @1234(1)]
+5464c5409
+< @ Node @1241 = LSL [@1225(2), @1231(1)]
+---
+> @ Node @1241 = LSL [@1225(2), @1231(2)]
+5467,5468c5412,5413
+< @ Node @1244 = LOADW [@1243(0)]
+< @ Node @1245 = STOREW [@1222(3), @1243(0), @1244(1)]
+---
+> @ Node @1244 = LOADW [@1243(1)]
+> @ Node @1245 = STOREW [@1222(3), @1243(1), @1244(1)]
+5487,5488c5432,5433
+< @ Node @1264 = LOADW [@1263(0)]
+< @ Node @1265 = STOREW [@1255(1), @1263(0), @1264(1)]
+---
+> @ Node @1264 = LOADW [@1263(1)]
+> @ Node @1265 = STOREW [@1255(1), @1263(1), @1264(1)]
+5495c5440
+< @ Sharing @1172(2) as temp 2
+---
+> @ Sharing @1172(3) as temp 2
+5916c5861
+< @ Node @1283 = LOADW [@1276(1)]
+---
+> @ Node @1283 = LOADW [@1276(2)]
+5931c5876
+< @ Node @1298 = LOADW [@1297(0)]
+---
+> @ Node @1298 = LOADW [@1297(1)]
+5937,5938c5882,5883
+< @ Node @1304 = OFFSET [@1297(1), @1303(1)]
+< @ Node @1305 = LOADW [@1304(0)]
+---
+> @ Node @1304 = OFFSET [@1297(2), @1303(1)]
+> @ Node @1305 = LOADW [@1304(1)]
+5950c5895
+< @ Node @1317 = LOADW [@1316(0)]
+---
+> @ Node @1317 = LOADW [@1316(1)]
+5956,5957c5901,5902
+< @ Node @1323 = OFFSET [@1316(1), @1322(1)]
+< @ Node @1324 = LOADW [@1323(0)]
+---
+> @ Node @1323 = OFFSET [@1316(2), @1322(1)]
+> @ Node @1324 = LOADW [@1323(1)]
+5975c5920
+< @ Node @1342 = LOADW [@1341(0)]
+---
+> @ Node @1342 = LOADW [@1341(1)]
+5983,5984c5928,5929
+< @ Node @1350 = LOADW [@1349(0)]
+< @ Node @1351 = LSR [@1350(1), @1340(1)]
+---
+> @ Node @1350 = LOADW [@1349(1)]
+> @ Node @1351 = LSR [@1350(1), @1340(2)]
+6007c5952
+< @ Node @1374 = LOADW [@1373(0)]
+---
+> @ Node @1374 = LOADW [@1373(1)]
+6013c5958
+< @ Node @1380 = LOADW [@1367(1)]
+---
+> @ Node @1380 = LOADW [@1367(2)]
+6022,6024c5967,5971
+< @ Sharing @1333(2) as temp 2
+< @ Sharing @1347(1) as temp 3
+< @ Sharing @1379(1) as temp 4
+---
+> @ Sharing @1297(2) as temp 2
+> @ Sharing @1316(2) as temp 3
+> @ Sharing @1333(2) as temp 4
+> @ Sharing @1347(1) as temp 5
+> @ Sharing @1379(1) as temp 6
+6038,6043c5985,5987
+< @ <JNEQ L258,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 1>>
+---
+> @ <DEFTEMP 2,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+> @ <JNEQ L258, <LSR, <LOADW, <TEMP 2>>, <CONST 8>>, <CONST 1>>
+6045,6048c5989
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @       <CONST 4>>>,
+---
+> @   <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>,
+6051a5993,5994
+> @ <DEFTEMP 3,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+6053a5997
+> @     <EQ, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 1>>,
+6055,6068c5999
+< @       <LSR,
+< @         <LOADW,
+< @           <OFFSET,
+< @             <GLOBAL _mem>,
+< @             <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @         <CONST 8>>,
+< @       <CONST 1>>,
+< @     <EQ,
+< @       <LOADW,
+< @         <OFFSET,
+< @           <OFFSET,
+< @             <GLOBAL _mem>,
+< @             <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @           <CONST 4>>>,
+---
+> @       <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>,
+6073,6074c6004,6005
+< @ <DEFTEMP 2, <GLOBAL _mem>>
+< @ <DEFTEMP 3,
+---
+> @ <DEFTEMP 4, <GLOBAL _mem>>
+> @ <DEFTEMP 5,
+6080c6011
+< @           <OFFSET, <TEMP 2>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+---
+> @           <OFFSET, <TEMP 4>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+6085c6016
+< @     <LOADW, <OFFSET, <TEMP 2>, <LSL, <TEMP 3>, <CONST 2>>>>,
+---
+> @     <LOADW, <OFFSET, <TEMP 4>, <LSL, <TEMP 5>, <CONST 2>>>>,
+6094c6025
+< @ <DEFTEMP 4,
+---
+> @ <DEFTEMP 6,
+6105c6036
+< @ <STOREW, <TEMP 4>, <LOCAL 40>>
+---
+> @ <STOREW, <TEMP 6>, <LOCAL 40>>
+6135,6140c6066,6067
+< @ <JNEQ L258,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 1>>
+---
+> @ <DEFTEMP 2,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+6143c6070,6072
+< 	ldr r0, [r0, r1, LSL #2]
+---
+> 	add r5, r0, r1, LSL #2
+> @ <JNEQ L258, <LSR, <LOADW, <TEMP 2>>, <CONST 8>>, <CONST 1>>
+> 	ldr r0, [r5]
+6148,6151c6077
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @       <CONST 4>>>,
+---
+> @   <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>,
+6153,6156c6079
+< 	set r0, _mem
+< 	ldr r1, [fp, #40]
+< 	add r0, r0, r1, LSL #2
+< 	ldr r0, [r0, #4]
+---
+> 	ldr r0, [r5, #4]
+6163a6087,6091
+> @ <DEFTEMP 3,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+> 	set r0, _mem
+> 	ldr r1, [fp, #40]
+> 	add r5, r0, r1, LSL #2
+6165a6094
+> @     <EQ, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 1>>,
+6167,6180c6096
+< @       <LSR,
+< @         <LOADW,
+< @           <OFFSET,
+< @             <GLOBAL _mem>,
+< @             <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @         <CONST 8>>,
+< @       <CONST 1>>,
+< @     <EQ,
+< @       <LOADW,
+< @         <OFFSET,
+< @           <OFFSET,
+< @             <GLOBAL _mem>,
+< @             <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @           <CONST 4>>>,
+---
+> @       <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>,
+6182,6184c6098
+< 	set r0, _mem
+< 	ldr r1, [fp, #40]
+< 	ldr r0, [r0, r1, LSL #2]
+---
+> 	ldr r0, [r5]
+6189,6192c6103
+< 	set r1, _mem
+< 	ldr r2, [fp, #40]
+< 	add r1, r1, r2, LSL #2
+< 	ldr r1, [r1, #4]
+---
+> 	ldr r1, [r5, #4]
+6204c6115
+< @ <DEFTEMP 2, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 4, <GLOBAL _mem>>
+6211c6122
+< @       <OFFSET, <TEMP 2>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+---
+> @       <OFFSET, <TEMP 4>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+6216c6127
+< @ <DEFTEMP 3, <CALL 2, <GLOBAL _Deref>>>
+---
+> @ <DEFTEMP 5, <CALL 2, <GLOBAL _Deref>>>
+6220c6131
+< @     <LOADW, <OFFSET, <TEMP 2>, <LSL, <TEMP 3>, <CONST 2>>>>,
+---
+> @     <LOADW, <OFFSET, <TEMP 4>, <LSL, <TEMP 5>, <CONST 2>>>>,
+6248c6159
+< @ <DEFTEMP 4, <CALL 2, <GLOBAL _Deref>>>
+---
+> @ <DEFTEMP 6, <CALL 2, <GLOBAL _Deref>>>
+6250c6161
+< @ <STOREW, <TEMP 4>, <LOCAL 40>>
+---
+> @ <STOREW, <TEMP 6>, <LOCAL 40>>
+6431c6342
+< @ Node @1400 = LOADW [@1393(1)]
+---
+> @ Node @1400 = LOADW [@1393(2)]
+6446c6357
+< @ Node @1415 = LOADW [@1414(0)]
+---
+> @ Node @1415 = LOADW [@1414(1)]
+6452,6453c6363,6364
+< @ Node @1421 = OFFSET [@1414(1), @1420(1)]
+< @ Node @1422 = LOADW [@1421(0)]
+---
+> @ Node @1421 = OFFSET [@1414(2), @1420(1)]
+> @ Node @1422 = LOADW [@1421(1)]
+6465c6376
+< @ Node @1434 = LOADW [@1433(0)]
+---
+> @ Node @1434 = LOADW [@1433(1)]
+6471,6472c6382,6383
+< @ Node @1440 = OFFSET [@1433(1), @1439(1)]
+< @ Node @1441 = LOADW [@1440(0)]
+---
+> @ Node @1440 = OFFSET [@1433(2), @1439(1)]
+> @ Node @1441 = LOADW [@1440(1)]
+6495c6406
+< @ Node @1464 = LOADW [@1463(0)]
+---
+> @ Node @1464 = LOADW [@1463(1)]
+6501c6412
+< @ Node @1470 = LOADW [@1457(1)]
+---
+> @ Node @1470 = LOADW [@1457(2)]
+6510c6421,6423
+< @ Sharing @1469(1) as temp 2
+---
+> @ Sharing @1414(2) as temp 2
+> @ Sharing @1433(2) as temp 3
+> @ Sharing @1469(1) as temp 4
+6524,6529c6437,6439
+< @ <JNEQ L269,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 1>>
+---
+> @ <DEFTEMP 2,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+> @ <JNEQ L269, <LSR, <LOADW, <TEMP 2>>, <CONST 8>>, <CONST 1>>
+6531,6534c6441
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @       <CONST 4>>>,
+---
+> @   <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>,
+6537a6445,6446
+> @ <DEFTEMP 3,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+6539a6449
+> @     <EQ, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 1>>,
+6541,6554c6451
+< @       <LSR,
+< @         <LOADW,
+< @           <OFFSET,
+< @             <GLOBAL _mem>,
+< @             <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @         <CONST 8>>,
+< @       <CONST 1>>,
+< @     <EQ,
+< @       <LOADW,
+< @         <OFFSET,
+< @           <OFFSET,
+< @             <GLOBAL _mem>,
+< @             <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @           <CONST 4>>>,
+---
+> @       <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>,
+6560c6457
+< @ <DEFTEMP 2,
+---
+> @ <DEFTEMP 4,
+6571c6468
+< @ <STOREW, <TEMP 2>, <LOCAL 40>>
+---
+> @ <STOREW, <TEMP 4>, <LOCAL 40>>
+6601,6606c6498,6499
+< @ <JNEQ L269,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 1>>
+---
+> @ <DEFTEMP 2,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+6609c6502,6504
+< 	ldr r0, [r0, r1, LSL #2]
+---
+> 	add r5, r0, r1, LSL #2
+> @ <JNEQ L269, <LSR, <LOADW, <TEMP 2>>, <CONST 8>>, <CONST 1>>
+> 	ldr r0, [r5]
+6614,6617c6509
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @       <CONST 4>>>,
+---
+> @   <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>,
+6619,6622c6511
+< 	set r0, _mem
+< 	ldr r1, [fp, #40]
+< 	add r0, r0, r1, LSL #2
+< 	ldr r0, [r0, #4]
+---
+> 	ldr r0, [r5, #4]
+6629a6519,6523
+> @ <DEFTEMP 3,
+> @   <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>
+> 	set r0, _mem
+> 	ldr r1, [fp, #40]
+> 	add r5, r0, r1, LSL #2
+6631a6526
+> @     <EQ, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 1>>,
+6633,6646c6528
+< @       <LSR,
+< @         <LOADW,
+< @           <OFFSET,
+< @             <GLOBAL _mem>,
+< @             <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>>,
+< @         <CONST 8>>,
+< @       <CONST 1>>,
+< @     <EQ,
+< @       <LOADW,
+< @         <OFFSET,
+< @           <OFFSET,
+< @             <GLOBAL _mem>,
+< @             <LSL, <LOADW, <LOCAL 40>>, <CONST 2>>>,
+< @           <CONST 4>>>,
+---
+> @       <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>,
+6648,6650c6530
+< 	set r0, _mem
+< 	ldr r1, [fp, #40]
+< 	ldr r0, [r0, r1, LSL #2]
+---
+> 	ldr r0, [r5]
+6655,6658c6535
+< 	set r1, _mem
+< 	ldr r2, [fp, #40]
+< 	add r1, r1, r2, LSL #2
+< 	ldr r1, [r1, #4]
+---
+> 	ldr r1, [r5, #4]
+6683c6560
+< @ <DEFTEMP 2, <CALL 2, <GLOBAL _Deref>>>
+---
+> @ <DEFTEMP 4, <CALL 2, <GLOBAL _Deref>>>
+6685c6562
+< @ <STOREW, <TEMP 2>, <LOCAL 40>>
+---
+> @ <STOREW, <TEMP 4>, <LOCAL 40>>
+6839c6716
+< @ Node @1487 = LOADW [@1480(1)]
+---
+> @ Node @1487 = LOADW [@1480(2)]
+6856c6733
+< @ Node @1504 = LOADW [@1503(0)]
+---
+> @ Node @1504 = LOADW [@1503(1)]
+6865c6742
+< @ Node @1513 = LOADW [@1512(0)]
+---
+> @ Node @1513 = LOADW [@1512(1)]
+6873,6874c6750,6751
+< @ Node @1521 = OFFSET [@1520(1), @1502(1)]
+< @ Node @1522 = LOADW [@1521(0)]
+---
+> @ Node @1521 = OFFSET [@1520(1), @1502(2)]
+> @ Node @1522 = LOADW [@1521(1)]
+6883c6760
+< @ Node @1531 = LOADW [@1530(0)]
+---
+> @ Node @1531 = LOADW [@1530(1)]
+6888c6765
+< @ Node @1536 = LOADW [@1497(2)]
+---
+> @ Node @1536 = LOADW [@1497(3)]
+7511c7388
+< @ Node @1554 = LOADW [@1553(0)]
+---
+> @ Node @1554 = LOADW [@1553(1)]
+7557c7434
+< @ Node @1600 = LOADW [@1599(0)]
+---
+> @ Node @1600 = LOADW [@1599(1)]
+7576c7453
+< @ Node @1619 = LOADW [@1618(0)]
+---
+> @ Node @1619 = LOADW [@1618(1)]
+7618c7495
+< @ Node @1661 = LOADW [@1660(0)]
+---
+> @ Node @1661 = LOADW [@1660(1)]
+7639c7516
+< @ Node @1682 = LOADW [@1681(0)]
+---
+> @ Node @1682 = LOADW [@1681(1)]
+7678c7555
+< @ Node @1721 = LOADW [@1720(0)]
+---
+> @ Node @1721 = LOADW [@1720(1)]
+7702c7579
+< @ Node @1745 = LOADW [@1744(0)]
+---
+> @ Node @1745 = LOADW [@1744(1)]
+7727c7604
+< @ Node @1770 = LOADW [@1769(0)]
+---
+> @ Node @1770 = LOADW [@1769(1)]
+7732c7609
+< @ Node @1775 = LSL [@1774(1), @1767(1)]
+---
+> @ Node @1775 = LSL [@1774(1), @1767(2)]
+7734,7735c7611,7612
+< @ Node @1777 = OFFSET [@1776(1), @1767(2)]
+< @ Node @1778 = LOADW [@1777(0)]
+---
+> @ Node @1777 = OFFSET [@1776(1), @1767(3)]
+> @ Node @1778 = LOADW [@1777(1)]
+7753c7630
+< @ Node @1796 = LOADW [@1795(0)]
+---
+> @ Node @1796 = LOADW [@1795(1)]
+7764c7641
+< @ Node @1807 = LSL [@1806(1), @1767(2)]
+---
+> @ Node @1807 = LSL [@1806(1), @1767(4)]
+7766,7767c7643,7644
+< @ Node @1809 = OFFSET [@1808(1), @1767(3)]
+< @ Node @1810 = LOADW [@1809(0)]
+---
+> @ Node @1809 = OFFSET [@1808(1), @1767(5)]
+> @ Node @1810 = LOADW [@1809(1)]
+7794c7671
+< @ Node @1837 = LOADW [@1836(0)]
+---
+> @ Node @1837 = LOADW [@1836(1)]
+8522c8399
+< @ Node @1871 = LOADW [@1870(0)]
+---
+> @ Node @1871 = LOADW [@1870(1)]
+8536c8413
+< @ Node @1885 = LOADW [@1884(0)]
+---
+> @ Node @1885 = LOADW [@1884(1)]
+8553c8430
+< @ Node @1902 = LOADW [@1901(0)]
+---
+> @ Node @1902 = LOADW [@1901(1)]
+8570c8447
+< @ Node @1919 = LOADW [@1918(0)]
+---
+> @ Node @1919 = LOADW [@1918(1)]
+8584c8461
+< @ Node @1933 = LOADW [@1932(0)]
+---
+> @ Node @1933 = LOADW [@1932(1)]
+9029c8906
+< @ Node @1955 = LOADW [@1948(1)]
+---
+> @ Node @1955 = LOADW [@1948(2)]
+9050c8927
+< @ Node @1976 = LOADW [@1975(0)]
+---
+> @ Node @1976 = LOADW [@1975(1)]
+9081c8958
+< @ Node @2007 = LOADW [@2006(0)]
+---
+> @ Node @2007 = LOADW [@2006(1)]
+9099c8976
+< @ Node @2025 = LOADW [@2024(0)]
+---
+> @ Node @2025 = LOADW [@2024(1)]
+9164c9041
+< @ Node @2090 = LOADW [@2089(0)]
+---
+> @ Node @2090 = LOADW [@2089(1)]
+9184c9061
+< @ Node @2110 = LOADW [@2109(0)]
+---
+> @ Node @2110 = LOADW [@2109(1)]
+9191c9068
+< @ Node @2117 = ARG 1 [@2107(1)]
+---
+> @ Node @2117 = ARG 1 [@2107(2)]
+9770c9647
+< @ Node @2145 = LOADW [@2144(0)]
+---
+> @ Node @2145 = LOADW [@2144(1)]
+9801c9678
+< @ Node @2176 = LOADW [@2175(0)]
+---
+> @ Node @2176 = LOADW [@2175(1)]
+9828c9705
+< @ Node @2203 = LOADW [@2202(0)]
+---
+> @ Node @2203 = LOADW [@2202(1)]
+9845,9846c9722,9723
+< @ Node @2220 = OFFSET [@2219(1), @2201(1)]
+< @ Node @2221 = LOADW [@2220(0)]
+---
+> @ Node @2220 = OFFSET [@2219(1), @2201(2)]
+> @ Node @2221 = LOADW [@2220(1)]
+10161c10038
+< @ Node @2244 = LOADC [@2243(0)]
+---
+> @ Node @2244 = LOADC [@2243(1)]
+10166c10043
+< @ Node @2249 = LOADW [@2246(1)]
+---
+> @ Node @2249 = LOADW [@2246(2)]
+10351c10228
+< @ Node @2312 = LOADW [@2311(0)]
+---
+> @ Node @2312 = LOADW [@2311(1)]
+11154c11031
+< @ Node @2322 = LOADW [@2321(0)]
+---
+> @ Node @2322 = LOADW [@2321(1)]
+11169c11046
+< @ Node @2337 = LOADW [@2326(1)]
+---
+> @ Node @2337 = LOADW [@2326(2)]
+11223c11100
+< @ Node @2391 = LOADW [@2390(0)]
+---
+> @ Node @2391 = LOADW [@2390(1)]
+11230c11107
+< @ Node @2398 = LOADW [@2397(0)]
+---
+> @ Node @2398 = LOADW [@2397(1)]
+11294,11295c11171,11172
+< @ Node @2462 = LOADC [@2461(0)]
+< @ Node @2463 = STOREC [@2457(1), @2461(0), @2462(1)]
+---
+> @ Node @2462 = LOADC [@2461(1)]
+> @ Node @2463 = STOREC [@2457(1), @2461(1), @2462(1)]
+11317,11318c11194,11195
+< @ Node @2485 = LOADC [@2484(0)]
+< @ Node @2486 = STOREC [@2480(1), @2484(0), @2485(1)]
+---
+> @ Node @2485 = LOADC [@2484(1)]
+> @ Node @2486 = STOREC [@2480(1), @2484(1), @2485(1)]
+11323c11200
+< @ Node @2491 = LOADW [@2490(0)]
+---
+> @ Node @2491 = LOADW [@2490(1)]
+11331c11208
+< @ Node @2499 = LOADW [@2498(0)]
+---
+> @ Node @2499 = LOADW [@2498(1)]
+11345c11222
+< @ Node @2513 = LOADW [@2512(0)]
+---
+> @ Node @2513 = LOADW [@2512(1)]
+11349c11226
+< @ Node @2517 = LOADW [@2516(0)]
+---
+> @ Node @2517 = LOADW [@2516(1)]
+11366c11243
+< @ Node @2534 = LOADW [@2528(1)]
+---
+> @ Node @2534 = LOADW [@2528(2)]
+11392c11269
+< @ Node @2560 = LOADW [@2559(0)]
+---
+> @ Node @2560 = LOADW [@2559(1)]
+11399c11276
+< @ Node @2567 = LOADW [@2566(0)]
+---
+> @ Node @2567 = LOADW [@2566(1)]
+11406c11283
+< @ Node @2574 = LOADW [@2573(0)]
+---
+> @ Node @2574 = LOADW [@2573(1)]
+11413c11290
+< @ Node @2581 = LOADW [@2580(0)]
+---
+> @ Node @2581 = LOADW [@2580(1)]
+11420c11297
+< @ Node @2588 = LOADW [@2587(0)]
+---
+> @ Node @2588 = LOADW [@2587(1)]
+11427c11304
+< @ Node @2595 = LOADW [@2594(0)]
+---
+> @ Node @2595 = LOADW [@2594(1)]
+11434c11311
+< @ Node @2602 = LOADW [@2601(0)]
+---
+> @ Node @2602 = LOADW [@2601(1)]
+11441c11318
+< @ Node @2609 = LOADW [@2608(0)]
+---
+> @ Node @2609 = LOADW [@2608(1)]
+11448c11325
+< @ Node @2616 = LOADW [@2615(0)]
+---
+> @ Node @2616 = LOADW [@2615(1)]
+11453c11330
+< @ Node @2621 = LOADW [@2620(0)]
+---
+> @ Node @2621 = LOADW [@2620(1)]
+11559c11436
+< @ Node @2727 = LOADW [@2726(0)]
+---
+> @ Node @2727 = LOADW [@2726(1)]
+11571c11448
+< @ Node @2739 = LOADW [@2738(0)]
+---
+> @ Node @2739 = LOADW [@2738(1)]
+11578c11455
+< @ Node @2746 = LOADW [@2745(0)]
+---
+> @ Node @2746 = LOADW [@2745(1)]
+11583c11460
+< @ Node @2751 = LOADW [@2750(0)]
+---
+> @ Node @2751 = LOADW [@2750(1)]
+11613c11490
+< @ Node @2781 = LOADW [@2780(0)]
+---
+> @ Node @2781 = LOADW [@2780(1)]
+11635,11636c11512,11513
+< @ Node @2803 = LOADC [@2802(0)]
+< @ Node @2804 = STOREC [@2793(3), @2802(0), @2803(1)]
+---
+> @ Node @2803 = LOADC [@2802(1)]
+> @ Node @2804 = STOREC [@2793(3), @2802(1), @2803(1)]
+11652,11653c11529,11530
+< @ Node @2820 = LOADC [@2819(0)]
+< @ Node @2821 = STOREC [@2815(1), @2819(0), @2820(1)]
+---
+> @ Node @2820 = LOADC [@2819(1)]
+> @ Node @2821 = STOREC [@2815(1), @2819(1), @2820(1)]
+12982c12859
+< @ Node @2900 = LOADW [@2899(0)]
+---
+> @ Node @2900 = LOADW [@2899(1)]
+13001c12878
+< @ Node @2919 = LOADW [@2918(0)]
+---
+> @ Node @2919 = LOADW [@2918(1)]
+13630,13631c13507,13508
+< @ Node @3087 = LOADW [@3086(0)]
+< @ Node @3088 = STOREW [@3078(1), @3086(0), @3087(1)]
+---
+> @ Node @3087 = LOADW [@3086(1)]
+> @ Node @3088 = STOREW [@3078(1), @3086(1), @3087(1)]
+13642c13519
+< @ Node @3099 = LOADW [@3098(0)]
+---
+> @ Node @3099 = LOADW [@3098(1)]
+13657c13534
+< @ Node @3114 = LOADW [@3109(1)]
+---
+> @ Node @3114 = LOADW [@3109(2)]
+13932c13809
+< @ Node @3147 = LOADW [@3146(0)]
+---
+> @ Node @3147 = LOADW [@3146(1)]
+13947c13824
+< @ Node @3162 = LOADW [@3161(0)]
+---
+> @ Node @3162 = LOADW [@3161(1)]
+13951c13828
+< @ Node @3166 = LOADW [@3165(0)]
+---
+> @ Node @3166 = LOADW [@3165(1)]
+13969c13846
+< @ Node @3184 = MINUS [@3183(1), @3159(1)]
+---
+> @ Node @3184 = MINUS [@3183(1), @3159(2)]
+14532c14409
+< @ Node @3272 = LOADW [@3271(0)]
+---
+> @ Node @3272 = LOADW [@3271(1)]
+14556,14557c14433,14434
+< @ Node @3296 = LOADW [@3295(0)]
+< @ Node @3297 = STOREW [@3290(1), @3295(0), @3296(1)]
+---
+> @ Node @3296 = LOADW [@3295(1)]
+> @ Node @3297 = STOREW [@3290(1), @3295(1), @3296(1)]
+14574c14451
+< @ Node @3314 = LOADW [@3313(0)]
+---
+> @ Node @3314 = LOADW [@3313(1)]
+14580,14581c14457,14458
+< @ Node @3320 = LOADW [@3313(0)]
+< @ Node @3321 = STOREW [@3319(1), @3313(0), @3320(1)]
+---
+> @ Node @3320 = LOADW [@3313(2)]
+> @ Node @3321 = STOREW [@3319(1), @3313(2), @3320(1)]
+14592c14469
+< @ Node @3332 = LOADW [@3331(0)]
+---
+> @ Node @3332 = LOADW [@3331(1)]
+14625c14502
+< @ Sharing @3312(2) as temp 3
+---
+> @ Sharing @3313(2) as temp 3
+14656,14657c14533,14536
+< @   <OFFSET, <GLOBAL _symtab>, <LSL, <LOADW, <REGVAR 0>>, <CONST 4>>>>
+< @ <JNEQ L506, <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>, <CONST -1>>
+---
+> @   <OFFSET,
+> @     <OFFSET, <GLOBAL _symtab>, <LSL, <LOADW, <REGVAR 0>>, <CONST 4>>>,
+> @     <CONST 4>>>
+> @ <JNEQ L506, <LOADW, <TEMP 3>>, <CONST -1>>
+14659c14538
+< @ <STOREW, <LOADW, <REGVAR 1>>, <OFFSET, <TEMP 3>, <CONST 4>>>
+---
+> @ <STOREW, <LOADW, <REGVAR 1>>, <TEMP 3>>
+14754c14633,14635
+< @   <OFFSET, <GLOBAL _symtab>, <LSL, <LOADW, <REGVAR 0>>, <CONST 4>>>>
+---
+> @   <OFFSET,
+> @     <OFFSET, <GLOBAL _symtab>, <LSL, <LOADW, <REGVAR 0>>, <CONST 4>>>,
+> @     <CONST 4>>>
+14756,14758c14637,14640
+< 	add r6, r0, r4, LSL #4
+< @ <JNEQ L506, <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>, <CONST -1>>
+< 	ldr r0, [r6, #4]
+---
+> 	add r0, r0, r4, LSL #4
+> 	add r6, r0, #4
+> @ <JNEQ L506, <LOADW, <TEMP 3>>, <CONST -1>>
+> 	ldr r0, [r6]
+14763,14764c14645,14646
+< @ <STOREW, <LOADW, <REGVAR 1>>, <OFFSET, <TEMP 3>, <CONST 4>>>
+< 	str r5, [r6, #4]
+---
+> @ <STOREW, <LOADW, <REGVAR 1>>, <TEMP 3>>
+> 	str r5, [r6]
+16090c15972
+< @ Node @3650 = LOADW [@3649(0)]
+---
+> @ Node @3650 = LOADW [@3649(1)]
+16413c16295
+< @ Node @3715 = LOADC [@3714(0)]
+---
+> @ Node @3715 = LOADC [@3714(1)]
+16428c16310
+< @ Node @3730 = LOADC [@3729(0)]
+---
+> @ Node @3730 = LOADC [@3729(1)]
+16439c16321
+< @ Node @3741 = LOADC [@3729(1)]
+---
+> @ Node @3741 = LOADC [@3729(2)]
+16471,16472c16353,16354
+< @ Node @3773 = LOADW [@3772(0)]
+< @ Node @3774 = STOREW [@3766(1), @3772(0), @3773(1)]
+---
+> @ Node @3773 = LOADW [@3772(1)]
+> @ Node @3774 = STOREW [@3766(1), @3772(1), @3773(1)]
+16484,16485c16366,16367
+< @ Node @3786 = LOADW [@3785(0)]
+< @ Node @3787 = STOREW [@3779(1), @3785(0), @3786(1)]
+---
+> @ Node @3786 = LOADW [@3785(1)]
+> @ Node @3787 = STOREW [@3779(1), @3785(1), @3786(1)]
+16499c16381
+< @ Node @3801 = LOADC [@3800(0)]
+---
+> @ Node @3801 = LOADC [@3800(1)]
+16862c16744
+< @ Node @3840 = LOADW [@3839(0)]
+---
+> @ Node @3840 = LOADW [@3839(1)]
+16866c16748
+< @ Node @3844 = LOADW [@3843(0)]
+---
+> @ Node @3844 = LOADW [@3843(1)]
+16869c16751
+< @ Node @3847 = LOADC [@3846(0)]
+---
+> @ Node @3847 = LOADC [@3846(1)]
+17072c16954
+< @ Node @3893 = LOADW [@3892(0)]
+---
+> @ Node @3893 = LOADW [@3892(1)]
+17094,17095c16976,16977
+< @ Node @3915 = LOADW [@3914(0)]
+< @ Node @3916 = STOREW [@3907(1), @3914(0), @3915(1)]
+---
+> @ Node @3915 = LOADW [@3914(1)]
+> @ Node @3916 = STOREW [@3907(1), @3914(1), @3915(1)]
+17100,17102c16982,16984
+< @ Node @3921 = LOADW [@3920(0)]
+< @ Node @3922 = STOREW [@3918(1), @3920(0), @3921(1)]
+< @ Node @3923 = LOADW [@3917(1)]
+---
+> @ Node @3921 = LOADW [@3920(1)]
+> @ Node @3922 = STOREW [@3918(1), @3920(1), @3921(1)]
+> @ Node @3923 = LOADW [@3917(2)]
+17285c17167
+< @ Node @3938 = LOADW [@3937(0)]
+---
+> @ Node @3938 = LOADW [@3937(1)]
+17292c17174
+< @ Node @3945 = LOADW [@3944(0)]
+---
+> @ Node @3945 = LOADW [@3944(1)]
+17301,17303c17183,17185
+< @ Node @3954 = OFFSET [@3953(1), @3943(1)]
+< @ Node @3955 = LOADW [@3954(0)]
+< @ Node @3956 = STOREW [@3950(2), @3954(0), @3955(1)]
+---
+> @ Node @3954 = OFFSET [@3953(1), @3943(2)]
+> @ Node @3955 = LOADW [@3954(1)]
+> @ Node @3956 = STOREW [@3950(2), @3954(1), @3955(1)]
+17314,17315c17196,17197
+< @ Node @3967 = LOADW [@3966(0)]
+< @ Node @3968 = LOADW [@3960(1)]
+---
+> @ Node @3967 = LOADW [@3966(1)]
+> @ Node @3968 = LOADW [@3960(2)]
+17562c17444
+< @ Node @3991 = LOADW [@3990(0)]
+---
+> @ Node @3991 = LOADW [@3990(1)]
+17569c17451
+< @ Node @3998 = LOADW [@3997(0)]
+---
+> @ Node @3998 = LOADW [@3997(1)]
+17574,17575c17456,17457
+< @ Node @4003 = LOADW [@3997(0)]
+< @ Node @4004 = STOREW [@3981(3), @3997(0), @4003(1)]
+---
+> @ Node @4003 = LOADW [@3997(2)]
+> @ Node @4004 = STOREW [@3981(3), @3997(2), @4003(1)]
+17586c17468
+< @ Node @4015 = LOADW [@4014(0)]
+---
+> @ Node @4015 = LOADW [@4014(1)]
+17593c17475
+< @ Sharing @3995(2) as temp 4
+---
+> @ Sharing @3997(2) as temp 4
+17610,17611c17492,17496
+< @ <DEFTEMP 4, <OFFSET, <TEMP 1>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>>
+< @ <DEFTEMP 5, <LOADW, <OFFSET, <TEMP 4>, <CONST 4>>>>
+---
+> @ <DEFTEMP 4,
+> @   <OFFSET,
+> @     <OFFSET, <TEMP 1>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>,
+> @     <CONST 4>>>
+> @ <DEFTEMP 5, <LOADW, <TEMP 4>>>
+17616c17501
+< @ <STOREW, <CONST 0>, <OFFSET, <TEMP 4>, <CONST 4>>>
+---
+> @ <STOREW, <CONST 0>, <TEMP 4>>
+17658,17661c17543,17550
+< @ <DEFTEMP 4, <OFFSET, <TEMP 1>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>>
+< 	add r5, r5, r4, LSL #2
+< @ <DEFTEMP 5, <LOADW, <OFFSET, <TEMP 4>, <CONST 4>>>>
+< 	ldr r8, [r5, #4]
+---
+> @ <DEFTEMP 4,
+> @   <OFFSET,
+> @     <OFFSET, <TEMP 1>, <LSL, <LOADW, <REGVAR 0>>, <CONST 2>>>,
+> @     <CONST 4>>>
+> 	add r0, r5, r4, LSL #2
+> 	add r5, r0, #4
+> @ <DEFTEMP 5, <LOADW, <TEMP 4>>>
+> 	ldr r8, [r5]
+17672c17561
+< @ <STOREW, <CONST 0>, <OFFSET, <TEMP 4>, <CONST 4>>>
+---
+> @ <STOREW, <CONST 0>, <TEMP 4>>
+17674c17563
+< 	str r0, [r5, #4]
+---
+> 	str r0, [r5]
+17984c17873
+< @ Node @4028 = LOADW [@4021(1)]
+---
+> @ Node @4028 = LOADW [@4021(2)]
+18001c17890
+< @ Node @4045 = LOADW [@4044(0)]
+---
+> @ Node @4045 = LOADW [@4044(1)]
+18018,18019c17907,17908
+< @ Node @4062 = LOADW [@4061(0)]
+< @ Node @4063 = LSL [@4062(1), @4060(1)]
+---
+> @ Node @4062 = LOADW [@4061(1)]
+> @ Node @4063 = LSL [@4062(1), @4060(2)]
+18021,18022c17910,17911
+< @ Node @4065 = OFFSET [@4064(1), @4060(2)]
+< @ Node @4066 = LOADW [@4065(0)]
+---
+> @ Node @4065 = OFFSET [@4064(1), @4060(3)]
+> @ Node @4066 = LOADW [@4065(1)]
+18056c17945
+< @ Node @4100 = LOADW [@4099(0)]
+---
+> @ Node @4100 = LOADW [@4099(1)]
+18060,18062c17949,17951
+< @ Node @4104 = OFFSET [@4103(1), @4098(1)]
+< @ Node @4105 = LOADW [@4104(0)]
+< @ Node @4106 = STOREW [@4100(1), @4104(0), @4105(1)]
+---
+> @ Node @4104 = OFFSET [@4103(1), @4098(2)]
+> @ Node @4105 = LOADW [@4104(1)]
+> @ Node @4106 = STOREW [@4100(1), @4104(1), @4105(1)]
+18068c17957
+< @ Node @4112 = LOADW [@4111(0)]
+---
+> @ Node @4112 = LOADW [@4111(1)]
+18087c17976
+< @ Node @4131 = LOADW [@4130(0)]
+---
+> @ Node @4131 = LOADW [@4130(1)]
+18099,18101c17988,17990
+< @ Node @4143 = OFFSET [@4142(1), @4129(1)]
+< @ Node @4144 = LOADW [@4143(0)]
+< @ Node @4145 = STOREW [@4136(1), @4143(0), @4144(1)]
+---
+> @ Node @4143 = OFFSET [@4142(1), @4129(2)]
+> @ Node @4144 = LOADW [@4143(1)]
+> @ Node @4145 = STOREW [@4136(1), @4143(1), @4144(1)]
+18129,18130c18018,18019
+< @ Node @4173 = LOADW [@4172(0)]
+< @ Node @4174 = STOREW [@4167(1), @4172(0), @4173(1)]
+---
+> @ Node @4173 = LOADW [@4172(1)]
+> @ Node @4174 = STOREW [@4167(1), @4172(1), @4173(1)]
+18141,18143c18030,18032
+< @ Node @4185 = OFFSET [@4184(1), @4159(2)]
+< @ Node @4186 = LOADW [@4185(0)]
+< @ Node @4187 = STOREW [@4181(1), @4185(0), @4186(1)]
+---
+> @ Node @4185 = OFFSET [@4184(1), @4159(3)]
+> @ Node @4186 = LOADW [@4185(1)]
+> @ Node @4187 = STOREW [@4181(1), @4185(1), @4186(1)]
+18618,18619c18507,18508
+< @ Node @4226 = LOADW [@4225(0)]
+< @ Node @4227 = STOREW [@4218(1), @4225(0), @4226(1)]
+---
+> @ Node @4226 = LOADW [@4225(1)]
+> @ Node @4227 = STOREW [@4218(1), @4225(1), @4226(1)]
+18637,18638c18526,18527
+< @ Node @4245 = LOADW [@4244(0)]
+< @ Node @4246 = STOREW [@4237(1), @4244(0), @4245(1)]
+---
+> @ Node @4245 = LOADW [@4244(1)]
+> @ Node @4246 = STOREW [@4237(1), @4244(1), @4245(1)]
+19264c19153
+< @ Node @4257 = LOADW [@4250(1)]
+---
+> @ Node @4257 = LOADW [@4250(2)]
+19273c19162
+< @ Node @4266 = LOADW [@4259(1)]
+---
+> @ Node @4266 = LOADW [@4259(2)]
+19290c19179
+< @ Node @4283 = LOADW [@4282(0)]
+---
+> @ Node @4283 = LOADW [@4282(1)]
+19297c19186
+< @ Node @4290 = LSL [@4289(1), @4280(1)]
+---
+> @ Node @4290 = LSL [@4289(1), @4280(2)]
+19299c19188
+< @ Node @4292 = LOADW [@4291(0)]
+---
+> @ Node @4292 = LOADW [@4291(1)]
+19318c19207
+< @ Node @4311 = LOADW [@4310(0)]
+---
+> @ Node @4311 = LOADW [@4310(1)]
+19336c19225
+< @ Node @4329 = LSL [@4328(1), @4308(1)]
+---
+> @ Node @4329 = LSL [@4328(1), @4308(2)]
+19339,19340c19228,19229
+< @ Node @4332 = LOADW [@4331(0)]
+< @ Node @4333 = STOREW [@4327(1), @4331(0), @4332(1)]
+---
+> @ Node @4332 = LOADW [@4331(1)]
+> @ Node @4333 = STOREW [@4327(1), @4331(1), @4332(1)]
+19352c19241
+< @ Node @4345 = LOADW [@4344(0)]
+---
+> @ Node @4345 = LOADW [@4344(1)]
+19370c19259
+< @ Node @4363 = LSL [@4362(1), @4342(1)]
+---
+> @ Node @4363 = LSL [@4362(1), @4342(2)]
+19373,19374c19262,19263
+< @ Node @4366 = LOADW [@4365(0)]
+< @ Node @4367 = STOREW [@4361(1), @4365(0), @4366(1)]
+---
+> @ Node @4366 = LOADW [@4365(1)]
+> @ Node @4367 = STOREW [@4361(1), @4365(1), @4366(1)]
+19386c19275
+< @ Node @4379 = LOADW [@4378(0)]
+---
+> @ Node @4379 = LOADW [@4378(1)]
+19391c19280
+< @ Node @4384 = LSL [@4383(1), @4376(1)]
+---
+> @ Node @4384 = LSL [@4383(1), @4376(2)]
+19393c19282
+< @ Node @4386 = LOADW [@4385(0)]
+---
+> @ Node @4386 = LOADW [@4385(1)]
+19408c19297
+< @ Node @4401 = LOADW [@4400(0)]
+---
+> @ Node @4401 = LOADW [@4400(1)]
+19424c19313
+< @ Node @4417 = LOADW [@4416(0)]
+---
+> @ Node @4417 = LOADW [@4416(1)]
+19429,19430c19318,19319
+< @ Node @4422 = OFFSET [@4421(1), @4415(1)]
+< @ Node @4423 = LOADW [@4422(0)]
+---
+> @ Node @4422 = OFFSET [@4421(1), @4415(2)]
+> @ Node @4423 = LOADW [@4422(1)]
+19460,19461c19349,19350
+< @ Node @4453 = LOADW [@4452(0)]
+< @ Node @4454 = LSL [@4453(1), @4451(1)]
+---
+> @ Node @4453 = LOADW [@4452(1)]
+> @ Node @4454 = LSL [@4453(1), @4451(2)]
+19463,19464c19352,19353
+< @ Node @4456 = OFFSET [@4455(1), @4451(2)]
+< @ Node @4457 = LOADW [@4456(0)]
+---
+> @ Node @4456 = OFFSET [@4455(1), @4451(3)]
+> @ Node @4457 = LOADW [@4456(1)]
+19471,19472c19360,19361
+< @ Node @4464 = OFFSET [@4463(1), @4451(2)]
+< @ Node @4465 = LOADW [@4464(0)]
+---
+> @ Node @4464 = OFFSET [@4463(1), @4451(4)]
+> @ Node @4465 = LOADW [@4464(1)]
+19482,19483c19371,19372
+< @ Node @4475 = OFFSET [@4474(1), @4451(2)]
+< @ Node @4476 = LOADW [@4475(0)]
+---
+> @ Node @4475 = OFFSET [@4474(1), @4451(5)]
+> @ Node @4476 = LOADW [@4475(1)]
+19512c19401
+< @ Node @4505 = LOADW [@4504(0)]
+---
+> @ Node @4505 = LOADW [@4504(1)]
+19517,19518c19406,19407
+< @ Node @4510 = OFFSET [@4509(1), @4503(1)]
+< @ Node @4511 = LOADW [@4510(0)]
+---
+> @ Node @4510 = OFFSET [@4509(1), @4503(2)]
+> @ Node @4511 = LOADW [@4510(1)]
+19532c19421
+< @ Node @4525 = LOADW [@4524(0)]
+---
+> @ Node @4525 = LOADW [@4524(1)]
+19537,19538c19426,19427
+< @ Node @4530 = OFFSET [@4529(1), @4523(1)]
+< @ Node @4531 = LOADW [@4530(0)]
+---
+> @ Node @4530 = OFFSET [@4529(1), @4523(2)]
+> @ Node @4531 = LOADW [@4530(1)]
+20454c20343
+< @ Node @4586 = LOADW [@4585(0)]
+---
+> @ Node @4586 = LOADW [@4585(1)]
+20473c20362
+< @ Node @4605 = ARG 0 [@4583(1)]
+---
+> @ Node @4605 = ARG 0 [@4583(2)]
+20486,20487c20375,20376
+< @ Node @4618 = LOADW [@4617(0)]
+< @ Node @4619 = LSL [@4618(1), @4616(1)]
+---
+> @ Node @4618 = LOADW [@4617(1)]
+> @ Node @4619 = LSL [@4618(1), @4616(2)]
+20489,20490c20378,20379
+< @ Node @4621 = OFFSET [@4620(1), @4616(2)]
+< @ Node @4622 = LOADW [@4621(0)]
+---
+> @ Node @4621 = OFFSET [@4620(1), @4616(3)]
+> @ Node @4622 = LOADW [@4621(1)]
+20507c20396
+< @ Node @4639 = LOADW [@4638(0)]
+---
+> @ Node @4639 = LOADW [@4638(1)]
+20519,20520c20408,20409
+< @ Node @4651 = LOADW [@4650(0)]
+< @ Node @4652 = LSR [@4651(1), @4637(1)]
+---
+> @ Node @4651 = LOADW [@4650(1)]
+> @ Node @4652 = LSR [@4651(1), @4637(2)]
+20534c20423
+< @ Node @4666 = LOADW [@4665(0)]
+---
+> @ Node @4666 = LOADW [@4665(1)]
+20547c20436
+< @ Node @4679 = LOADW [@4678(0)]
+---
+> @ Node @4679 = LOADW [@4678(1)]
+20562c20451
+< @ Node @4694 = LOADW [@4693(0)]
+---
+> @ Node @4694 = LOADW [@4693(1)]
+20991c20880
+< @ Node @4731 = LOADW [@4730(0)]
+---
+> @ Node @4731 = LOADW [@4730(1)]
+20999,21000c20888,20889
+< @ Node @4739 = LOADW [@4738(0)]
+< @ Node @4740 = LOADW [@4721(1)]
+---
+> @ Node @4739 = LOADW [@4738(1)]
+> @ Node @4740 = LOADW [@4721(2)]
+21280,21281c21169,21170
+< @ Node @4768 = LOADW [@4767(0)]
+< @ Node @4769 = STOREW [@4762(1), @4767(0), @4768(1)]
+---
+> @ Node @4768 = LOADW [@4767(1)]
+> @ Node @4769 = STOREW [@4762(1), @4767(1), @4768(1)]
+21285,21287c21174,21176
+< @ Node @4773 = OFFSET [@4767(1), @4772(1)]
+< @ Node @4774 = LOADW [@4773(0)]
+< @ Node @4775 = STOREW [@4771(1), @4773(0), @4774(1)]
+---
+> @ Node @4773 = OFFSET [@4767(2), @4772(1)]
+> @ Node @4774 = LOADW [@4773(1)]
+> @ Node @4775 = STOREW [@4771(1), @4773(1), @4774(1)]
+21292,21294c21181,21183
+< @ Node @4780 = OFFSET [@4767(2), @4779(1)]
+< @ Node @4781 = LOADW [@4780(0)]
+< @ Node @4782 = STOREW [@4778(1), @4780(0), @4781(1)]
+---
+> @ Node @4780 = OFFSET [@4767(3), @4779(1)]
+> @ Node @4781 = LOADW [@4780(1)]
+> @ Node @4782 = STOREW [@4778(1), @4780(1), @4781(1)]
+21298,21300c21187,21189
+< @ Node @4786 = OFFSET [@4767(3), @4785(1)]
+< @ Node @4787 = LOADW [@4786(0)]
+< @ Node @4788 = STOREW [@4784(1), @4786(0), @4787(1)]
+---
+> @ Node @4786 = OFFSET [@4767(4), @4785(1)]
+> @ Node @4787 = LOADW [@4786(1)]
+> @ Node @4788 = STOREW [@4784(1), @4786(1), @4787(1)]
+21305,21307c21194,21196
+< @ Node @4793 = OFFSET [@4767(4), @4792(1)]
+< @ Node @4794 = LOADW [@4793(0)]
+< @ Node @4795 = STOREW [@4791(1), @4793(0), @4794(1)]
+---
+> @ Node @4793 = OFFSET [@4767(5), @4792(1)]
+> @ Node @4794 = LOADW [@4793(1)]
+> @ Node @4795 = STOREW [@4791(1), @4793(1), @4794(1)]
+21311,21313c21200,21202
+< @ Node @4799 = OFFSET [@4767(5), @4798(1)]
+< @ Node @4800 = LOADW [@4799(0)]
+< @ Node @4801 = STOREW [@4797(1), @4799(0), @4800(1)]
+---
+> @ Node @4799 = OFFSET [@4767(6), @4798(1)]
+> @ Node @4800 = LOADW [@4799(1)]
+> @ Node @4801 = STOREW [@4797(1), @4799(1), @4800(1)]
+21317,21319c21206,21208
+< @ Node @4805 = OFFSET [@4767(6), @4804(1)]
+< @ Node @4806 = LOADW [@4805(0)]
+< @ Node @4807 = STOREW [@4803(1), @4805(0), @4806(1)]
+---
+> @ Node @4805 = OFFSET [@4767(7), @4804(1)]
+> @ Node @4806 = LOADW [@4805(1)]
+> @ Node @4807 = STOREW [@4803(1), @4805(1), @4806(1)]
+21345,21346c21234,21235
+< @ Node @4833 = LOADW [@4832(0)]
+< @ Node @4834 = STOREW [@4820(1), @4832(0), @4833(1)]
+---
+> @ Node @4833 = LOADW [@4832(1)]
+> @ Node @4834 = STOREW [@4820(1), @4832(1), @4833(1)]
+21350,21352c21239,21241
+< @ Node @4838 = OFFSET [@4832(1), @4837(1)]
+< @ Node @4839 = LOADW [@4838(0)]
+< @ Node @4840 = STOREW [@4836(1), @4838(0), @4839(1)]
+---
+> @ Node @4838 = OFFSET [@4832(2), @4837(1)]
+> @ Node @4839 = LOADW [@4838(1)]
+> @ Node @4840 = STOREW [@4836(1), @4838(1), @4839(1)]
+21361c21250
+< @ Node @4849 = LOADW [@4848(0)]
+---
+> @ Node @4849 = LOADW [@4848(1)]
+21369c21258
+< @ Node @4857 = LOADW [@4856(0)]
+---
+> @ Node @4857 = LOADW [@4856(1)]
+21373c21262
+< @ Sharing @4767(6) as temp 2
+---
+> @ Sharing @4767(7) as temp 2
+21375c21264,21265
+< @ Sharing @4849(2) as temp 4
+---
+> @ Sharing @4832(2) as temp 4
+> @ Sharing @4849(2) as temp 5
+21403,21404c21293
+< @ <STOREW,
+< @   <CONST 1026>,
+---
+> @ <DEFTEMP 4,
+21411a21301
+> @ <STOREW, <CONST 1026>, <TEMP 4>>
+21413,21423c21303
+< @ <STOREW,
+< @   <CONST 0>,
+< @   <OFFSET,
+< @     <OFFSET,
+< @       <GLOBAL _mem>,
+< @       <LSL,
+< @         <PLUS,
+< @           <PLUS, <LOADW, <REGVAR 0>>, <CONST 7>>,
+< @           <MINUS, <LSL, <LOADW, <REGVAR 1>>, <CONST 1>>, <CONST 2>>>,
+< @         <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <CONST 0>, <OFFSET, <TEMP 4>, <CONST 4>>>
+21431,21432c21311,21312
+< @ <DEFTEMP 4, <LOADW, <GLOBAL _goalframe>>>
+< @ <STOREW, <TEMP 4>, <GLOBAL _choice>>
+---
+> @ <DEFTEMP 5, <LOADW, <GLOBAL _goalframe>>>
+> @ <STOREW, <TEMP 5>, <GLOBAL _choice>>
+21495,21496c21375
+< @ <STOREW,
+< @   <CONST 1026>,
+---
+> @ <DEFTEMP 4,
+21503a21383,21389
+> 	set r0, _mem
+> 	add r1, r4, #7
+> 	lsl r2, r5, #1
+> 	sub r2, r2, #2
+> 	add r1, r1, r2
+> 	add r7, r0, r1, LSL #2
+> @ <STOREW, <CONST 1026>, <TEMP 4>>
+21505,21510c21391
+< 	set r1, _mem
+< 	add r2, r4, #7
+< 	lsl r3, r5, #1
+< 	sub r3, r3, #2
+< 	add r2, r2, r3
+< 	str r0, [r1, r2, LSL #2]
+---
+> 	str r0, [r7]
+21512,21522c21393
+< @ <STOREW,
+< @   <CONST 0>,
+< @   <OFFSET,
+< @     <OFFSET,
+< @       <GLOBAL _mem>,
+< @       <LSL,
+< @         <PLUS,
+< @           <PLUS, <LOADW, <REGVAR 0>>, <CONST 7>>,
+< @           <MINUS, <LSL, <LOADW, <REGVAR 1>>, <CONST 1>>, <CONST 2>>>,
+< @         <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <CONST 0>, <OFFSET, <TEMP 4>, <CONST 4>>>
+21524,21530c21395
+< 	set r1, _mem
+< 	add r2, r4, #7
+< 	lsl r3, r5, #1
+< 	sub r3, r3, #2
+< 	add r2, r2, r3
+< 	add r1, r1, r2, LSL #2
+< 	str r0, [r1, #4]
+---
+> 	str r0, [r7, #4]
+21546c21411
+< @ <DEFTEMP 4, <LOADW, <GLOBAL _goalframe>>>
+---
+> @ <DEFTEMP 5, <LOADW, <GLOBAL _goalframe>>>
+21549c21414
+< @ <STOREW, <TEMP 4>, <GLOBAL _choice>>
+---
+> @ <STOREW, <TEMP 5>, <GLOBAL _choice>>
+22082c21947
+< @ Node @4883 = LOADW [@4882(0)]
+---
+> @ Node @4883 = LOADW [@4882(1)]
+22094c21959
+< @ Node @4895 = LOADW [@4894(0)]
+---
+> @ Node @4895 = LOADW [@4894(1)]
+22113c21978
+< @ Node @4914 = LOADW [@4913(0)]
+---
+> @ Node @4914 = LOADW [@4913(1)]
+22117c21982
+< @ Node @4918 = LOADW [@4917(0)]
+---
+> @ Node @4918 = LOADW [@4917(1)]
+22136c22001
+< @ Node @4937 = LOADW [@4936(0)]
+---
+> @ Node @4937 = LOADW [@4936(1)]
+22141c22006
+< @ Node @4942 = LSL [@4941(1), @4934(1)]
+---
+> @ Node @4942 = LSL [@4941(1), @4934(2)]
+22143,22144c22008,22009
+< @ Node @4944 = LOADW [@4943(0)]
+< @ Node @4945 = STOREW [@4937(1), @4943(0), @4944(1)]
+---
+> @ Node @4944 = LOADW [@4943(1)]
+> @ Node @4945 = STOREW [@4937(1), @4943(1), @4944(1)]
+22147c22012
+< @ Node @4948 = LOADW [@4921(1)]
+---
+> @ Node @4948 = LOADW [@4921(2)]
+22154c22019
+< @ Node @4955 = LOADW [@4954(0)]
+---
+> @ Node @4955 = LOADW [@4954(1)]
+22164c22029
+< @ Node @4965 = LOADW [@4964(0)]
+---
+> @ Node @4965 = LOADW [@4964(1)]
+22166c22031
+< @ Node @4967 = LOADW [@4966(0)]
+---
+> @ Node @4967 = LOADW [@4966(1)]
+22187c22052
+< @ Node @4988 = LOADW [@4987(0)]
+---
+> @ Node @4988 = LOADW [@4987(1)]
+22192,22193c22057,22058
+< @ Node @4993 = OFFSET [@4987(1), @4991(2)]
+< @ Node @4994 = LOADW [@4993(0)]
+---
+> @ Node @4993 = OFFSET [@4987(2), @4991(2)]
+> @ Node @4994 = LOADW [@4993(1)]
+22207,22208c22072,22073
+< @ Node @5008 = LOADW [@4993(0)]
+< @ Node @5009 = STOREW [@5007(1), @4993(0), @5008(1)]
+---
+> @ Node @5008 = LOADW [@4993(2)]
+> @ Node @5009 = STOREW [@5007(1), @4993(2), @5008(1)]
+22214c22079
+< @ Node @5015 = LOADW [@5011(1)]
+---
+> @ Node @5015 = LOADW [@5011(2)]
+22225c22090
+< @ Node @5026 = LOADW [@5025(0)]
+---
+> @ Node @5026 = LOADW [@5025(1)]
+22228c22093
+< @ Node @5029 = LSL [@5028(1), @5023(1)]
+---
+> @ Node @5029 = LSL [@5028(1), @5023(2)]
+22232,22233c22097,22098
+< @ Node @5033 = LOADW [@5032(0)]
+< @ Node @5034 = STOREW [@5026(1), @5032(0), @5033(1)]
+---
+> @ Node @5033 = LOADW [@5032(1)]
+> @ Node @5034 = STOREW [@5026(1), @5032(1), @5033(1)]
+22237c22102
+< @ Node @5038 = LOADW [@5037(0)]
+---
+> @ Node @5038 = LOADW [@5037(1)]
+22240c22105
+< @ Node @5041 = LSL [@5040(1), @5023(2)]
+---
+> @ Node @5041 = LSL [@5040(1), @5023(3)]
+22242,22243c22107,22108
+< @ Node @5043 = OFFSET [@5042(1), @5031(1)]
+< @ Node @5044 = LOADW [@5043(0)]
+---
+> @ Node @5043 = OFFSET [@5042(1), @5031(2)]
+> @ Node @5044 = LOADW [@5043(1)]
+22245c22110
+< @ Node @5046 = LOADW [@5045(0)]
+---
+> @ Node @5046 = LOADW [@5045(1)]
+22267,22268c22132,22133
+< @ Node @5068 = LOADW [@5067(0)]
+< @ Node @5069 = STOREW [@5055(1), @5067(0), @5068(1)]
+---
+> @ Node @5068 = LOADW [@5067(1)]
+> @ Node @5069 = STOREW [@5055(1), @5067(1), @5068(1)]
+22274c22139
+< @ Node @5075 = LSL [@5074(1), @5063(2)]
+---
+> @ Node @5075 = LSL [@5074(1), @5063(3)]
+22278,22279c22143,22144
+< @ Node @5079 = LOADW [@5078(0)]
+< @ Node @5080 = STOREW [@5071(1), @5078(0), @5079(1)]
+---
+> @ Node @5079 = LOADW [@5078(1)]
+> @ Node @5080 = STOREW [@5071(1), @5078(1), @5079(1)]
+22281c22146
+< @ Node @5082 = LOADW [@5049(1)]
+---
+> @ Node @5082 = LOADW [@5049(2)]
+22301c22166
+< @ Node @5102 = LOADW [@5101(0)]
+---
+> @ Node @5102 = LOADW [@5101(1)]
+22308c22173
+< @ Node @5109 = LOADC [@5108(0)]
+---
+> @ Node @5109 = LOADC [@5108(1)]
+22315c22180
+< @ Node @5116 = LOADW [@5115(0)]
+---
+> @ Node @5116 = LOADW [@5115(1)]
+22322c22187
+< @ Node @5123 = LOADW [@5122(0)]
+---
+> @ Node @5123 = LOADW [@5122(1)]
+22331,22340c22196,22206
+< @ Sharing @4994(4) as temp 8
+< @ Sharing @4998(2) as temp 9
+< @ Sharing @5020(3) as temp 10
+< @ Sharing @5027(2) as temp 11
+< @ Sharing @5050(3) as temp 12
+< @ Sharing @5056(2) as temp 13
+< @ Sharing @5057(2) as temp 14
+< @ Sharing @5064(2) as temp 15
+< @ Sharing @5095(2) as temp 16
+< @ Sharing @5107(1) as temp 17
+---
+> @ Sharing @4993(2) as temp 8
+> @ Sharing @4994(4) as temp 9
+> @ Sharing @4998(2) as temp 10
+> @ Sharing @5020(3) as temp 11
+> @ Sharing @5027(2) as temp 12
+> @ Sharing @5050(3) as temp 13
+> @ Sharing @5056(2) as temp 14
+> @ Sharing @5057(2) as temp 15
+> @ Sharing @5064(2) as temp 16
+> @ Sharing @5095(2) as temp 17
+> @ Sharing @5107(1) as temp 18
+22427,22431c22293,22298
+< @ <DEFTEMP 8, <LOADW, <OFFSET, <TEMP 7>, <CONST 4>>>>
+< @ <JEQ L697, <TEMP 8>, <CONST 0>>
+< @ <DEFTEMP 9, <LOADW, <GLOBAL _goalframe>>>
+< @ <JGT L697, <TEMP 9>, <TEMP 8>>
+< @ <JGEQ L697, <TEMP 8>, <PLUS, <TEMP 9>, <LOADW, <REGVAR 1>>>>
+---
+> @ <DEFTEMP 8, <OFFSET, <TEMP 7>, <CONST 4>>>
+> @ <DEFTEMP 9, <LOADW, <TEMP 8>>>
+> @ <JEQ L697, <TEMP 9>, <CONST 0>>
+> @ <DEFTEMP 10, <LOADW, <GLOBAL _goalframe>>>
+> @ <JGT L697, <TEMP 10>, <TEMP 9>>
+> @ <JGEQ L697, <TEMP 9>, <PLUS, <TEMP 10>, <LOADW, <REGVAR 1>>>>
+22433,22435c22300
+< @ <STOREW,
+< @   <PLUS, <TEMP 8>, <LOADW, <REGVAR 2>>>,
+< @   <OFFSET, <TEMP 7>, <CONST 4>>>
+---
+> @ <STOREW, <PLUS, <TEMP 9>, <LOADW, <REGVAR 2>>>, <TEMP 8>>
+22441,22442c22306,22307
+< @ <DEFTEMP 10, <GLOBAL _mem>>
+< @ <DEFTEMP 11, <GLOBAL _goalframe>>
+---
+> @ <DEFTEMP 11, <GLOBAL _mem>>
+> @ <DEFTEMP 12, <GLOBAL _goalframe>>
+22445c22310
+< @     <OFFSET, <TEMP 10>, <LSL, <LOADW, <GLOBAL _prok>>, <CONST 2>>>>,
+---
+> @     <OFFSET, <TEMP 11>, <LSL, <LOADW, <GLOBAL _prok>>, <CONST 2>>>>,
+22447c22312
+< @     <OFFSET, <TEMP 10>, <LSL, <LOADW, <TEMP 11>>, <CONST 2>>>,
+---
+> @     <OFFSET, <TEMP 11>, <LSL, <LOADW, <TEMP 12>>, <CONST 2>>>,
+22454c22319
+< @       <OFFSET, <TEMP 10>, <LSL, <LOADW, <TEMP 11>>, <CONST 2>>>,
+---
+> @       <OFFSET, <TEMP 11>, <LSL, <LOADW, <TEMP 12>>, <CONST 2>>>,
+22458,22459c22323,22324
+< @ <DEFTEMP 12, <LOADW, <LOCAL -4>>>
+< @ <JGT L702, <TEMP 12>, <LOADW, <LOCAL -16>>>
+---
+> @ <DEFTEMP 13, <LOADW, <LOCAL -4>>>
+> @ <JGT L702, <TEMP 13>, <LOADW, <LOCAL -16>>>
+22461,22463c22326,22328
+< @ <DEFTEMP 13, <GLOBAL _mem>>
+< @ <DEFTEMP 14, <GLOBAL _goalframe>>
+< @ <DEFTEMP 15, <MINUS, <LSL, <TEMP 12>, <CONST 1>>, <CONST 2>>>
+---
+> @ <DEFTEMP 14, <GLOBAL _mem>>
+> @ <DEFTEMP 15, <GLOBAL _goalframe>>
+> @ <DEFTEMP 16, <MINUS, <LSL, <TEMP 13>, <CONST 1>>, <CONST 2>>>
+22467c22332
+< @     <TEMP 13>,
+---
+> @     <TEMP 14>,
+22469c22334
+< @       <PLUS, <PLUS, <LOADW, <TEMP 14>>, <CONST 7>>, <TEMP 15>>,
+---
+> @       <PLUS, <PLUS, <LOADW, <TEMP 15>>, <CONST 7>>, <TEMP 16>>,
+22476c22341
+< @       <TEMP 13>,
+---
+> @       <TEMP 14>,
+22478c22343
+< @         <PLUS, <PLUS, <LOADW, <TEMP 14>>, <CONST 7>>, <TEMP 15>>,
+---
+> @         <PLUS, <PLUS, <LOADW, <TEMP 15>>, <CONST 7>>, <TEMP 16>>,
+22481c22346
+< @ <STOREW, <PLUS, <TEMP 12>, <CONST 1>>, <LOCAL -4>>
+---
+> @ <STOREW, <PLUS, <TEMP 13>, <CONST 1>>, <LOCAL -4>>
+22485,22486c22350,22351
+< @ <DEFTEMP 16, <GLOBAL _prok>>
+< @ <DEFTEMP 17,
+---
+> @ <DEFTEMP 17, <GLOBAL _prok>>
+> @ <DEFTEMP 18,
+22494c22359
+< @           <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <TEMP 16>>, <CONST 2>>>,
+---
+> @           <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <TEMP 17>>, <CONST 2>>>,
+22497c22362
+< @ <STOREC, <TEMP 17>, <GLOBAL _ok>>
+---
+> @ <STOREC, <TEMP 18>, <GLOBAL _ok>>
+22499c22364
+< @ <STOREW, <PLUS, <LOADW, <TEMP 16>>, <CONST 4>>, <GLOBAL _current>>
+---
+> @ <STOREW, <PLUS, <LOADW, <TEMP 17>>, <CONST 4>>, <GLOBAL _current>>
+22663,22665c22528,22532
+< @ <DEFTEMP 8, <LOADW, <OFFSET, <TEMP 7>, <CONST 4>>>>
+< 	ldr r8, [r7, #4]
+< @ <JEQ L697, <TEMP 8>, <CONST 0>>
+---
+> @ <DEFTEMP 8, <OFFSET, <TEMP 7>, <CONST 4>>>
+> 	add r7, r7, #4
+> @ <DEFTEMP 9, <LOADW, <TEMP 8>>>
+> 	ldr r8, [r7]
+> @ <JEQ L697, <TEMP 9>, <CONST 0>>
+22668c22535
+< @ <DEFTEMP 9, <LOADW, <GLOBAL _goalframe>>>
+---
+> @ <DEFTEMP 10, <LOADW, <GLOBAL _goalframe>>>
+22671c22538
+< @ <JGT L697, <TEMP 9>, <TEMP 8>>
+---
+> @ <JGT L697, <TEMP 10>, <TEMP 9>>
+22674c22541
+< @ <JGEQ L697, <TEMP 8>, <PLUS, <TEMP 9>, <LOADW, <REGVAR 1>>>>
+---
+> @ <JGEQ L697, <TEMP 9>, <PLUS, <TEMP 10>, <LOADW, <REGVAR 1>>>>
+22679,22681c22546
+< @ <STOREW,
+< @   <PLUS, <TEMP 8>, <LOADW, <REGVAR 2>>>,
+< @   <OFFSET, <TEMP 7>, <CONST 4>>>
+---
+> @ <STOREW, <PLUS, <TEMP 9>, <LOADW, <REGVAR 2>>>, <TEMP 8>>
+22683c22548
+< 	str r0, [r7, #4]
+---
+> 	str r0, [r7]
+22695c22560
+< @ <DEFTEMP 10, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 11, <GLOBAL _mem>>
+22697c22562
+< @ <DEFTEMP 11, <GLOBAL _goalframe>>
+---
+> @ <DEFTEMP 12, <GLOBAL _goalframe>>
+22701c22566
+< @     <OFFSET, <TEMP 10>, <LSL, <LOADW, <GLOBAL _prok>>, <CONST 2>>>>,
+---
+> @     <OFFSET, <TEMP 11>, <LSL, <LOADW, <GLOBAL _prok>>, <CONST 2>>>>,
+22703c22568
+< @     <OFFSET, <TEMP 10>, <LSL, <LOADW, <TEMP 11>>, <CONST 2>>>,
+---
+> @     <OFFSET, <TEMP 11>, <LSL, <LOADW, <TEMP 12>>, <CONST 2>>>,
+22718c22583
+< @       <OFFSET, <TEMP 10>, <LSL, <LOADW, <TEMP 11>>, <CONST 2>>>,
+---
+> @       <OFFSET, <TEMP 11>, <LSL, <LOADW, <TEMP 12>>, <CONST 2>>>,
+22727c22592
+< @ <DEFTEMP 12, <LOADW, <LOCAL -4>>>
+---
+> @ <DEFTEMP 13, <LOADW, <LOCAL -4>>>
+22729c22594
+< @ <JGT L702, <TEMP 12>, <LOADW, <LOCAL -16>>>
+---
+> @ <JGT L702, <TEMP 13>, <LOADW, <LOCAL -16>>>
+22734c22599
+< @ <DEFTEMP 13, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 14, <GLOBAL _mem>>
+22736c22601
+< @ <DEFTEMP 14, <GLOBAL _goalframe>>
+---
+> @ <DEFTEMP 15, <GLOBAL _goalframe>>
+22738c22603
+< @ <DEFTEMP 15, <MINUS, <LSL, <TEMP 12>, <CONST 1>>, <CONST 2>>>
+---
+> @ <DEFTEMP 16, <MINUS, <LSL, <TEMP 13>, <CONST 1>>, <CONST 2>>>
+22744c22609
+< @     <TEMP 13>,
+---
+> @     <TEMP 14>,
+22746c22611
+< @       <PLUS, <PLUS, <LOADW, <TEMP 14>>, <CONST 7>>, <TEMP 15>>,
+---
+> @       <PLUS, <PLUS, <LOADW, <TEMP 15>>, <CONST 7>>, <TEMP 16>>,
+22758c22623
+< @       <TEMP 13>,
+---
+> @       <TEMP 14>,
+22760c22625
+< @         <PLUS, <PLUS, <LOADW, <TEMP 14>>, <CONST 7>>, <TEMP 15>>,
+---
+> @         <PLUS, <PLUS, <LOADW, <TEMP 15>>, <CONST 7>>, <TEMP 16>>,
+22769c22634
+< @ <STOREW, <PLUS, <TEMP 12>, <CONST 1>>, <LOCAL -4>>
+---
+> @ <STOREW, <PLUS, <TEMP 13>, <CONST 1>>, <LOCAL -4>>
+22777c22642
+< @ <DEFTEMP 16, <GLOBAL _prok>>
+---
+> @ <DEFTEMP 17, <GLOBAL _prok>>
+22785c22650
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <TEMP 16>>, <CONST 2>>>,
+---
+> @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <TEMP 17>>, <CONST 2>>>,
+22796c22661
+< @ <DEFTEMP 17, <CALL 4, <GLOBAL _Unify>>>
+---
+> @ <DEFTEMP 18, <CALL 4, <GLOBAL _Unify>>>
+22798c22663
+< @ <STOREC, <TEMP 17>, <GLOBAL _ok>>
+---
+> @ <STOREC, <TEMP 18>, <GLOBAL _ok>>
+22802c22667
+< @ <STOREW, <PLUS, <LOADW, <TEMP 16>>, <CONST 4>>, <GLOBAL _current>>
+---
+> @ <STOREW, <PLUS, <LOADW, <TEMP 17>>, <CONST 4>>, <GLOBAL _current>>
+23060,23061c22925,22926
+< @ Node @5135 = LOADW [@5134(0)]
+< @ Node @5136 = LSL [@5135(1), @5133(1)]
+---
+> @ Node @5135 = LOADW [@5134(1)]
+> @ Node @5136 = LSL [@5135(1), @5133(2)]
+23065c22930
+< @ Node @5140 = LOADW [@5139(0)]
+---
+> @ Node @5140 = LOADW [@5139(1)]
+23073c22938
+< @ Node @5148 = LOADC [@5147(0)]
+---
+> @ Node @5148 = LOADC [@5147(1)]
+23084c22949
+< @ Node @5159 = LOADC [@5158(0)]
+---
+> @ Node @5159 = LOADC [@5158(1)]
+23104c22969
+< @ Node @5179 = LOADW [@5178(0)]
+---
+> @ Node @5179 = LOADW [@5178(1)]
+23116c22981
+< @ Node @5191 = LOADW [@5190(0)]
+---
+> @ Node @5191 = LOADW [@5190(1)]
+23141c23006
+< @ Node @5216 = LOADW [@5215(0)]
+---
+> @ Node @5216 = LOADW [@5215(1)]
+23154c23019
+< @ Node @5229 = LSL [@5228(1), @5213(1)]
+---
+> @ Node @5229 = LSL [@5228(1), @5213(2)]
+23158c23023
+< @ Node @5233 = LOADW [@5232(0)]
+---
+> @ Node @5233 = LOADW [@5232(1)]
+23161c23026
+< @ Node @5236 = LSL [@5235(1), @5213(2)]
+---
+> @ Node @5236 = LSL [@5235(1), @5213(3)]
+23165c23030
+< @ Node @5240 = LOADW [@5239(0)]
+---
+> @ Node @5240 = LOADW [@5239(1)]
+23170c23035
+< @ Node @5245 = LOADC [@5244(0)]
+---
+> @ Node @5245 = LOADC [@5244(1)]
+23174c23039
+< @ Node @5249 = PLUS [@5248(1), @5231(1)]
+---
+> @ Node @5249 = PLUS [@5248(1), @5231(2)]
+23176c23041
+< @ Node @5251 = LOADW [@5250(0)]
+---
+> @ Node @5251 = LOADW [@5250(1)]
+23607c23472
+< @ Node @5262 = LOADW [@5261(0)]
+---
+> @ Node @5262 = LOADW [@5261(1)]
+23628c23493
+< @ Node @5283 = ARG 1 [@5259(1)]
+---
+> @ Node @5283 = ARG 1 [@5259(2)]
+23633c23498
+< @ Node @5288 = LSL [@5287(1), @5259(2)]
+---
+> @ Node @5288 = LSL [@5287(1), @5259(3)]
+23635,23636c23500,23501
+< @ Node @5290 = LOADW [@5289(0)]
+< @ Node @5291 = LSL [@5290(1), @5259(2)]
+---
+> @ Node @5290 = LOADW [@5289(1)]
+> @ Node @5291 = LSL [@5290(1), @5259(4)]
+23638c23503
+< @ Node @5293 = LOADW [@5292(0)]
+---
+> @ Node @5293 = LOADW [@5292(1)]
+23640,23641c23505,23506
+< @ Node @5295 = OFFSET [@5289(1), @5278(2)]
+< @ Node @5296 = LOADW [@5295(0)]
+---
+> @ Node @5295 = OFFSET [@5289(2), @5278(2)]
+> @ Node @5296 = LOADW [@5295(1)]
+23643c23508
+< @ Node @5298 = ARG 2 [@5259(2)]
+---
+> @ Node @5298 = ARG 2 [@5259(5)]
+23655c23520
+< @ Node @5310 = LOADW [@5309(0)]
+---
+> @ Node @5310 = LOADW [@5309(1)]
+23659c23524
+< @ Node @5314 = LOADW [@5313(0)]
+---
+> @ Node @5314 = LOADW [@5313(1)]
+23667c23532
+< @ Node @5322 = LOADW [@5321(0)]
+---
+> @ Node @5322 = LOADW [@5321(1)]
+23679,23680c23544,23545
+< @ Node @5334 = LOADW [@5333(0)]
+< @ Node @5335 = LOADW [@5327(1)]
+---
+> @ Node @5334 = LOADW [@5333(1)]
+> @ Node @5335 = LOADW [@5327(2)]
+23686,23687c23551,23553
+< @ Sharing @5306(3) as temp 3
+< @ Sharing @5327(2) as temp 4
+---
+> @ Sharing @5289(2) as temp 3
+> @ Sharing @5306(3) as temp 4
+> @ Sharing @5327(2) as temp 5
+23709a23576
+> @ <DEFTEMP 3, <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>>
+23713,23724c23580,23581
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL,
+< @           <LOADW,
+< @             <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>>,
+< @           <CONST 2>>>>>,
+< @   <ARG 1,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>,
+< @         <CONST 4>>>>,
+---
+> @     <LOADW, <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 3>>, <CONST 2>>>>>,
+> @   <ARG 1, <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>>,
+23729c23586
+< @ <DEFTEMP 3, <LOADW, <GLOBAL _goalframe>>>
+---
+> @ <DEFTEMP 4, <LOADW, <GLOBAL _goalframe>>>
+23732c23589
+< @     <LOADW, <OFFSET, <GLOBAL _mem>, <LSL, <TEMP 3>, <CONST 2>>>>,
+---
+> @     <LOADW, <OFFSET, <GLOBAL _mem>, <LSL, <TEMP 4>, <CONST 2>>>>,
+23736,23737c23593,23594
+< @ <JLEQ L725, <TEMP 3>, <LOADW, <GLOBAL _choice>>>
+< @ <STOREW, <MINUS, <TEMP 3>, <CONST 1>>, <GLOBAL _lsp>>
+---
+> @ <JLEQ L725, <TEMP 4>, <LOADW, <GLOBAL _choice>>>
+> @ <STOREW, <MINUS, <TEMP 4>, <CONST 1>>, <GLOBAL _lsp>>
+23740c23597
+< @ <DEFTEMP 4, <GLOBAL _goalframe>>
+---
+> @ <DEFTEMP 5, <GLOBAL _goalframe>>
+23744c23601
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <TEMP 4>>, <CONST 2>>>,
+---
+> @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <TEMP 5>>, <CONST 2>>>,
+23746c23603
+< @   <TEMP 4>>
+---
+> @   <TEMP 5>>
+23795a23653,23655
+> @ <DEFTEMP 3, <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>>
+> 	ldr r0, [r5]
+> 	add r5, r4, r0, LSL #2
+23798,23805c23658,23659
+< @ <ARG 1,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r5]
+< 	add r0, r4, r0, LSL #2
+< 	ldr r1, [r0, #4]
+---
+> @ <ARG 1, <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>>
+> 	ldr r1, [r5, #4]
+23807,23813c23661
+< @   <LOADW,
+< @     <OFFSET,
+< @       <TEMP 1>,
+< @       <LSL,
+< @         <LOADW,
+< @           <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>>,
+< @         <CONST 2>>>>>
+---
+> @   <LOADW, <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 3>>, <CONST 2>>>>>
+23816d23663
+< 	ldr r0, [r4, r0, LSL #2]
+23824c23671
+< @ <DEFTEMP 3, <LOADW, <GLOBAL _goalframe>>>
+---
+> @ <DEFTEMP 4, <LOADW, <GLOBAL _goalframe>>>
+23829c23676
+< @     <LOADW, <OFFSET, <GLOBAL _mem>, <LSL, <TEMP 3>, <CONST 2>>>>,
+---
+> @     <LOADW, <OFFSET, <GLOBAL _mem>, <LSL, <TEMP 4>, <CONST 2>>>>,
+23838c23685
+< @ <JLEQ L725, <TEMP 3>, <LOADW, <GLOBAL _choice>>>
+---
+> @ <JLEQ L725, <TEMP 4>, <LOADW, <GLOBAL _choice>>>
+23843c23690
+< @ <STOREW, <MINUS, <TEMP 3>, <CONST 1>>, <GLOBAL _lsp>>
+---
+> @ <STOREW, <MINUS, <TEMP 4>, <CONST 1>>, <GLOBAL _lsp>>
+23850c23697
+< @ <DEFTEMP 4, <GLOBAL _goalframe>>
+---
+> @ <DEFTEMP 5, <GLOBAL _goalframe>>
+23855c23702
+< @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <TEMP 4>>, <CONST 2>>>,
+---
+> @       <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <TEMP 5>>, <CONST 2>>>,
+23857c23704
+< @   <TEMP 4>>
+---
+> @   <TEMP 5>>
+24033c23880
+< @ Node @5349 = LOADW [@5348(0)]
+---
+> @ Node @5349 = LOADW [@5348(1)]
+24035c23882
+< @ Node @5351 = LOADW [@5350(0)]
+---
+> @ Node @5351 = LOADW [@5350(1)]
+24038,24039c23885,23886
+< @ Node @5354 = OFFSET [@5348(1), @5353(1)]
+< @ Node @5355 = LOADW [@5354(0)]
+---
+> @ Node @5354 = OFFSET [@5348(2), @5353(1)]
+> @ Node @5355 = LOADW [@5354(1)]
+24041c23888
+< @ Node @5357 = LOADW [@5356(0)]
+---
+> @ Node @5357 = LOADW [@5356(1)]
+24045c23892
+< @ Node @5361 = LSL [@5351(2), @5346(1)]
+---
+> @ Node @5361 = LSL [@5351(2), @5346(2)]
+24047c23894
+< @ Node @5363 = LOADW [@5362(0)]
+---
+> @ Node @5363 = LOADW [@5362(1)]
+24052c23899
+< @ Node @5368 = LOADW [@5367(0)]
+---
+> @ Node @5368 = LOADW [@5367(1)]
+24056c23903
+< @ Node @5372 = LSL [@5371(1), @5346(1)]
+---
+> @ Node @5372 = LSL [@5371(1), @5346(3)]
+24060c23907
+< @ Node @5376 = LOADW [@5375(0)]
+---
+> @ Node @5376 = LOADW [@5375(1)]
+24062c23909
+< @ Node @5378 = LOADW [@5377(0)]
+---
+> @ Node @5378 = LOADW [@5377(1)]
+24066c23913
+< @ Node @5382 = LOADW [@5381(0)]
+---
+> @ Node @5382 = LOADW [@5381(1)]
+24068c23915
+< @ Node @5384 = LOADW [@5383(0)]
+---
+> @ Node @5384 = LOADW [@5383(1)]
+24074c23921
+< @ Node @5390 = LOADW [@5389(0)]
+---
+> @ Node @5390 = LOADW [@5389(1)]
+24078,24079c23925,23926
+< @ Node @5394 = LOADW [@5393(0)]
+< @ Node @5395 = LOADW [@5344(2)]
+---
+> @ Node @5394 = LOADW [@5393(1)]
+> @ Node @5395 = LOADW [@5344(3)]
+24090c23937
+< @ Node @5406 = ARG 1 [@5353(1)]
+---
+> @ Node @5406 = ARG 1 [@5353(2)]
+24094c23941
+< @ Node @5410 = ARG 1 [@5346(2)]
+---
+> @ Node @5410 = ARG 1 [@5346(4)]
+24102c23949
+< @ Node @5418 = ARG 2 [@5346(3)]
+---
+> @ Node @5418 = ARG 2 [@5346(5)]
+24109,24115c23956,23963
+< @ Sharing @5349(1) as temp 3
+< @ Sharing @5355(1) as temp 4
+< @ Sharing @5356(2) as temp 5
+< @ Sharing @5366(1) as temp 6
+< @ Sharing @5367(2) as temp 7
+< @ Sharing @5371(2) as temp 8
+< @ Sharing @5373(3) as temp 9
+---
+> @ Sharing @5348(2) as temp 3
+> @ Sharing @5349(1) as temp 4
+> @ Sharing @5355(1) as temp 5
+> @ Sharing @5356(2) as temp 6
+> @ Sharing @5366(1) as temp 7
+> @ Sharing @5367(2) as temp 8
+> @ Sharing @5371(2) as temp 9
+> @ Sharing @5373(3) as temp 10
+24122,24131c23970,23975
+< @ <DEFTEMP 3,
+< @   <LOADW, <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>>>
+< @ <STOREW, <TEMP 3>, <GLOBAL _current>>
+< @ <DEFTEMP 4,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< @ <DEFTEMP 5, <GLOBAL _goalframe>>
+< @ <STOREW, <TEMP 4>, <TEMP 5>>
+---
+> @ <DEFTEMP 3, <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>>
+> @ <DEFTEMP 4, <LOADW, <TEMP 3>>>
+> @ <STOREW, <TEMP 4>, <GLOBAL _current>>
+> @ <DEFTEMP 5, <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>>
+> @ <DEFTEMP 6, <GLOBAL _goalframe>>
+> @ <STOREW, <TEMP 5>, <TEMP 6>>
+24133c23977
+< @ <DEFTEMP 6,
+---
+> @ <DEFTEMP 7,
+24136,24139c23980,23983
+< @     <ARG 0, <LOADW, <OFFSET, <TEMP 1>, <LSL, <TEMP 3>, <CONST 2>>>>>,
+< @     <ARG 1, <TEMP 4>>>>
+< @ <DEFTEMP 7, <GLOBAL _call>>
+< @ <STOREW, <TEMP 6>, <TEMP 7>>
+---
+> @     <ARG 0, <LOADW, <OFFSET, <TEMP 1>, <LSL, <TEMP 4>, <CONST 2>>>>>,
+> @     <ARG 1, <TEMP 5>>>>
+> @ <DEFTEMP 8, <GLOBAL _call>>
+> @ <STOREW, <TEMP 7>, <TEMP 8>>
+24141,24144c23985,23988
+< @ <DEFTEMP 8, <LOADW, <TEMP 2>>>
+< @ <DEFTEMP 9, <OFFSET, <TEMP 1>, <LSL, <TEMP 8>, <CONST 2>>>>
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 8>>>, <GLOBAL _prok>>
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 16>>>, <GLOBAL _gsp>>
+---
+> @ <DEFTEMP 9, <LOADW, <TEMP 2>>>
+> @ <DEFTEMP 10, <OFFSET, <TEMP 1>, <LSL, <TEMP 9>, <CONST 2>>>>
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 10>, <CONST 8>>>, <GLOBAL _prok>>
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 10>, <CONST 16>>>, <GLOBAL _gsp>>
+24146,24147c23990,23991
+< @ <STOREW, <MINUS, <TEMP 8>, <CONST 1>>, <GLOBAL _lsp>>
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 12>>>, <TEMP 2>>
+---
+> @ <STOREW, <MINUS, <TEMP 9>, <CONST 1>>, <GLOBAL _lsp>>
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 10>, <CONST 12>>>, <TEMP 2>>
+24162,24163c24006,24007
+< @   <ARG 0, <LOADW, <TEMP 7>>>,
+< @   <ARG 1, <LOADW, <TEMP 5>>>,
+---
+> @   <ARG 0, <LOADW, <TEMP 8>>>,
+> @   <ARG 1, <LOADW, <TEMP 6>>>,
+24180,24181c24024
+< @ <DEFTEMP 3,
+< @   <LOADW, <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>>>
+---
+> @ <DEFTEMP 3, <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>>
+24183,24184c24026,24029
+< 	ldr r6, [r4, r0, LSL #2]
+< @ <STOREW, <TEMP 3>, <GLOBAL _current>>
+---
+> 	add r6, r4, r0, LSL #2
+> @ <DEFTEMP 4, <LOADW, <TEMP 3>>>
+> 	ldr r7, [r6]
+> @ <STOREW, <TEMP 4>, <GLOBAL _current>>
+24186,24195c24031,24034
+< 	str r6, [r0]
+< @ <DEFTEMP 4,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET, <TEMP 1>, <LSL, <LOADW, <TEMP 2>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r5]
+< 	add r0, r4, r0, LSL #2
+< 	ldr r7, [r0, #4]
+< @ <DEFTEMP 5, <GLOBAL _goalframe>>
+---
+> 	str r7, [r0]
+> @ <DEFTEMP 5, <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>>
+> 	ldr r6, [r6, #4]
+> @ <DEFTEMP 6, <GLOBAL _goalframe>>
+24197,24198c24036,24037
+< @ <STOREW, <TEMP 4>, <TEMP 5>>
+< 	str r7, [r8]
+---
+> @ <STOREW, <TEMP 5>, <TEMP 6>>
+> 	str r6, [r8]
+24200,24204c24039,24043
+< @ <ARG 1, <TEMP 4>>
+< 	mov r1, r7
+< @ <ARG 0, <LOADW, <OFFSET, <TEMP 1>, <LSL, <TEMP 3>, <CONST 2>>>>>
+< 	ldr r0, [r4, r6, LSL #2]
+< @ <DEFTEMP 6, <CALL 2, <GLOBAL _Deref>>>
+---
+> @ <ARG 1, <TEMP 5>>
+> 	mov r1, r6
+> @ <ARG 0, <LOADW, <OFFSET, <TEMP 1>, <LSL, <TEMP 4>, <CONST 2>>>>>
+> 	ldr r0, [r4, r7, LSL #2]
+> @ <DEFTEMP 7, <CALL 2, <GLOBAL _Deref>>>
+24206c24045
+< @ <DEFTEMP 7, <GLOBAL _call>>
+---
+> @ <DEFTEMP 8, <GLOBAL _call>>
+24208c24047
+< @ <STOREW, <TEMP 6>, <TEMP 7>>
+---
+> @ <STOREW, <TEMP 7>, <TEMP 8>>
+24211c24050
+< @ <DEFTEMP 8, <LOADW, <TEMP 2>>>
+---
+> @ <DEFTEMP 9, <LOADW, <TEMP 2>>>
+24213c24052
+< @ <DEFTEMP 9, <OFFSET, <TEMP 1>, <LSL, <TEMP 8>, <CONST 2>>>>
+---
+> @ <DEFTEMP 10, <OFFSET, <TEMP 1>, <LSL, <TEMP 9>, <CONST 2>>>>
+24215c24054
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 8>>>, <GLOBAL _prok>>
+---
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 10>, <CONST 8>>>, <GLOBAL _prok>>
+24219c24058
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 16>>>, <GLOBAL _gsp>>
+---
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 10>, <CONST 16>>>, <GLOBAL _gsp>>
+24224c24063
+< @ <STOREW, <MINUS, <TEMP 8>, <CONST 1>>, <GLOBAL _lsp>>
+---
+> @ <STOREW, <MINUS, <TEMP 9>, <CONST 1>>, <GLOBAL _lsp>>
+24228c24067
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 12>>>, <TEMP 2>>
+---
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 10>, <CONST 12>>>, <TEMP 2>>
+24253c24092
+< @ <ARG 1, <LOADW, <TEMP 5>>>
+---
+> @ <ARG 1, <LOADW, <TEMP 6>>>
+24255c24094
+< @ <ARG 0, <LOADW, <TEMP 7>>>
+---
+> @ <ARG 0, <LOADW, <TEMP 8>>>
+24592c24431
+< @ Node @5427 = LOADC [@5426(0)]
+---
+> @ Node @5427 = LOADC [@5426(1)]
+24611c24450
+< @ Node @5446 = LOADW [@5445(0)]
+---
+> @ Node @5446 = LOADW [@5445(1)]
+24621c24460
+< @ Node @5456 = LOADW [@5455(0)]
+---
+> @ Node @5456 = LOADW [@5455(1)]
+24636c24475
+< @ Node @5471 = ARG 1 [@5443(1)]
+---
+> @ Node @5471 = ARG 1 [@5443(2)]
+24644c24483
+< @ Node @5479 = ARG 2 [@5443(2)]
+---
+> @ Node @5479 = ARG 2 [@5443(3)]
+24659,24660c24498,24499
+< @ Node @5494 = LOADW [@5493(0)]
+< @ Node @5495 = LSL [@5494(1), @5492(1)]
+---
+> @ Node @5494 = LOADW [@5493(1)]
+> @ Node @5495 = LSL [@5494(1), @5492(2)]
+24664c24503
+< @ Node @5499 = LOADW [@5498(0)]
+---
+> @ Node @5499 = LOADW [@5498(1)]
+24669c24508
+< @ Node @5504 = LOADW [@5503(0)]
+---
+> @ Node @5504 = LOADW [@5503(1)]
+24686c24525
+< @ Node @5521 = LOADC [@5520(0)]
+---
+> @ Node @5521 = LOADC [@5520(1)]
+24693,24695c24532,24534
+< @ Node @5528 = OFFSET [@5527(1), @5492(2)]
+< @ Node @5529 = LOADW [@5528(0)]
+< @ Node @5530 = LSL [@5529(1), @5492(2)]
+---
+> @ Node @5528 = OFFSET [@5527(1), @5492(3)]
+> @ Node @5529 = LOADW [@5528(1)]
+> @ Node @5530 = LSL [@5529(1), @5492(4)]
+24697c24536
+< @ Node @5532 = LOADW [@5531(0)]
+---
+> @ Node @5532 = LOADW [@5531(1)]
+24717,24718c24556,24557
+< @ Node @5552 = LOADW [@5551(0)]
+< @ Node @5553 = LSL [@5552(1), @5550(1)]
+---
+> @ Node @5552 = LOADW [@5551(1)]
+> @ Node @5553 = LSL [@5552(1), @5550(2)]
+24722c24561
+< @ Node @5557 = LOADW [@5556(0)]
+---
+> @ Node @5557 = LOADW [@5556(1)]
+24726c24565
+< @ Node @5561 = LOADW [@5560(0)]
+---
+> @ Node @5561 = LOADW [@5560(1)]
+25236c25075
+< @ Node @5591 = LOADW [@5590(0)]
+---
+> @ Node @5591 = LOADW [@5590(1)]
+25240c25079
+< @ Node @5595 = LOADW [@5594(0)]
+---
+> @ Node @5595 = LOADW [@5594(1)]
+25245c25084
+< @ Node @5600 = LOADW [@5599(0)]
+---
+> @ Node @5600 = LOADW [@5599(1)]
+25248c25087
+< @ Node @5603 = LOADW [@5602(0)]
+---
+> @ Node @5603 = LOADW [@5602(1)]
+25251c25090
+< @ Node @5606 = LOADW [@5605(0)]
+---
+> @ Node @5606 = LOADW [@5605(1)]
+25254c25093
+< @ Node @5609 = LOADW [@5608(0)]
+---
+> @ Node @5609 = LOADW [@5608(1)]
+25264c25103
+< @ Node @5619 = LOADW [@5618(0)]
+---
+> @ Node @5619 = LOADW [@5618(1)]
+25270c25109
+< @ Node @5625 = LOADW [@5605(1)]
+---
+> @ Node @5625 = LOADW [@5605(2)]
+25273c25112
+< @ Node @5628 = LOADW [@5627(0)]
+---
+> @ Node @5628 = LOADW [@5627(1)]
+25278c25117
+< @ Node @5633 = LOADW [@5599(1)]
+---
+> @ Node @5633 = LOADW [@5599(2)]
+25283c25122
+< @ Node @5638 = LOADC [@5637(0)]
+---
+> @ Node @5638 = LOADC [@5637(1)]
+25624,25625c25463,25464
+< @ Node @5707 = LOADW [@5706(0)]
+< @ Node @5708 = LSL [@5707(1), @5705(1)]
+---
+> @ Node @5707 = LOADW [@5706(1)]
+> @ Node @5708 = LSL [@5707(1), @5705(2)]
+25627,25628c25466,25467
+< @ Node @5710 = OFFSET [@5709(1), @5705(2)]
+< @ Node @5711 = LOADW [@5710(0)]
+---
+> @ Node @5710 = OFFSET [@5709(1), @5705(3)]
+> @ Node @5711 = LOADW [@5710(1)]
+25648c25487
+< @ Node @5731 = LOADW [@5730(0)]
+---
+> @ Node @5731 = LOADW [@5730(1)]
+25658,25659c25497,25498
+< @ Node @5741 = LOADW [@5740(0)]
+< @ Node @5742 = STOREW [@5736(1), @5740(0), @5741(1)]
+---
+> @ Node @5741 = LOADW [@5740(1)]
+> @ Node @5742 = STOREW [@5736(1), @5740(1), @5741(1)]
+25829,25830c25668,25669
+< @ Node @5765 = LOADW [@5764(0)]
+< @ Node @5766 = STOREW [@5758(1), @5764(0), @5765(1)]
+---
+> @ Node @5765 = LOADW [@5764(1)]
+> @ Node @5766 = STOREW [@5758(1), @5764(1), @5765(1)]
+25962c25801
+< @ Node @5778 = LOADW [@5777(0)]
+---
+> @ Node @5778 = LOADW [@5777(1)]
+25964c25803
+< @ Node @5780 = LOADW [@5779(0)]
+---
+> @ Node @5780 = LOADW [@5779(1)]
+25969c25808
+< @ Node @5785 = LOADW [@5784(0)]
+---
+> @ Node @5785 = LOADW [@5784(1)]
+25977c25816
+< @ Node @5793 = LOADW [@5792(0)]
+---
+> @ Node @5793 = LOADW [@5792(1)]
+25986c25825
+< @ Node @5802 = LOADW [@5799(1)]
+---
+> @ Node @5802 = LOADW [@5799(2)]
+26195c26034
+< @ Node @5814 = LOADW [@5813(0)]
+---
+> @ Node @5814 = LOADW [@5813(1)]
+26199c26038
+< @ Node @5818 = LOADW [@5817(0)]
+---
+> @ Node @5818 = LOADW [@5817(1)]
+26220c26059
+< @ Node @5839 = LOADC [@5838(0)]
+---
+> @ Node @5839 = LOADC [@5838(1)]
+26238c26077
+< @ Node @5857 = LOADW [@5856(0)]
+---
+> @ Node @5857 = LOADW [@5856(1)]
+26246,26247c26085,26086
+< @ Node @5865 = OFFSET [@5864(1), @5855(1)]
+< @ Node @5866 = LOADW [@5865(0)]
+---
+> @ Node @5865 = OFFSET [@5864(1), @5855(2)]
+> @ Node @5866 = LOADW [@5865(1)]
+26255,26256c26094,26095
+< @ Node @5874 = LOADW [@5873(0)]
+< @ Node @5875 = STOREW [@5868(1), @5873(0), @5874(1)]
+---
+> @ Node @5874 = LOADW [@5873(1)]
+> @ Node @5875 = STOREW [@5868(1), @5873(1), @5874(1)]
+26261c26100
+< @ Node @5880 = LOADW [@5879(0)]
+---
+> @ Node @5880 = LOADW [@5879(1)]
+26631c26470
+< @ Node @5893 = LOADW [@5892(0)]
+---
+> @ Node @5893 = LOADW [@5892(1)]
+26635c26474
+< @ Node @5897 = LOADW [@5896(0)]
+---
+> @ Node @5897 = LOADW [@5896(1)]
+26656c26495
+< @ Node @5918 = LOADC [@5917(0)]
+---
+> @ Node @5918 = LOADC [@5917(1)]
+26676c26515
+< @ Node @5938 = LOADW [@5932(1)]
+---
+> @ Node @5938 = LOADW [@5932(2)]
+26679c26518
+< @ Node @5941 = LOADW [@5940(0)]
+---
+> @ Node @5941 = LOADW [@5940(1)]
+26686c26525
+< @ Node @5948 = LOADW [@5947(0)]
+---
+> @ Node @5948 = LOADW [@5947(1)]
+26692,26693c26531,26532
+< @ Node @5954 = OFFSET [@5953(1), @5946(1)]
+< @ Node @5955 = LOADW [@5954(0)]
+---
+> @ Node @5954 = OFFSET [@5953(1), @5946(2)]
+> @ Node @5955 = LOADW [@5954(1)]
+26701,26702c26540,26541
+< @ Node @5963 = LOADW [@5962(0)]
+< @ Node @5964 = STOREW [@5957(1), @5962(0), @5963(1)]
+---
+> @ Node @5963 = LOADW [@5962(1)]
+> @ Node @5964 = STOREW [@5957(1), @5962(1), @5963(1)]
+26707c26546
+< @ Node @5969 = LOADW [@5968(0)]
+---
+> @ Node @5969 = LOADW [@5968(1)]
+26719,26720c26558,26559
+< @ Node @5981 = LOADW [@5980(0)]
+< @ Node @5982 = LOADW [@5940(1)]
+---
+> @ Node @5981 = LOADW [@5980(1)]
+> @ Node @5982 = LOADW [@5940(2)]
+26722,26724c26561,26563
+< @ Node @5984 = OFFSET [@5978(2), @5946(1)]
+< @ Node @5985 = LOADW [@5984(0)]
+< @ Node @5986 = LOADW [@5936(2)]
+---
+> @ Node @5984 = OFFSET [@5978(2), @5946(3)]
+> @ Node @5985 = LOADW [@5984(1)]
+> @ Node @5986 = LOADW [@5936(3)]
+26731c26570
+< @ Node @5993 = LOADW [@5978(2)]
+---
+> @ Node @5993 = LOADW [@5978(3)]
+26733c26572
+< @ Node @5995 = LOADW [@5968(1)]
+---
+> @ Node @5995 = LOADW [@5968(2)]
+26750c26589
+< @ Sharing @5950(4) as temp 5
+---
+> @ Sharing @5950(3) as temp 5
+26753,26754c26592
+< @ Sharing @5976(2) as temp 8
+< @ Sharing @5978(2) as temp 9
+---
+> @ Sharing @5978(3) as temp 8
+26814,26817c26652,26654
+< @ <DEFTEMP 8, <LOADW, <TEMP 1>>>
+< @ <DEFTEMP 9, <OFFSET, <TEMP 5>, <LSL, <TEMP 8>, <CONST 2>>>>
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 12>>>, <TEMP 4>>
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 4>>>, <TEMP 2>>
+---
+> @ <DEFTEMP 8, <OFFSET, <TEMP 5>, <LSL, <LOADW, <TEMP 1>>, <CONST 2>>>>
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 8>, <CONST 12>>>, <TEMP 4>>
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 8>, <CONST 4>>>, <TEMP 2>>
+26821c26658
+< @ <STOREW, <PLUS, <LOADW, <TEMP 9>>, <CONST 1>>, <TEMP 7>>
+---
+> @ <STOREW, <PLUS, <LOADW, <TEMP 8>>, <CONST 1>>, <TEMP 7>>
+26937,26941c26774,26777
+< @ <DEFTEMP 8, <LOADW, <TEMP 1>>>
+< 	ldr r5, [r5]
+< @ <DEFTEMP 9, <OFFSET, <TEMP 5>, <LSL, <TEMP 8>, <CONST 2>>>>
+< 	add r5, r9, r5, LSL #2
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 12>>>, <TEMP 4>>
+---
+> @ <DEFTEMP 8, <OFFSET, <TEMP 5>, <LSL, <LOADW, <TEMP 1>>, <CONST 2>>>>
+> 	ldr r0, [r5]
+> 	add r5, r9, r0, LSL #2
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 8>, <CONST 12>>>, <TEMP 4>>
+26944c26780
+< @ <STOREW, <LOADW, <OFFSET, <TEMP 9>, <CONST 4>>>, <TEMP 2>>
+---
+> @ <STOREW, <LOADW, <OFFSET, <TEMP 8>, <CONST 4>>>, <TEMP 2>>
+26954c26790
+< @ <STOREW, <PLUS, <LOADW, <TEMP 9>>, <CONST 1>>, <TEMP 7>>
+---
+> @ <STOREW, <PLUS, <LOADW, <TEMP 8>>, <CONST 1>>, <TEMP 7>>
+27464c27300
+< @ Node @6020 = LOADW [@6019(0)]
+---
+> @ Node @6020 = LOADW [@6019(1)]
+27468c27304
+< @ Node @6024 = LOADW [@6023(0)]
+---
+> @ Node @6024 = LOADW [@6023(1)]
+27471c27307
+< @ Node @6027 = JNEQ L785 [@6026(1), @6021(1)]
+---
+> @ Node @6027 = JNEQ L785 [@6026(1), @6021(2)]
+27473,27474c27309,27310
+< @ Node @6029 = LOADW [@6028(0)]
+< @ Node @6030 = LSL [@6029(1), @6021(2)]
+---
+> @ Node @6029 = LOADW [@6028(1)]
+> @ Node @6030 = LSL [@6029(1), @6021(3)]
+27476,27478c27312,27314
+< @ Node @6032 = LOADW [@6031(0)]
+< @ Node @6033 = LSR [@6032(1), @6025(2)]
+< @ Node @6034 = JNEQ L785 [@6033(1), @6021(2)]
+---
+> @ Node @6032 = LOADW [@6031(1)]
+> @ Node @6033 = LSR [@6032(1), @6025(3)]
+> @ Node @6034 = JNEQ L785 [@6033(1), @6021(4)]
+27483c27319
+< @ Node @6039 = LOADW [@6038(0)]
+---
+> @ Node @6039 = LOADW [@6038(1)]
+27489,27492c27325,27328
+< @ Node @6045 = OFFSET [@6023(1), @6018(1)]
+< @ Node @6046 = LOADW [@6045(0)]
+< @ Node @6047 = OFFSET [@6031(1), @6018(1)]
+< @ Node @6048 = LOADW [@6047(0)]
+---
+> @ Node @6045 = OFFSET [@6023(2), @6018(2)]
+> @ Node @6046 = LOADW [@6045(1)]
+> @ Node @6047 = OFFSET [@6031(2), @6018(3)]
+> @ Node @6048 = LOADW [@6047(1)]
+27507c27343
+< @ Node @6063 = LOADW [@6062(0)]
+---
+> @ Node @6063 = LOADW [@6062(1)]
+27511c27347
+< @ Node @6067 = LOADW [@6066(0)]
+---
+> @ Node @6067 = LOADW [@6066(1)]
+27514c27350
+< @ Node @6070 = JNEQ L788 [@6069(1), @6064(1)]
+---
+> @ Node @6070 = JNEQ L788 [@6069(1), @6064(2)]
+27517,27518c27353,27354
+< @ Node @6073 = LOADW [@6072(0)]
+< @ Node @6074 = LSL [@6073(1), @6064(2)]
+---
+> @ Node @6073 = LOADW [@6072(1)]
+> @ Node @6074 = LSL [@6073(1), @6064(3)]
+27520c27356
+< @ Node @6076 = LOADW [@6075(0)]
+---
+> @ Node @6076 = LOADW [@6075(1)]
+27522c27358
+< @ Node @6078 = JNEQ L788 [@6077(1), @6064(2)]
+---
+> @ Node @6078 = JNEQ L788 [@6077(1), @6064(4)]
+27524,27527c27360,27363
+< @ Node @6080 = OFFSET [@6066(1), @6061(1)]
+< @ Node @6081 = LOADW [@6080(0)]
+< @ Node @6082 = OFFSET [@6075(1), @6061(1)]
+< @ Node @6083 = LOADW [@6082(0)]
+---
+> @ Node @6080 = OFFSET [@6066(2), @6061(2)]
+> @ Node @6081 = LOADW [@6080(1)]
+> @ Node @6082 = OFFSET [@6075(2), @6061(3)]
+> @ Node @6083 = LOADW [@6082(1)]
+27532c27368
+< @ Node @6088 = LOADW [@6087(0)]
+---
+> @ Node @6088 = LOADW [@6087(1)]
+27554c27390
+< @ Node @6110 = LOADW [@6109(0)]
+---
+> @ Node @6110 = LOADW [@6109(1)]
+27558,27560c27394,27396
+< @ Node @6114 = LOADW [@6113(0)]
+< @ Node @6115 = LSR [@6114(1), @6108(1)]
+< @ Node @6116 = JNEQ L791 [@6115(1), @6111(1)]
+---
+> @ Node @6114 = LOADW [@6113(1)]
+> @ Node @6115 = LSR [@6114(1), @6108(2)]
+> @ Node @6116 = JNEQ L791 [@6115(1), @6111(2)]
+27563,27564c27399,27400
+< @ Node @6119 = LOADW [@6118(0)]
+< @ Node @6120 = LSL [@6119(1), @6111(2)]
+---
+> @ Node @6119 = LOADW [@6118(1)]
+> @ Node @6120 = LSL [@6119(1), @6111(3)]
+27566,27568c27402,27404
+< @ Node @6122 = LOADW [@6121(0)]
+< @ Node @6123 = LSR [@6122(1), @6108(2)]
+< @ Node @6124 = JNEQ L791 [@6123(1), @6111(2)]
+---
+> @ Node @6122 = LOADW [@6121(1)]
+> @ Node @6123 = LSR [@6122(1), @6108(3)]
+> @ Node @6124 = JNEQ L791 [@6123(1), @6111(4)]
+27571,27574c27407,27410
+< @ Node @6127 = OFFSET [@6113(1), @6126(1)]
+< @ Node @6128 = LOADW [@6127(0)]
+< @ Node @6129 = OFFSET [@6121(1), @6126(1)]
+< @ Node @6130 = LOADW [@6129(0)]
+---
+> @ Node @6127 = OFFSET [@6113(2), @6126(1)]
+> @ Node @6128 = LOADW [@6127(1)]
+> @ Node @6129 = OFFSET [@6121(2), @6126(2)]
+> @ Node @6130 = LOADW [@6129(1)]
+27578,27579c27414,27415
+< @ Node @6134 = OFFSET [@6107(3), @6126(1)]
+< @ Node @6135 = LOADW [@6134(0)]
+---
+> @ Node @6134 = OFFSET [@6107(3), @6126(3)]
+> @ Node @6135 = LOADW [@6134(1)]
+27612c27448
+< @ Node @6168 = LOADC [@6167(0)]
+---
+> @ Node @6168 = LOADC [@6167(1)]
+27620c27456
+< @ Node @6176 = LOADW [@6172(1)]
+---
+> @ Node @6176 = LOADW [@6172(2)]
+27628,27642c27464,27484
+< @ Sharing @6051(1) as temp 3
+< @ Sharing @6054(1) as temp 4
+< @ Sharing @6059(2) as temp 5
+< @ Sharing @6060(3) as temp 6
+< @ Sharing @6081(2) as temp 7
+< @ Sharing @6083(2) as temp 8
+< @ Sharing @6096(1) as temp 9
+< @ Sharing @6100(1) as temp 10
+< @ Sharing @6106(2) as temp 11
+< @ Sharing @6107(3) as temp 12
+< @ Sharing @6128(2) as temp 13
+< @ Sharing @6130(2) as temp 14
+< @ Sharing @6143(1) as temp 15
+< @ Sharing @6147(1) as temp 16
+< @ Sharing @6172(2) as temp 17
+---
+> @ Sharing @6023(2) as temp 3
+> @ Sharing @6031(2) as temp 4
+> @ Sharing @6051(1) as temp 5
+> @ Sharing @6054(1) as temp 6
+> @ Sharing @6059(2) as temp 7
+> @ Sharing @6060(3) as temp 8
+> @ Sharing @6066(2) as temp 9
+> @ Sharing @6075(2) as temp 10
+> @ Sharing @6081(2) as temp 11
+> @ Sharing @6083(2) as temp 12
+> @ Sharing @6096(1) as temp 13
+> @ Sharing @6100(1) as temp 14
+> @ Sharing @6106(2) as temp 15
+> @ Sharing @6107(3) as temp 16
+> @ Sharing @6113(2) as temp 17
+> @ Sharing @6121(2) as temp 18
+> @ Sharing @6128(2) as temp 19
+> @ Sharing @6130(2) as temp 20
+> @ Sharing @6143(1) as temp 21
+> @ Sharing @6147(1) as temp 22
+> @ Sharing @6172(2) as temp 23
+27651,27667d27492
+< @ <JNEQ L785,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @ <JNEQ L785,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @     result := Unify(av[3], goalframe, NewInt(mem[av[1]+1] + mem[av[2]+1]), NULL)
+27668a27494,27504
+> @   <OFFSET,
+> @     <TEMP 1>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>>
+> @ <JNEQ L785, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 2>>
+> @ <DEFTEMP 4,
+> @   <OFFSET,
+> @     <TEMP 1>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>>
+> @ <JNEQ L785, <LSR, <LOADW, <TEMP 4>>, <CONST 8>>, <CONST 2>>
+> @     result := Unify(av[3], goalframe, NewInt(mem[av[1]+1] + mem[av[2]+1]), NULL)
+> @ <DEFTEMP 5,
+27673,27685c27509,27511
+< @         <LOADW,
+< @           <OFFSET,
+< @             <OFFSET,
+< @               <TEMP 1>,
+< @               <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>,
+< @             <CONST 4>>>,
+< @         <LOADW,
+< @           <OFFSET,
+< @             <OFFSET,
+< @               <TEMP 1>,
+< @               <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>,
+< @             <CONST 4>>>>>>>
+< @ <DEFTEMP 4,
+---
+> @         <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>,
+> @         <LOADW, <OFFSET, <TEMP 4>, <CONST 4>>>>>>>
+> @ <DEFTEMP 6,
+27690c27516
+< @     <ARG 2, <TEMP 3>>,
+---
+> @     <ARG 2, <TEMP 5>>,
+27692c27518
+< @ <STOREC, <TEMP 4>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 6>, <REGVAR 0>>
+27696,27730c27522,27523
+< @ <DEFTEMP 5, <GLOBAL _mem>>
+< @ <DEFTEMP 6, <GLOBAL _av>>
+< @ <JNEQ L788,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @ <JNEQ L788,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @     if mem[av[1]+1] <= mem[av[3]+1] then
+< @ <DEFTEMP 7,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< @ <DEFTEMP 8,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< @ <JGT L786, <TEMP 7>, <TEMP 8>>
+< @       result := Unify(av[2], goalframe, 
+---
+> @ <DEFTEMP 7, <GLOBAL _mem>>
+> @ <DEFTEMP 8, <GLOBAL _av>>
+27732c27525,27528
+< @   <CALL 1, <GLOBAL _NewInt>, <ARG 0, <MINUS, <TEMP 8>, <TEMP 7>>>>>
+---
+> @   <OFFSET,
+> @     <TEMP 7>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 8>, <CONST 4>>>, <CONST 2>>>>
+> @ <JNEQ L788, <LSR, <LOADW, <TEMP 9>>, <CONST 8>>, <CONST 2>>
+27733a27530,27541
+> @   <OFFSET,
+> @     <TEMP 7>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 8>, <CONST 12>>>, <CONST 2>>>>
+> @ <JNEQ L788, <LSR, <LOADW, <TEMP 10>>, <CONST 8>>, <CONST 2>>
+> @     if mem[av[1]+1] <= mem[av[3]+1] then
+> @ <DEFTEMP 11, <LOADW, <OFFSET, <TEMP 9>, <CONST 4>>>>
+> @ <DEFTEMP 12, <LOADW, <OFFSET, <TEMP 10>, <CONST 4>>>>
+> @ <JGT L786, <TEMP 11>, <TEMP 12>>
+> @       result := Unify(av[2], goalframe, 
+> @ <DEFTEMP 13,
+> @   <CALL 1, <GLOBAL _NewInt>, <ARG 0, <MINUS, <TEMP 12>, <TEMP 11>>>>>
+> @ <DEFTEMP 14,
+27736c27544
+< @     <ARG 0, <LOADW, <OFFSET, <TEMP 6>, <CONST 8>>>>,
+---
+> @     <ARG 0, <LOADW, <OFFSET, <TEMP 8>, <CONST 8>>>>,
+27738c27546
+< @     <ARG 2, <TEMP 9>>,
+---
+> @     <ARG 2, <TEMP 13>>,
+27740c27548
+< @ <STOREC, <TEMP 10>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 14>, <REGVAR 0>>
+27744,27761c27552,27563
+< @ <DEFTEMP 11, <GLOBAL _mem>>
+< @ <DEFTEMP 12, <GLOBAL _av>>
+< @ <JNEQ L791,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 11>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 12>, <CONST 8>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @ <JNEQ L791,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 11>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 12>, <CONST 12>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 15, <GLOBAL _mem>>
+> @ <DEFTEMP 16, <GLOBAL _av>>
+> @ <DEFTEMP 17,
+> @   <OFFSET,
+> @     <TEMP 15>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 16>, <CONST 8>>>, <CONST 2>>>>
+> @ <JNEQ L791, <LSR, <LOADW, <TEMP 17>>, <CONST 8>>, <CONST 2>>
+> @ <DEFTEMP 18,
+> @   <OFFSET,
+> @     <TEMP 15>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 16>, <CONST 12>>>, <CONST 2>>>>
+> @ <JNEQ L791, <LSR, <LOADW, <TEMP 18>>, <CONST 8>>, <CONST 2>>
+27763,27777c27565,27567
+< @ <DEFTEMP 13,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 11>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 12>, <CONST 8>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< @ <DEFTEMP 14,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 11>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 12>, <CONST 12>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< @ <JGT L786, <TEMP 13>, <TEMP 14>>
+---
+> @ <DEFTEMP 19, <LOADW, <OFFSET, <TEMP 17>, <CONST 4>>>>
+> @ <DEFTEMP 20, <LOADW, <OFFSET, <TEMP 18>, <CONST 4>>>>
+> @ <JGT L786, <TEMP 19>, <TEMP 20>>
+27779,27781c27569,27571
+< @ <DEFTEMP 15,
+< @   <CALL 1, <GLOBAL _NewInt>, <ARG 0, <MINUS, <TEMP 14>, <TEMP 13>>>>>
+< @ <DEFTEMP 16,
+---
+> @ <DEFTEMP 21,
+> @   <CALL 1, <GLOBAL _NewInt>, <ARG 0, <MINUS, <TEMP 20>, <TEMP 19>>>>>
+> @ <DEFTEMP 22,
+27784c27574
+< @     <ARG 0, <LOADW, <OFFSET, <TEMP 12>, <CONST 4>>>>,
+---
+> @     <ARG 0, <LOADW, <OFFSET, <TEMP 16>, <CONST 4>>>>,
+27786c27576
+< @     <ARG 2, <TEMP 15>>,
+---
+> @     <ARG 2, <TEMP 21>>,
+27788c27578
+< @ <STOREC, <TEMP 16>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 22>, <REGVAR 0>>
+27804,27805c27594,27595
+< @ <DEFTEMP 17, <GLOBAL _current>>
+< @ <STOREW, <PLUS, <LOADW, <TEMP 17>>, <CONST 1>>, <TEMP 17>>
+---
+> @ <DEFTEMP 23, <GLOBAL _current>>
+> @ <STOREW, <PLUS, <LOADW, <TEMP 23>>, <CONST 1>>, <TEMP 23>>
+27824,27831c27614,27617
+< @ <JNEQ L785,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 3,
+> @   <OFFSET,
+> @     <TEMP 1>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>>
+27833c27619,27621
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> 	add r7, r5, r0, LSL #2
+> @ <JNEQ L785, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r7]
+27837,27844c27625,27628
+< @ <JNEQ L785,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 4,
+> @   <OFFSET,
+> @     <TEMP 1>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>>
+27846c27630,27632
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> 	add r5, r5, r0, LSL #2
+> @ <JNEQ L785, <LSR, <LOADW, <TEMP 4>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r5]
+27853,27870c27639,27642
+< @     <LOADW,
+< @       <OFFSET,
+< @         <OFFSET,
+< @           <TEMP 1>,
+< @           <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>,
+< @         <CONST 4>>>,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <OFFSET,
+< @           <TEMP 1>,
+< @           <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>,
+< @         <CONST 4>>>>>
+< 	ldr r0, [r6, #4]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r0, [r0, #4]
+< 	ldr r1, [r6, #8]
+< 	add r1, r5, r1, LSL #2
+< 	ldr r1, [r1, #4]
+---
+> @     <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>,
+> @     <LOADW, <OFFSET, <TEMP 4>, <CONST 4>>>>>
+> 	ldr r0, [r7, #4]
+> 	ldr r1, [r5, #4]
+27872c27644
+< @ <DEFTEMP 3, <CALL 1, <GLOBAL _NewInt>>>
+---
+> @ <DEFTEMP 5, <CALL 1, <GLOBAL _NewInt>>>
+27876c27648
+< @ <ARG 2, <TEMP 3>>
+---
+> @ <ARG 2, <TEMP 5>>
+27883c27655
+< @ <DEFTEMP 4, <CALL 4, <GLOBAL _Unify>>>
+---
+> @ <DEFTEMP 6, <CALL 4, <GLOBAL _Unify>>>
+27885c27657
+< @ <STOREC, <TEMP 4>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 6>, <REGVAR 0>>
+27892c27664
+< @ <DEFTEMP 5, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 7, <GLOBAL _mem>>
+27894c27666
+< @ <DEFTEMP 6, <GLOBAL _av>>
+---
+> @ <DEFTEMP 8, <GLOBAL _av>>
+27896,27903c27668,27671
+< @ <JNEQ L788,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 9,
+> @   <OFFSET,
+> @     <TEMP 7>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 8>, <CONST 4>>>, <CONST 2>>>>
+27905c27673,27675
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> 	add r7, r5, r0, LSL #2
+> @ <JNEQ L788, <LSR, <LOADW, <TEMP 9>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r7]
+27909,27916c27679,27682
+< @ <JNEQ L788,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 10,
+> @   <OFFSET,
+> @     <TEMP 7>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 8>, <CONST 12>>>, <CONST 2>>>>
+27918c27684,27686
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> 	add r5, r5, r0, LSL #2
+> @ <JNEQ L788, <LSR, <LOADW, <TEMP 10>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r5]
+27923,27943c27691,27695
+< @ <DEFTEMP 7,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r6, #4]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r7, [r0, #4]
+< @ <DEFTEMP 8,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r6, #12]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r5, [r0, #4]
+< @ <JGT L786, <TEMP 7>, <TEMP 8>>
+---
+> @ <DEFTEMP 11, <LOADW, <OFFSET, <TEMP 9>, <CONST 4>>>>
+> 	ldr r7, [r7, #4]
+> @ <DEFTEMP 12, <LOADW, <OFFSET, <TEMP 10>, <CONST 4>>>>
+> 	ldr r5, [r5, #4]
+> @ <JGT L786, <TEMP 11>, <TEMP 12>>
+27947c27699
+< @ <ARG 0, <MINUS, <TEMP 8>, <TEMP 7>>>
+---
+> @ <ARG 0, <MINUS, <TEMP 12>, <TEMP 11>>>
+27949c27701
+< @ <DEFTEMP 9, <CALL 1, <GLOBAL _NewInt>>>
+---
+> @ <DEFTEMP 13, <CALL 1, <GLOBAL _NewInt>>>
+27953c27705
+< @ <ARG 2, <TEMP 9>>
+---
+> @ <ARG 2, <TEMP 13>>
+27958c27710
+< @ <ARG 0, <LOADW, <OFFSET, <TEMP 6>, <CONST 8>>>>
+---
+> @ <ARG 0, <LOADW, <OFFSET, <TEMP 8>, <CONST 8>>>>
+27960c27712
+< @ <DEFTEMP 10, <CALL 4, <GLOBAL _Unify>>>
+---
+> @ <DEFTEMP 14, <CALL 4, <GLOBAL _Unify>>>
+27962c27714
+< @ <STOREC, <TEMP 10>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 14>, <REGVAR 0>>
+27969c27721
+< @ <DEFTEMP 11, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 15, <GLOBAL _mem>>
+27971c27723
+< @ <DEFTEMP 12, <GLOBAL _av>>
+---
+> @ <DEFTEMP 16, <GLOBAL _av>>
+27973,27980c27725,27728
+< @ <JNEQ L791,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 11>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 12>, <CONST 8>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 17,
+> @   <OFFSET,
+> @     <TEMP 15>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 16>, <CONST 8>>>, <CONST 2>>>>
+27982c27730,27732
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> 	add r7, r5, r0, LSL #2
+> @ <JNEQ L791, <LSR, <LOADW, <TEMP 17>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r7]
+27986,27993c27736,27739
+< @ <JNEQ L791,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 11>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 12>, <CONST 12>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 18,
+> @   <OFFSET,
+> @     <TEMP 15>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 16>, <CONST 12>>>, <CONST 2>>>>
+27995c27741,27743
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> 	add r5, r5, r0, LSL #2
+> @ <JNEQ L791, <LSR, <LOADW, <TEMP 18>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r5]
+28000,28020c27748,27752
+< @ <DEFTEMP 13,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 11>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 12>, <CONST 8>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r6, #8]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r7, [r0, #4]
+< @ <DEFTEMP 14,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 11>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 12>, <CONST 12>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r6, #12]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r5, [r0, #4]
+< @ <JGT L786, <TEMP 13>, <TEMP 14>>
+---
+> @ <DEFTEMP 19, <LOADW, <OFFSET, <TEMP 17>, <CONST 4>>>>
+> 	ldr r7, [r7, #4]
+> @ <DEFTEMP 20, <LOADW, <OFFSET, <TEMP 18>, <CONST 4>>>>
+> 	ldr r5, [r5, #4]
+> @ <JGT L786, <TEMP 19>, <TEMP 20>>
+28024c27756
+< @ <ARG 0, <MINUS, <TEMP 14>, <TEMP 13>>>
+---
+> @ <ARG 0, <MINUS, <TEMP 20>, <TEMP 19>>>
+28026c27758
+< @ <DEFTEMP 15, <CALL 1, <GLOBAL _NewInt>>>
+---
+> @ <DEFTEMP 21, <CALL 1, <GLOBAL _NewInt>>>
+28030c27762
+< @ <ARG 2, <TEMP 15>>
+---
+> @ <ARG 2, <TEMP 21>>
+28035c27767
+< @ <ARG 0, <LOADW, <OFFSET, <TEMP 12>, <CONST 4>>>>
+---
+> @ <ARG 0, <LOADW, <OFFSET, <TEMP 16>, <CONST 4>>>>
+28037c27769
+< @ <DEFTEMP 16, <CALL 4, <GLOBAL _Unify>>>
+---
+> @ <DEFTEMP 22, <CALL 4, <GLOBAL _Unify>>>
+28039c27771
+< @ <STOREC, <TEMP 16>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 22>, <REGVAR 0>>
+28067c27799
+< @ <DEFTEMP 17, <GLOBAL _current>>
+---
+> @ <DEFTEMP 23, <GLOBAL _current>>
+28069c27801
+< @ <STOREW, <PLUS, <LOADW, <TEMP 17>>, <CONST 1>>, <TEMP 17>>
+---
+> @ <STOREW, <PLUS, <LOADW, <TEMP 23>>, <CONST 1>>, <TEMP 23>>
+28659c28391
+< @ Node @6194 = LOADW [@6193(0)]
+---
+> @ Node @6194 = LOADW [@6193(1)]
+28663c28395
+< @ Node @6198 = LOADW [@6197(0)]
+---
+> @ Node @6198 = LOADW [@6197(1)]
+28666c28398
+< @ Node @6201 = JNEQ L804 [@6200(1), @6195(1)]
+---
+> @ Node @6201 = JNEQ L804 [@6200(1), @6195(2)]
+28668,28669c28400,28401
+< @ Node @6203 = LOADW [@6202(0)]
+< @ Node @6204 = LSL [@6203(1), @6195(2)]
+---
+> @ Node @6203 = LOADW [@6202(1)]
+> @ Node @6204 = LSL [@6203(1), @6195(3)]
+28671,28673c28403,28405
+< @ Node @6206 = LOADW [@6205(0)]
+< @ Node @6207 = LSR [@6206(1), @6199(2)]
+< @ Node @6208 = JNEQ L804 [@6207(1), @6195(2)]
+---
+> @ Node @6206 = LOADW [@6205(1)]
+> @ Node @6207 = LSR [@6206(1), @6199(3)]
+> @ Node @6208 = JNEQ L804 [@6207(1), @6195(4)]
+28678c28410
+< @ Node @6213 = LOADW [@6212(0)]
+---
+> @ Node @6213 = LOADW [@6212(1)]
+28684,28687c28416,28419
+< @ Node @6219 = OFFSET [@6197(1), @6192(1)]
+< @ Node @6220 = LOADW [@6219(0)]
+< @ Node @6221 = OFFSET [@6205(1), @6192(1)]
+< @ Node @6222 = LOADW [@6221(0)]
+---
+> @ Node @6219 = OFFSET [@6197(2), @6192(2)]
+> @ Node @6220 = LOADW [@6219(1)]
+> @ Node @6221 = OFFSET [@6205(2), @6192(3)]
+> @ Node @6222 = LOADW [@6221(1)]
+28702c28434
+< @ Node @6237 = LOADW [@6236(0)]
+---
+> @ Node @6237 = LOADW [@6236(1)]
+28706c28438
+< @ Node @6241 = LOADW [@6240(0)]
+---
+> @ Node @6241 = LOADW [@6240(1)]
+28709c28441
+< @ Node @6244 = JNEQ L807 [@6243(1), @6238(1)]
+---
+> @ Node @6244 = JNEQ L807 [@6243(1), @6238(2)]
+28712,28713c28444,28445
+< @ Node @6247 = LOADW [@6246(0)]
+< @ Node @6248 = LSL [@6247(1), @6238(2)]
+---
+> @ Node @6247 = LOADW [@6246(1)]
+> @ Node @6248 = LSL [@6247(1), @6238(3)]
+28715c28447
+< @ Node @6250 = LOADW [@6249(0)]
+---
+> @ Node @6250 = LOADW [@6249(1)]
+28717c28449
+< @ Node @6252 = JNEQ L807 [@6251(1), @6238(2)]
+---
+> @ Node @6252 = JNEQ L807 [@6251(1), @6238(4)]
+28719,28720c28451,28452
+< @ Node @6254 = OFFSET [@6240(1), @6235(1)]
+< @ Node @6255 = LOADW [@6254(0)]
+---
+> @ Node @6254 = OFFSET [@6240(2), @6235(2)]
+> @ Node @6255 = LOADW [@6254(1)]
+28725,28726c28457,28458
+< @ Node @6260 = OFFSET [@6249(1), @6235(1)]
+< @ Node @6261 = LOADW [@6260(0)]
+---
+> @ Node @6260 = OFFSET [@6249(2), @6235(3)]
+> @ Node @6261 = LOADW [@6260(1)]
+28734c28466
+< @ Node @6269 = LOADW [@6268(0)]
+---
+> @ Node @6269 = LOADW [@6268(1)]
+28741,28742c28473,28474
+< @ Node @6276 = LOADW [@6246(0)]
+< @ Node @6277 = LSL [@6276(1), @6238(3)]
+---
+> @ Node @6276 = LOADW [@6246(2)]
+> @ Node @6277 = LSL [@6276(1), @6238(5)]
+28744,28745c28476,28477
+< @ Node @6279 = OFFSET [@6278(1), @6235(1)]
+< @ Node @6280 = LOADW [@6279(0)]
+---
+> @ Node @6279 = OFFSET [@6278(1), @6235(4)]
+> @ Node @6280 = LOADW [@6279(1)]
+28747,28748c28479,28480
+< @ Node @6282 = LOADW [@6236(0)]
+< @ Node @6283 = LSL [@6282(1), @6238(4)]
+---
+> @ Node @6282 = LOADW [@6236(2)]
+> @ Node @6283 = LSL [@6282(1), @6238(6)]
+28750,28751c28482,28483
+< @ Node @6285 = OFFSET [@6284(1), @6235(1)]
+< @ Node @6286 = LOADW [@6285(0)]
+---
+> @ Node @6285 = OFFSET [@6284(1), @6235(5)]
+> @ Node @6286 = LOADW [@6285(1)]
+28768c28500
+< @ Node @6303 = LOADW [@6302(0)]
+---
+> @ Node @6303 = LOADW [@6302(1)]
+28772,28774c28504,28506
+< @ Node @6307 = LOADW [@6306(0)]
+< @ Node @6308 = LSR [@6307(1), @6301(1)]
+< @ Node @6309 = JNEQ L810 [@6308(1), @6304(1)]
+---
+> @ Node @6307 = LOADW [@6306(1)]
+> @ Node @6308 = LSR [@6307(1), @6301(2)]
+> @ Node @6309 = JNEQ L810 [@6308(1), @6304(2)]
+28777,28778c28509,28510
+< @ Node @6312 = LOADW [@6311(0)]
+< @ Node @6313 = LSL [@6312(1), @6304(2)]
+---
+> @ Node @6312 = LOADW [@6311(1)]
+> @ Node @6313 = LSL [@6312(1), @6304(3)]
+28780,28782c28512,28514
+< @ Node @6315 = LOADW [@6314(0)]
+< @ Node @6316 = LSR [@6315(1), @6301(2)]
+< @ Node @6317 = JNEQ L810 [@6316(1), @6304(2)]
+---
+> @ Node @6315 = LOADW [@6314(1)]
+> @ Node @6316 = LSR [@6315(1), @6301(3)]
+> @ Node @6317 = JNEQ L810 [@6316(1), @6304(4)]
+28785,28786c28517,28518
+< @ Node @6320 = OFFSET [@6306(1), @6319(1)]
+< @ Node @6321 = LOADW [@6320(0)]
+---
+> @ Node @6320 = OFFSET [@6306(2), @6319(1)]
+> @ Node @6321 = LOADW [@6320(1)]
+28791,28792c28523,28524
+< @ Node @6326 = OFFSET [@6314(1), @6319(1)]
+< @ Node @6327 = LOADW [@6326(0)]
+---
+> @ Node @6326 = OFFSET [@6314(2), @6319(2)]
+> @ Node @6327 = LOADW [@6326(1)]
+28799,28800c28531,28532
+< @ Node @6334 = OFFSET [@6300(3), @6319(1)]
+< @ Node @6335 = LOADW [@6334(0)]
+---
+> @ Node @6334 = OFFSET [@6300(3), @6319(3)]
+> @ Node @6335 = LOADW [@6334(1)]
+28807,28808c28539,28540
+< @ Node @6342 = LOADW [@6311(0)]
+< @ Node @6343 = LSL [@6342(1), @6304(3)]
+---
+> @ Node @6342 = LOADW [@6311(2)]
+> @ Node @6343 = LSL [@6342(1), @6304(5)]
+28810,28811c28542,28543
+< @ Node @6345 = OFFSET [@6344(1), @6319(1)]
+< @ Node @6346 = LOADW [@6345(0)]
+---
+> @ Node @6345 = OFFSET [@6344(1), @6319(4)]
+> @ Node @6346 = LOADW [@6345(1)]
+28813,28814c28545,28546
+< @ Node @6348 = LOADW [@6302(0)]
+< @ Node @6349 = LSL [@6348(1), @6304(4)]
+---
+> @ Node @6348 = LOADW [@6302(2)]
+> @ Node @6349 = LSL [@6348(1), @6304(6)]
+28816,28817c28548,28549
+< @ Node @6351 = OFFSET [@6350(1), @6319(1)]
+< @ Node @6352 = LOADW [@6351(0)]
+---
+> @ Node @6351 = OFFSET [@6350(1), @6319(5)]
+> @ Node @6352 = LOADW [@6351(1)]
+28845c28577
+< @ Node @6380 = LOADC [@6379(0)]
+---
+> @ Node @6380 = LOADC [@6379(1)]
+28853c28585
+< @ Node @6388 = LOADW [@6384(1)]
+---
+> @ Node @6388 = LOADW [@6384(2)]
+28861,28877c28593,28619
+< @ Sharing @6225(1) as temp 3
+< @ Sharing @6228(1) as temp 4
+< @ Sharing @6233(4) as temp 5
+< @ Sharing @6234(5) as temp 6
+< @ Sharing @6255(2) as temp 7
+< @ Sharing @6264(1) as temp 8
+< @ Sharing @6288(1) as temp 9
+< @ Sharing @6290(1) as temp 10
+< @ Sharing @6293(1) as temp 11
+< @ Sharing @6299(4) as temp 12
+< @ Sharing @6300(5) as temp 13
+< @ Sharing @6321(2) as temp 14
+< @ Sharing @6330(1) as temp 15
+< @ Sharing @6354(1) as temp 16
+< @ Sharing @6356(1) as temp 17
+< @ Sharing @6359(1) as temp 18
+< @ Sharing @6384(2) as temp 19
+---
+> @ Sharing @6197(2) as temp 3
+> @ Sharing @6205(2) as temp 4
+> @ Sharing @6225(1) as temp 5
+> @ Sharing @6228(1) as temp 6
+> @ Sharing @6233(4) as temp 7
+> @ Sharing @6234(3) as temp 8
+> @ Sharing @6236(2) as temp 9
+> @ Sharing @6240(2) as temp 10
+> @ Sharing @6246(2) as temp 11
+> @ Sharing @6249(2) as temp 12
+> @ Sharing @6255(2) as temp 13
+> @ Sharing @6264(1) as temp 14
+> @ Sharing @6288(1) as temp 15
+> @ Sharing @6290(1) as temp 16
+> @ Sharing @6293(1) as temp 17
+> @ Sharing @6299(4) as temp 18
+> @ Sharing @6300(3) as temp 19
+> @ Sharing @6302(2) as temp 20
+> @ Sharing @6306(2) as temp 21
+> @ Sharing @6311(2) as temp 22
+> @ Sharing @6314(2) as temp 23
+> @ Sharing @6321(2) as temp 24
+> @ Sharing @6330(1) as temp 25
+> @ Sharing @6354(1) as temp 26
+> @ Sharing @6356(1) as temp 27
+> @ Sharing @6359(1) as temp 28
+> @ Sharing @6384(2) as temp 29
+28886,28902d28627
+< @ <JNEQ L804,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @ <JNEQ L804,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @     result := Unify(av[3], goalframe, 
+28903a28629,28639
+> @   <OFFSET,
+> @     <TEMP 1>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>>
+> @ <JNEQ L804, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 2>>
+> @ <DEFTEMP 4,
+> @   <OFFSET,
+> @     <TEMP 1>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>>
+> @ <JNEQ L804, <LSR, <LOADW, <TEMP 4>>, <CONST 8>>, <CONST 2>>
+> @     result := Unify(av[3], goalframe, 
+> @ <DEFTEMP 5,
+28908,28920c28644,28646
+< @         <LOADW,
+< @           <OFFSET,
+< @             <OFFSET,
+< @               <TEMP 1>,
+< @               <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>,
+< @             <CONST 4>>>,
+< @         <LOADW,
+< @           <OFFSET,
+< @             <OFFSET,
+< @               <TEMP 1>,
+< @               <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>,
+< @             <CONST 4>>>>>>>
+< @ <DEFTEMP 4,
+---
+> @         <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>,
+> @         <LOADW, <OFFSET, <TEMP 4>, <CONST 4>>>>>>>
+> @ <DEFTEMP 6,
+28925c28651
+< @     <ARG 2, <TEMP 3>>,
+---
+> @     <ARG 2, <TEMP 5>>,
+28927c28653
+< @ <STOREC, <TEMP 4>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 6>, <REGVAR 0>>
+28931,28948c28657,28664
+< @ <DEFTEMP 5, <GLOBAL _mem>>
+< @ <DEFTEMP 6, <GLOBAL _av>>
+< @ <JNEQ L807,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @ <JNEQ L807,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 7, <GLOBAL _mem>>
+> @ <DEFTEMP 8, <GLOBAL _av>>
+> @ <DEFTEMP 9, <OFFSET, <TEMP 8>, <CONST 4>>>
+> @ <DEFTEMP 10, <OFFSET, <TEMP 7>, <LSL, <LOADW, <TEMP 9>>, <CONST 2>>>>
+> @ <JNEQ L807, <LSR, <LOADW, <TEMP 10>>, <CONST 8>>, <CONST 2>>
+> @ <DEFTEMP 11, <OFFSET, <TEMP 8>, <CONST 12>>>
+> @ <DEFTEMP 12, <OFFSET, <TEMP 7>, <LSL, <LOADW, <TEMP 11>>, <CONST 2>>>>
+> @ <JNEQ L807, <LSR, <LOADW, <TEMP 12>>, <CONST 8>>, <CONST 2>>
+28950,28957c28666,28667
+< @ <DEFTEMP 7,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< @ <JEQ L805, <TEMP 7>, <CONST 0>>
+---
+> @ <DEFTEMP 13, <LOADW, <OFFSET, <TEMP 10>, <CONST 4>>>>
+> @ <JEQ L805, <TEMP 13>, <CONST 0>>
+28959c28669
+< @ <DEFTEMP 8,
+---
+> @ <DEFTEMP 14,
+28962,28970c28672,28674
+< @     <ARG 0,
+< @       <LOADW,
+< @         <OFFSET,
+< @           <OFFSET,
+< @             <TEMP 5>,
+< @             <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>,
+< @           <CONST 4>>>>,
+< @     <ARG 1, <TEMP 7>>>>
+< @ <JNEQ L805, <TEMP 8>, <CONST 0>>
+---
+> @     <ARG 0, <LOADW, <OFFSET, <TEMP 12>, <CONST 4>>>>,
+> @     <ARG 1, <TEMP 13>>>>
+> @ <JNEQ L805, <TEMP 14>, <CONST 0>>
+28972c28676
+< @ <DEFTEMP 9,
+---
+> @ <DEFTEMP 15,
+28978,28980c28682
+< @           <OFFSET,
+< @             <TEMP 5>,
+< @             <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>,
+---
+> @           <OFFSET, <TEMP 7>, <LSL, <LOADW, <TEMP 11>>, <CONST 2>>>,
+28985,28987c28687
+< @           <OFFSET,
+< @             <TEMP 5>,
+< @             <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>,
+---
+> @           <OFFSET, <TEMP 7>, <LSL, <LOADW, <TEMP 9>>, <CONST 2>>>,
+28989,28990c28689,28690
+< @ <DEFTEMP 10, <CALL 1, <GLOBAL _NewInt>, <ARG 0, <TEMP 9>>>>
+< @ <DEFTEMP 11,
+---
+> @ <DEFTEMP 16, <CALL 1, <GLOBAL _NewInt>, <ARG 0, <TEMP 15>>>>
+> @ <DEFTEMP 17,
+28993c28693
+< @     <ARG 0, <LOADW, <OFFSET, <TEMP 6>, <CONST 8>>>>,
+---
+> @     <ARG 0, <LOADW, <OFFSET, <TEMP 8>, <CONST 8>>>>,
+28995c28695
+< @     <ARG 2, <TEMP 10>>,
+---
+> @     <ARG 2, <TEMP 16>>,
+28997c28697
+< @ <STOREC, <TEMP 11>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 17>, <REGVAR 0>>
+29001,29018c28701,28708
+< @ <DEFTEMP 12, <GLOBAL _mem>>
+< @ <DEFTEMP 13, <GLOBAL _av>>
+< @ <JNEQ L810,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 8>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< @ <JNEQ L810,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 12>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 18, <GLOBAL _mem>>
+> @ <DEFTEMP 19, <GLOBAL _av>>
+> @ <DEFTEMP 20, <OFFSET, <TEMP 19>, <CONST 8>>>
+> @ <DEFTEMP 21, <OFFSET, <TEMP 18>, <LSL, <LOADW, <TEMP 20>>, <CONST 2>>>>
+> @ <JNEQ L810, <LSR, <LOADW, <TEMP 21>>, <CONST 8>>, <CONST 2>>
+> @ <DEFTEMP 22, <OFFSET, <TEMP 19>, <CONST 12>>>
+> @ <DEFTEMP 23, <OFFSET, <TEMP 18>, <LSL, <LOADW, <TEMP 22>>, <CONST 2>>>>
+> @ <JNEQ L810, <LSR, <LOADW, <TEMP 23>>, <CONST 8>>, <CONST 2>>
+29020,29027c28710,28711
+< @ <DEFTEMP 14,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 8>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< @ <JEQ L805, <TEMP 14>, <CONST 0>>
+---
+> @ <DEFTEMP 24, <LOADW, <OFFSET, <TEMP 21>, <CONST 4>>>>
+> @ <JEQ L805, <TEMP 24>, <CONST 0>>
+29029c28713
+< @ <DEFTEMP 15,
+---
+> @ <DEFTEMP 25,
+29032,29040c28716,28718
+< @     <ARG 0,
+< @       <LOADW,
+< @         <OFFSET,
+< @           <OFFSET,
+< @             <TEMP 12>,
+< @             <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 12>>>, <CONST 2>>>,
+< @           <CONST 4>>>>,
+< @     <ARG 1, <TEMP 14>>>>
+< @ <JNEQ L805, <TEMP 15>, <CONST 0>>
+---
+> @     <ARG 0, <LOADW, <OFFSET, <TEMP 23>, <CONST 4>>>>,
+> @     <ARG 1, <TEMP 24>>>>
+> @ <JNEQ L805, <TEMP 25>, <CONST 0>>
+29042c28720
+< @ <DEFTEMP 16,
+---
+> @ <DEFTEMP 26,
+29048,29050c28726
+< @           <OFFSET,
+< @             <TEMP 12>,
+< @             <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 12>>>, <CONST 2>>>,
+---
+> @           <OFFSET, <TEMP 18>, <LSL, <LOADW, <TEMP 22>>, <CONST 2>>>,
+29055,29057c28731
+< @           <OFFSET,
+< @             <TEMP 12>,
+< @             <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 8>>>, <CONST 2>>>,
+---
+> @           <OFFSET, <TEMP 18>, <LSL, <LOADW, <TEMP 20>>, <CONST 2>>>,
+29059,29060c28733,28734
+< @ <DEFTEMP 17, <CALL 1, <GLOBAL _NewInt>, <ARG 0, <TEMP 16>>>>
+< @ <DEFTEMP 18,
+---
+> @ <DEFTEMP 27, <CALL 1, <GLOBAL _NewInt>, <ARG 0, <TEMP 26>>>>
+> @ <DEFTEMP 28,
+29063c28737
+< @     <ARG 0, <LOADW, <OFFSET, <TEMP 13>, <CONST 4>>>>,
+---
+> @     <ARG 0, <LOADW, <OFFSET, <TEMP 19>, <CONST 4>>>>,
+29065c28739
+< @     <ARG 2, <TEMP 17>>,
+---
+> @     <ARG 2, <TEMP 27>>,
+29067c28741
+< @ <STOREC, <TEMP 18>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 28>, <REGVAR 0>>
+29083,29084c28757,28758
+< @ <DEFTEMP 19, <GLOBAL _current>>
+< @ <STOREW, <PLUS, <LOADW, <TEMP 19>>, <CONST 1>>, <TEMP 19>>
+---
+> @ <DEFTEMP 29, <GLOBAL _current>>
+> @ <STOREW, <PLUS, <LOADW, <TEMP 29>>, <CONST 1>>, <TEMP 29>>
+29103,29110c28777,28780
+< @ <JNEQ L804,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 3,
+> @   <OFFSET,
+> @     <TEMP 1>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>>
+29112c28782,28784
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> 	add r7, r5, r0, LSL #2
+> @ <JNEQ L804, <LSR, <LOADW, <TEMP 3>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r7]
+29116,29123c28788,28791
+< @ <JNEQ L804,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 1>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+---
+> @ <DEFTEMP 4,
+> @   <OFFSET,
+> @     <TEMP 1>,
+> @     <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>>
+29125c28793,28795
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> 	add r5, r5, r0, LSL #2
+> @ <JNEQ L804, <LSR, <LOADW, <TEMP 4>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r5]
+29132,29149c28802,28805
+< @     <LOADW,
+< @       <OFFSET,
+< @         <OFFSET,
+< @           <TEMP 1>,
+< @           <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 4>>>, <CONST 2>>>,
+< @         <CONST 4>>>,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <OFFSET,
+< @           <TEMP 1>,
+< @           <LSL, <LOADW, <OFFSET, <TEMP 2>, <CONST 8>>>, <CONST 2>>>,
+< @         <CONST 4>>>>>
+< 	ldr r0, [r6, #4]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r0, [r0, #4]
+< 	ldr r1, [r6, #8]
+< 	add r1, r5, r1, LSL #2
+< 	ldr r1, [r1, #4]
+---
+> @     <LOADW, <OFFSET, <TEMP 3>, <CONST 4>>>,
+> @     <LOADW, <OFFSET, <TEMP 4>, <CONST 4>>>>>
+> 	ldr r0, [r7, #4]
+> 	ldr r1, [r5, #4]
+29151c28807
+< @ <DEFTEMP 3, <CALL 1, <GLOBAL _NewInt>>>
+---
+> @ <DEFTEMP 5, <CALL 1, <GLOBAL _NewInt>>>
+29155c28811
+< @ <ARG 2, <TEMP 3>>
+---
+> @ <ARG 2, <TEMP 5>>
+29162c28818
+< @ <DEFTEMP 4, <CALL 4, <GLOBAL _Unify>>>
+---
+> @ <DEFTEMP 6, <CALL 4, <GLOBAL _Unify>>>
+29164c28820
+< @ <STOREC, <TEMP 4>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 6>, <REGVAR 0>>
+29171c28827
+< @ <DEFTEMP 5, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 7, <GLOBAL _mem>>
+29173c28829
+< @ <DEFTEMP 6, <GLOBAL _av>>
+---
+> @ <DEFTEMP 8, <GLOBAL _av>>
+29175,29184c28831,28837
+< @ <JNEQ L807,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< 	ldr r0, [r6, #4]
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> @ <DEFTEMP 9, <OFFSET, <TEMP 8>, <CONST 4>>>
+> 	add r7, r6, #4
+> @ <DEFTEMP 10, <OFFSET, <TEMP 7>, <LSL, <LOADW, <TEMP 9>>, <CONST 2>>>>
+> 	ldr r0, [r7]
+> 	add r8, r5, r0, LSL #2
+> @ <JNEQ L807, <LSR, <LOADW, <TEMP 10>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r8]
+29188,29199c28841,28849
+< @ <JNEQ L807,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< 	ldr r0, [r6, #12]
+< 	ldr r0, [r5, r0, LSL #2]
+< 	lsr r0, r0, #8
+< 	cmp r0, #2
+---
+> @ <DEFTEMP 11, <OFFSET, <TEMP 8>, <CONST 12>>>
+> 	add r9, r6, #12
+> @ <DEFTEMP 12, <OFFSET, <TEMP 7>, <LSL, <LOADW, <TEMP 11>>, <CONST 2>>>>
+> 	ldr r0, [r9]
+> 	add r0, r5, r0, LSL #2
+> @ <JNEQ L807, <LSR, <LOADW, <TEMP 12>>, <CONST 8>>, <CONST 2>>
+> 	ldr r1, [r0]
+> 	lsr r1, r1, #8
+> 	cmp r1, #2
+29202,29213c28852,28855
+< @ <DEFTEMP 7,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r6, #4]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r7, [r0, #4]
+< @ <JEQ L805, <TEMP 7>, <CONST 0>>
+< 	cmp r7, #0
+---
+> @ <DEFTEMP 13, <LOADW, <OFFSET, <TEMP 10>, <CONST 4>>>>
+> 	ldr r8, [r8, #4]
+> @ <JEQ L805, <TEMP 13>, <CONST 0>>
+> 	cmp r8, #0
+29216,29228c28858,28863
+< @ <ARG 1, <TEMP 7>>
+< 	mov r1, r7
+< @ <ARG 0,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r6, #12]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r0, [r0, #4]
+< @ <DEFTEMP 8, <CALL 2, <GLOBAL int_mod>>>
+---
+> @ <ARG 1, <TEMP 13>>
+> 	mov r1, r8
+> @ <ARG 0, <LOADW, <OFFSET, <TEMP 12>, <CONST 4>>>>
+> 	mov r8, r0
+> 	ldr r0, [r8, #4]
+> @ <DEFTEMP 14, <CALL 2, <GLOBAL int_mod>>>
+29230c28865
+< @ <JNEQ L805, <TEMP 8>, <CONST 0>>
+---
+> @ <JNEQ L805, <TEMP 14>, <CONST 0>>
+29237,29239c28872
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 4>>>, <CONST 2>>>,
+---
+> @       <OFFSET, <TEMP 7>, <LSL, <LOADW, <TEMP 9>>, <CONST 2>>>,
+29241c28874
+< 	ldr r0, [r6, #4]
+---
+> 	ldr r0, [r7]
+29247,29249c28880
+< @       <OFFSET,
+< @         <TEMP 5>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 6>, <CONST 12>>>, <CONST 2>>>,
+---
+> @       <OFFSET, <TEMP 7>, <LSL, <LOADW, <TEMP 11>>, <CONST 2>>>,
+29251c28882
+< 	ldr r0, [r6, #12]
+---
+> 	ldr r0, [r9]
+29254c28885
+< @ <DEFTEMP 9, <CALL 2, <GLOBAL int_div>>>
+---
+> @ <DEFTEMP 15, <CALL 2, <GLOBAL int_div>>>
+29256,29257c28887,28888
+< @ <ARG 0, <TEMP 9>>
+< @ <DEFTEMP 10, <CALL 1, <GLOBAL _NewInt>>>
+---
+> @ <ARG 0, <TEMP 15>>
+> @ <DEFTEMP 16, <CALL 1, <GLOBAL _NewInt>>>
+29261c28892
+< @ <ARG 2, <TEMP 10>>
+---
+> @ <ARG 2, <TEMP 16>>
+29266c28897
+< @ <ARG 0, <LOADW, <OFFSET, <TEMP 6>, <CONST 8>>>>
+---
+> @ <ARG 0, <LOADW, <OFFSET, <TEMP 8>, <CONST 8>>>>
+29268c28899
+< @ <DEFTEMP 11, <CALL 4, <GLOBAL _Unify>>>
+---
+> @ <DEFTEMP 17, <CALL 4, <GLOBAL _Unify>>>
+29270c28901
+< @ <STOREC, <TEMP 11>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 17>, <REGVAR 0>>
+29277c28908
+< @ <DEFTEMP 12, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 18, <GLOBAL _mem>>
+29279c28910
+< @ <DEFTEMP 13, <GLOBAL _av>>
+---
+> @ <DEFTEMP 19, <GLOBAL _av>>
+29281,29290c28912,28918
+< @ <JNEQ L810,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 8>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< 	ldr r0, [r6, #8]
+< 	ldr r0, [r5, r0, LSL #2]
+---
+> @ <DEFTEMP 20, <OFFSET, <TEMP 19>, <CONST 8>>>
+> 	add r7, r6, #8
+> @ <DEFTEMP 21, <OFFSET, <TEMP 18>, <LSL, <LOADW, <TEMP 20>>, <CONST 2>>>>
+> 	ldr r0, [r7]
+> 	add r8, r5, r0, LSL #2
+> @ <JNEQ L810, <LSR, <LOADW, <TEMP 21>>, <CONST 8>>, <CONST 2>>
+> 	ldr r0, [r8]
+29294,29305c28922,28930
+< @ <JNEQ L810,
+< @   <LSR,
+< @     <LOADW,
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 12>>>, <CONST 2>>>>,
+< @     <CONST 8>>,
+< @   <CONST 2>>
+< 	ldr r0, [r6, #12]
+< 	ldr r0, [r5, r0, LSL #2]
+< 	lsr r0, r0, #8
+< 	cmp r0, #2
+---
+> @ <DEFTEMP 22, <OFFSET, <TEMP 19>, <CONST 12>>>
+> 	add r9, r6, #12
+> @ <DEFTEMP 23, <OFFSET, <TEMP 18>, <LSL, <LOADW, <TEMP 22>>, <CONST 2>>>>
+> 	ldr r0, [r9]
+> 	add r0, r5, r0, LSL #2
+> @ <JNEQ L810, <LSR, <LOADW, <TEMP 23>>, <CONST 8>>, <CONST 2>>
+> 	ldr r1, [r0]
+> 	lsr r1, r1, #8
+> 	cmp r1, #2
+29308,29319c28933,28936
+< @ <DEFTEMP 14,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 8>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r6, #8]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r7, [r0, #4]
+< @ <JEQ L805, <TEMP 14>, <CONST 0>>
+< 	cmp r7, #0
+---
+> @ <DEFTEMP 24, <LOADW, <OFFSET, <TEMP 21>, <CONST 4>>>>
+> 	ldr r8, [r8, #4]
+> @ <JEQ L805, <TEMP 24>, <CONST 0>>
+> 	cmp r8, #0
+29322,29334c28939,28944
+< @ <ARG 1, <TEMP 14>>
+< 	mov r1, r7
+< @ <ARG 0,
+< @   <LOADW,
+< @     <OFFSET,
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 12>>>, <CONST 2>>>,
+< @       <CONST 4>>>>
+< 	ldr r0, [r6, #12]
+< 	add r0, r5, r0, LSL #2
+< 	ldr r0, [r0, #4]
+< @ <DEFTEMP 15, <CALL 2, <GLOBAL int_mod>>>
+---
+> @ <ARG 1, <TEMP 24>>
+> 	mov r1, r8
+> @ <ARG 0, <LOADW, <OFFSET, <TEMP 23>, <CONST 4>>>>
+> 	mov r8, r0
+> 	ldr r0, [r8, #4]
+> @ <DEFTEMP 25, <CALL 2, <GLOBAL int_mod>>>
+29336c28946
+< @ <JNEQ L805, <TEMP 15>, <CONST 0>>
+---
+> @ <JNEQ L805, <TEMP 25>, <CONST 0>>
+29343,29345c28953
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 8>>>, <CONST 2>>>,
+---
+> @       <OFFSET, <TEMP 18>, <LSL, <LOADW, <TEMP 20>>, <CONST 2>>>,
+29347c28955
+< 	ldr r0, [r6, #8]
+---
+> 	ldr r0, [r7]
+29353,29355c28961
+< @       <OFFSET,
+< @         <TEMP 12>,
+< @         <LSL, <LOADW, <OFFSET, <TEMP 13>, <CONST 12>>>, <CONST 2>>>,
+---
+> @       <OFFSET, <TEMP 18>, <LSL, <LOADW, <TEMP 22>>, <CONST 2>>>,
+29357c28963
+< 	ldr r0, [r6, #12]
+---
+> 	ldr r0, [r9]
+29360c28966
+< @ <DEFTEMP 16, <CALL 2, <GLOBAL int_div>>>
+---
+> @ <DEFTEMP 26, <CALL 2, <GLOBAL int_div>>>
+29362,29363c28968,28969
+< @ <ARG 0, <TEMP 16>>
+< @ <DEFTEMP 17, <CALL 1, <GLOBAL _NewInt>>>
+---
+> @ <ARG 0, <TEMP 26>>
+> @ <DEFTEMP 27, <CALL 1, <GLOBAL _NewInt>>>
+29367c28973
+< @ <ARG 2, <TEMP 17>>
+---
+> @ <ARG 2, <TEMP 27>>
+29372c28978
+< @ <ARG 0, <LOADW, <OFFSET, <TEMP 13>, <CONST 4>>>>
+---
+> @ <ARG 0, <LOADW, <OFFSET, <TEMP 19>, <CONST 4>>>>
+29374c28980
+< @ <DEFTEMP 18, <CALL 4, <GLOBAL _Unify>>>
+---
+> @ <DEFTEMP 28, <CALL 4, <GLOBAL _Unify>>>
+29376c28982
+< @ <STOREC, <TEMP 18>, <REGVAR 0>>
+---
+> @ <STOREC, <TEMP 28>, <REGVAR 0>>
+29404c29010
+< @ <DEFTEMP 19, <GLOBAL _current>>
+---
+> @ <DEFTEMP 29, <GLOBAL _current>>
+29406c29012
+< @ <STOREW, <PLUS, <LOADW, <TEMP 19>>, <CONST 1>>, <TEMP 19>>
+---
+> @ <STOREW, <PLUS, <LOADW, <TEMP 29>>, <CONST 1>>, <TEMP 29>>
+29462c29068
+< @ Node @6402 = LOADW [@6398(1)]
+---
+> @ Node @6402 = LOADW [@6398(2)]
+29469c29075
+< @ Node @6409 = LOADW [@6408(0)]
+---
+> @ Node @6409 = LOADW [@6408(1)]
+29476c29082
+< @ Node @6416 = LOADW [@6415(0)]
+---
+> @ Node @6416 = LOADW [@6415(1)]
+29587c29193
+< @ Node @6429 = LOADW [@6425(1)]
+---
+> @ Node @6429 = LOADW [@6425(2)]
+29594c29200
+< @ Node @6436 = LOADW [@6435(0)]
+---
+> @ Node @6436 = LOADW [@6435(1)]
+29598c29204
+< @ Node @6440 = LOADW [@6439(0)]
+---
+> @ Node @6440 = LOADW [@6439(1)]
+29601c29207
+< @ Node @6443 = EQ [@6442(1), @6437(1)]
+---
+> @ Node @6443 = EQ [@6442(1), @6437(2)]
+29706c29312
+< @ Node @6453 = LOADW [@6449(1)]
+---
+> @ Node @6453 = LOADW [@6449(2)]
+29713c29319
+< @ Node @6460 = LOADW [@6459(0)]
+---
+> @ Node @6460 = LOADW [@6459(1)]
+29717c29323
+< @ Node @6464 = LOADW [@6463(0)]
+---
+> @ Node @6464 = LOADW [@6463(1)]
+29821c29427
+< @ Node @6478 = LOADW [@6477(0)]
+---
+> @ Node @6478 = LOADW [@6477(1)]
+29834c29440
+< @ Node @6491 = LOADW [@6487(1)]
+---
+> @ Node @6491 = LOADW [@6487(2)]
+29916c29522
+< @ Node @6503 = LOADW [@6499(1)]
+---
+> @ Node @6503 = LOADW [@6499(2)]
+30517c30123
+< @ Node @6601 = LOADC [@6600(0)]
+---
+> @ Node @6601 = LOADC [@6600(1)]
+30520c30126
+< @ Node @6604 = LOADW [@6603(0)]
+---
+> @ Node @6604 = LOADW [@6603(1)]
+30525c30131
+< @ Node @6609 = LOADC [@6608(0)]
+---
+> @ Node @6609 = LOADC [@6608(1)]
+30528c30134
+< @ Node @6612 = LOADW [@6611(0)]
+---
+> @ Node @6612 = LOADW [@6611(1)]
+30532c30138
+< @ Node @6616 = LOADW [@6615(0)]
+---
+> @ Node @6616 = LOADW [@6615(1)]
+30562,30563c30168,30169
+< @ Node @6646 = LOADW [@6645(0)]
+< @ Node @6647 = STOREW [@6641(1), @6645(0), @6646(1)]
+---
+> @ Node @6646 = LOADW [@6645(1)]
+> @ Node @6647 = STOREW [@6641(1), @6645(1), @6646(1)]
+30567,30569c30173,30175
+< @ Node @6651 = OFFSET [@6645(1), @6650(1)]
+< @ Node @6652 = LOADW [@6651(0)]
+< @ Node @6653 = STOREW [@6649(1), @6651(0), @6652(1)]
+---
+> @ Node @6651 = OFFSET [@6645(2), @6650(1)]
+> @ Node @6652 = LOADW [@6651(1)]
+> @ Node @6653 = STOREW [@6649(1), @6651(1), @6652(1)]
+30571c30177
+< @ Node @6655 = LSL [@6649(2), @6635(2)]
+---
+> @ Node @6655 = LSL [@6649(2), @6635(3)]
+30573,30574c30179,30180
+< @ Node @6657 = LOADW [@6656(0)]
+< @ Node @6658 = STOREW [@6643(2), @6656(0), @6657(1)]
+---
+> @ Node @6657 = LOADW [@6656(1)]
+> @ Node @6658 = STOREW [@6643(2), @6656(1), @6657(1)]
+30586c30192
+< @ Node @6670 = LOADW [@6669(0)]
+---
+> @ Node @6670 = LOADW [@6669(1)]
+30597,30598c30203,30204
+< @ Node @6681 = LOADW [@6680(0)]
+< @ Node @6682 = STOREW [@6676(1), @6680(0), @6681(1)]
+---
+> @ Node @6681 = LOADW [@6680(1)]
+> @ Node @6682 = STOREW [@6676(1), @6680(1), @6681(1)]
+30602c30208
+< @ Node @6686 = LSL [@6685(1), @6666(2)]
+---
+> @ Node @6686 = LSL [@6685(1), @6666(3)]
+30606,30607c30212,30213
+< @ Node @6690 = LOADW [@6689(0)]
+< @ Node @6691 = STOREW [@6684(1), @6689(0), @6690(1)]
+---
+> @ Node @6690 = LOADW [@6689(1)]
+> @ Node @6691 = STOREW [@6684(1), @6689(1), @6690(1)]
+30609,30612c30215,30219
+< @ Sharing @6668(1) as temp 2
+< @ Sharing @6669(3) as temp 3
+< @ Sharing @6676(1) as temp 4
+< @ Sharing @6677(2) as temp 5
+---
+> @ Sharing @6645(2) as temp 2
+> @ Sharing @6668(1) as temp 3
+> @ Sharing @6669(3) as temp 4
+> @ Sharing @6676(1) as temp 5
+> @ Sharing @6677(2) as temp 6
+30632,30633c30239
+< @ <STOREW,
+< @   <CONST 1282>,
+---
+> @ <DEFTEMP 2,
+30634a30241
+> @ <STOREW, <CONST 1282>, <TEMP 2>>
+30636,30640c30243
+< @ <STOREW,
+< @   <LOADW, <REGVAR 0>>,
+< @   <OFFSET,
+< @     <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <REGVAR 1>>, <CONST 2>>>,
+< @     <CONST 4>>>
+---
+> @ <STOREW, <LOADW, <REGVAR 0>>, <OFFSET, <TEMP 2>, <CONST 4>>>
+30648,30650c30251,30253
+< @ <DEFTEMP 2, <CALL 1, <GLOBAL _HeapAlloc>, <ARG 0, <CONST 2>>>>
+< @ <DEFTEMP 3, <GLOBAL _callbody>>
+< @ <STOREW, <TEMP 2>, <TEMP 3>>
+---
+> @ <DEFTEMP 3, <CALL 1, <GLOBAL _HeapAlloc>, <ARG 0, <CONST 2>>>>
+> @ <DEFTEMP 4, <GLOBAL _callbody>>
+> @ <STOREW, <TEMP 3>, <TEMP 4>>
+30652,30653c30255,30256
+< @ <DEFTEMP 4, <CALL 1, <GLOBAL _MakeRef>, <ARG 0, <CONST 1>>>>
+< @ <DEFTEMP 5, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 5, <CALL 1, <GLOBAL _MakeRef>, <ARG 0, <CONST 1>>>>
+> @ <DEFTEMP 6, <GLOBAL _mem>>
+30655,30656c30258,30259
+< @   <TEMP 4>,
+< @   <OFFSET, <TEMP 5>, <LSL, <LOADW, <TEMP 3>>, <CONST 2>>>>
+---
+> @   <TEMP 5>,
+> @   <OFFSET, <TEMP 6>, <LSL, <LOADW, <TEMP 4>>, <CONST 2>>>>
+30661c30264
+< @     <OFFSET, <TEMP 5>, <LSL, <LOADW, <TEMP 3>>, <CONST 2>>>,
+---
+> @     <OFFSET, <TEMP 6>, <LSL, <LOADW, <TEMP 4>>, <CONST 2>>>,
+30711,30712c30314
+< @ <STOREW,
+< @   <CONST 1282>,
+---
+> @ <DEFTEMP 2,
+30713a30316,30318
+> 	set r0, _mem
+> 	add r7, r0, r5, LSL #2
+> @ <STOREW, <CONST 1282>, <TEMP 2>>
+30715,30716c30320
+< 	set r1, _mem
+< 	str r0, [r1, r5, LSL #2]
+---
+> 	str r0, [r7]
+30718,30725c30322,30323
+< @ <STOREW,
+< @   <LOADW, <REGVAR 0>>,
+< @   <OFFSET,
+< @     <OFFSET, <GLOBAL _mem>, <LSL, <LOADW, <REGVAR 1>>, <CONST 2>>>,
+< @     <CONST 4>>>
+< 	set r0, _mem
+< 	add r0, r0, r5, LSL #2
+< 	str r4, [r0, #4]
+---
+> @ <STOREW, <LOADW, <REGVAR 0>>, <OFFSET, <TEMP 2>, <CONST 4>>>
+> 	str r4, [r7, #4]
+30740c30338
+< @ <DEFTEMP 2, <CALL 1, <GLOBAL _HeapAlloc>>>
+---
+> @ <DEFTEMP 3, <CALL 1, <GLOBAL _HeapAlloc>>>
+30742c30340
+< @ <DEFTEMP 3, <GLOBAL _callbody>>
+---
+> @ <DEFTEMP 4, <GLOBAL _callbody>>
+30744c30342
+< @ <STOREW, <TEMP 2>, <TEMP 3>>
+---
+> @ <STOREW, <TEMP 3>, <TEMP 4>>
+30749c30347
+< @ <DEFTEMP 4, <CALL 1, <GLOBAL _MakeRef>>>
+---
+> @ <DEFTEMP 5, <CALL 1, <GLOBAL _MakeRef>>>
+30751c30349
+< @ <DEFTEMP 5, <GLOBAL _mem>>
+---
+> @ <DEFTEMP 6, <GLOBAL _mem>>
+30754,30755c30352,30353
+< @   <TEMP 4>,
+< @   <OFFSET, <TEMP 5>, <LSL, <LOADW, <TEMP 3>>, <CONST 2>>>>
+---
+> @   <TEMP 5>,
+> @   <OFFSET, <TEMP 6>, <LSL, <LOADW, <TEMP 4>>, <CONST 2>>>>
+30762c30360
+< @     <OFFSET, <TEMP 5>, <LSL, <LOADW, <TEMP 3>>, <CONST 2>>>,
+---
+> @     <OFFSET, <TEMP 6>, <LSL, <LOADW, <TEMP 4>>, <CONST 2>>>,
+30865c30463
+< @ Node @6695 = LOADW [@6694(0)]
+---
+> @ Node @6695 = LOADW [@6694(1)]
+30872c30470
+< @ Node @6702 = LOADW [@6701(0)]
+---
+> @ Node @6702 = LOADW [@6701(1)]
+30900c30498
+< @ Node @6730 = LOADW [@6729(0)]
+---
+> @ Node @6730 = LOADW [@6729(1)]
+30919c30517
+< @ Node @6749 = LOADW [@6748(0)]
+---
+> @ Node @6749 = LOADW [@6748(1)]
