@@ -5,7 +5,7 @@ open Print
 open Optree
 open Mach
 
-let debug = true
+let debug = false
 
 (* |fits_offset| -- test for fitting in offset field of address *)
 let fits_offset x = (-4096 < x && x < 4096)
